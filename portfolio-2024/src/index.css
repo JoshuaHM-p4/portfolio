@@ -1,0 +1,95 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  /* TEXT  */
+
+  .header-1 {
+    @apply text-center font-texturina text-slate-800 text-2xl
+    lg:text-4xl
+  }
+
+  .description {
+    @apply text-center text-slate-600 font-cinzel text-sm
+    lg:text-base
+    ;
+  }
+
+  /* Elements */
+
+  .background {
+    @apply bg-gradient-to-t from-[#A05645] via-[#FFA752] to-[#F9F5F1]
+    -z-50 w-screen h-screen absolute bg-fixed;
+  }
+
+  .page {
+    @apply bg-transparent h-screen w-screen flex items-center justify-center
+    py-10 px-2
+    md:py-10 md:px-28
+    ;
+  }
+
+  .glass-container {
+    @apply mx-auto h-full w-full border-white-500 bg-white-500 bg-opacity-30 rounded-3xl backdrop-blur-sm
+    flex flex-col items-center justify-center p-7
+    md:justify-normal md:items-start md:flex-row
+    ;
+  }
+
+  .navbar {
+    @apply  h-full rounded-md items-center px-5 py-2 flex flex-col w-full
+    md:w-1/3;
+  }
+
+  .profile-card  {
+    @apply flex flex-col h-fit w-full items-center pb-5 rounded-md
+    hover:bg-white-100 hover:bg-opacity-30 transition-all ease-in-out
+    ;
+  }
+
+  .nav-container {
+    @apply mt-5 flex justify-between h-fit overflow-x-scroll
+    md:flex-col md:gap-2 md:w-fit md:overflow-hidden
+    ;
+  }
+
+  .nav-button {
+    @apply items-center content-center align-middle justify-start rounded-full
+    hover:bg-white-500  hover:bg-opacity-60 transition-all ease-in-out p-2
+    flex
+    min-w-fit
+
+    ;
+  }
+
+  .nav-link {
+    @apply text-center text-slate-800 font-texturina
+    ;
+  }
+
+  .dummy-icon {
+    @apply rounded-full bg-slate-50 h-52 w-52 p-16;
+  }
+
+
+}
+
+@layer utilities {
+  .z-50 {
+    z-index: 50;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-texturina;
+  }
+
+  p {
+    @apply font-cinzel;
+  }
+}
+
