@@ -32,11 +32,20 @@
   }
 
   .nav-button {
-    @apply items-center content-center align-middle justify-center rounded-md
-    hover:bg-white-500  hover:bg-opacity-60 transition-all ease-in-out p-2
-    flex
-    w-full
-    min-w-fit
+    @apply p-2 items-center content-center align-middle justify-center rounded-md
+    flex w-full min-w-fit
+    bg-white-500 bg-opacity-10 border border-white-100 shadow-md
+    hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out
+    ;
+  }
+
+  .nav-active {
+    @apply bg-white-500 bg-opacity-70
+    ;
+  }
+
+  .nav-link {
+    @apply text-center text-slate-800 font-texturina leading-[-4rem]
     ;
   }
 
@@ -47,10 +56,7 @@
     ;
   }
 
-  .nav-link {
-    @apply text-center text-slate-800 font-texturina leading-[-4rem]
-    ;
-  }
+
 
   .dummy-icon {
     @apply rounded-full bg-slate-50 h-52 w-52 p-16;

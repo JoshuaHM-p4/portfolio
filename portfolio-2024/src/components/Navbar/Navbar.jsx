@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import linkData from "../../data/links.json";
 
 const DummyIcon = () => (
@@ -38,9 +38,9 @@ const Navbar = () => {
       </div>
 
       {/* Nav Container and Buttons */}
-      <div className="mt-1 justify-between h-fit overflow-x-scroll flex md:flex-col md:gap-2 md:w-full md:overflow-hidden">
+      <div className="justify-between h-fit overflow-x-scroll flex md:flex-col md:gap-2 md:w-full md:overflow-hidden">
         {navItems.map((item, index) => (
-          <NavButton key={index} icon={item.icon} text={item.text} destination={item.destination}/>
+          <NavButton key={index} icon={item.icon} text={item.text} destination={item.destination} />
         ))}
       </div>
     </div>
@@ -49,9 +49,12 @@ const Navbar = () => {
 
 const NavButton = ({ icon, text = 'tooltip text', destination }) => {
   return (
-    <button className="nav-button">
-      <Link className="nav-link" to={destination} >&#91; {text} &#93;</Link>
-    </button>
+    <NavLink
+      className={({ isActive }) => (isActive ? 'nav-button nav-link nav-active' : 'nav-button nav-link')}
+      to={destination}
+    >
+      &#91; {text} &#93;
+    </NavLink>
   );
 }
 export default Navbar;
