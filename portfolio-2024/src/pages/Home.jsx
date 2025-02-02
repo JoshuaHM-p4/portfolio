@@ -1,13 +1,12 @@
 const Home = () => {
   const skills = [
-    { name: 'Python', icon: 'python' },
-    { name: 'Tensorflow', icon: 'tensorflow' },
-    { name: 'PyTorch', icon: 'pytorch' },
-    { name: 'Scikit-learn', icon: 'scikit-learn' },
-    { name: 'Pandas', icon: 'pandas' },
-    { name: 'Numpy', icon: 'numpy' },
-    { name: 'Matplotlib', icon: 'matplotlib' },
-    { name: 'Seaborn', icon: 'seaborn' },
+    { name: 'python', icon: 'python' },
+    { name: 'tensorflow', icon: 'tensorflow' },
+    { name: 'pyTorch', icon: 'pytorch' },
+    { name: 'skLearn', icon: 'scikitlearn' },
+    { name: 'pandas', icon: 'pandas' },
+    { name: 'numpy', icon: 'numpy' },
+    { name: 'matplotlib', icon: 'matplotlib' },
   ]
 
   const projects = [
@@ -31,10 +30,7 @@ const Home = () => {
         (
           <div key={index} className="p-2 flex flex-col justify-center items-center align-bottom rounded-md bg-white-500 bg-opacity-25 border border-white-100 shadow-md
     hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out">
-            {/* <img src={`./icons/${skill.icon}.svg`} alt={skill.name} className="skill-icon" /> */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="35" viewBox="0 0 36 35" fill="none">
-              <circle cx="18" cy="17.5" r="17.5" fill="#D9D9D9" />
-            </svg>
+            <img src={`./icons/${skill.icon}.svg`} alt={skill.name} className="w-12" />
             <p className="skill-text">{skill.name}</p>
           </div>
         )
