@@ -12,6 +12,23 @@
     lg:text-4xl
   }
 
+  .header-2 {
+    @apply text-center font-texturina text-slate-800 text-xl
+    lg:text-2xl
+  }
+
+  .paragraph {
+    @apply text-slate-800 font-texturina text-sm
+    lg:text-base
+    ;
+  }
+
+  .skill-text {
+    @apply text-blue-500 font-texturina text-sm
+    lg:text-base font-medium
+    ;
+  }
+
   .description {
     @apply text-center text-slate-600 font-cinzel text-sm
     lg:text-base
@@ -23,12 +40,6 @@
   .background {
     @apply bg-gradient-to-t from-[#A05645] via-[#FFA752] to-[#F9F5F1]
     -z-50 w-screen h-screen absolute bg-fixed;
-  }
-
-
-  .profile-card  {
-    @apply
-    ;
   }
 
   .nav-button {
