@@ -3,26 +3,19 @@ import Navbar from '../components/Navbar/Navbar';
 // Home
 // About Me
 // Contacts
-// 
+//
 
-const DummyIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-  </svg>
-);
+
 
 const Home = () => {
-  const navItems = [
 
-    { icon: <DummyIcon />, text: 'Interests' },
-    { icon: <DummyIcon />, text: 'Experiences' },
-    { icon: <DummyIcon />, text: 'Projects' }
-  ];
 
   return (
-    <div className='page'>
-      <div className="glass-container">
-        <Navbar navItems={navItems}/>
+    <div className='bg-transparent h-screen w-screen flex items-center justify-center py-10 px-2 md:py-10 md:px-28'>
+      <div className="mx-auto h-full w-full border border-white-500 bg-white-500 bg-opacity-30 rounded-3xl backdrop-blur-sm
+          flex flex-col items-center justify-center p-2
+          md:justify-normal md:items-start md:flex-row">
+        <Navbar />
       </div>
     </div>
   );
