@@ -1,15 +1,19 @@
 // src/App.jsx
-import React from 'react'
-import './App.css'
-import Home from './pages/Home'
-import Background from './components/Background/Background'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
+import PersistentLayout from "./components/PersistentLayout";
+import Home from './pages/Home';
 
 const App = () => {
   return (
-    <div className='relative w-screen h-screen'>
-      <Background />
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PersistentLayout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

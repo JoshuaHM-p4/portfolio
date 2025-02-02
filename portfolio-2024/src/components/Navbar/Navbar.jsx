@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import linkData from "../../data/links.json";
 
 const DummyIcon = () => (
@@ -9,10 +10,11 @@ const DummyIcon = () => (
 
 const Navbar = () => {
   const navItems = [
-    { icon: <DummyIcon />, text: 'about' },
-    { icon: <DummyIcon />, text: 'interests' },
-    { icon: <DummyIcon />, text: 'experiences' },
-    { icon: <DummyIcon />, text: 'projects' }
+    { icon: <DummyIcon />, text: 'home', destination: '/' },
+    { icon: <DummyIcon />, text: 'about', destination: '/about' },
+    { icon: <DummyIcon />, text: 'interests', destination: '/interests' },
+    { icon: <DummyIcon />, text: 'experiences', destination: '/experiences' },
+    { icon: <DummyIcon />, text: 'projects', destination: '/projects' },
   ];
 
   return (
@@ -38,17 +40,17 @@ const Navbar = () => {
       {/* Nav Container and Buttons */}
       <div className="mt-1 justify-between h-fit overflow-x-scroll flex md:flex-col md:gap-2 md:w-full md:overflow-hidden">
         {navItems.map((item, index) => (
-          <NavButton key={index} icon={item.icon} text={item.text} />
+          <NavButton key={index} icon={item.icon} text={item.text} destination={item.destination}/>
         ))}
       </div>
     </div>
   );
 }
 
-const NavButton = ({ icon, text = 'tooltip text' }) => {
+const NavButton = ({ icon, text = 'tooltip text', destination }) => {
   return (
     <button className="nav-button">
-      <h4 className="nav-link">&#91; {text} &#93;</h4>
+      <Link className="nav-link" to={destination} >&#91; {text} &#93;</Link>
     </button>
   );
 }
