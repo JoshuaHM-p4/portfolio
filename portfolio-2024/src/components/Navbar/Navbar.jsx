@@ -31,9 +31,13 @@ const Navbar = () => {
         </div>
 
         {/* Contacts and Resume */}
-        <div className="flex justify-between align-bottom mt-2 transition-colors border-transparent border-b-2 hover:border-white-100 pb-3 self-stretch mx-5">
-          <a className="nav-profile-link" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">linkedin</a>
-          <a className="nav-profile-link" href={linkData.resume} target="_blank" rel="noopener noreferrer">resume</a>
+        <div className="flex justify-between align-bottom mt-2 transition-colors border-transparent border-b-2 hover:border-white-100 pb-3 self-stretch">
+          <a className="nav-profile-link" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
+            <img src={`./icons/linkedin.svg`} alt={'linkedin-icon'} className="w-7" /> linkedin
+          </a>
+          <a className="nav-profile-link" href={linkData.resume} target="_blank" rel="noopener noreferrer">
+            <img src={`./icons/resume.svg`} alt={'linkedin-icon'} className="w-7" /> resume
+          </a>
         </div>
       </div>
 

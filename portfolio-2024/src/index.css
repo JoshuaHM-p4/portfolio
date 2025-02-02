@@ -61,7 +61,7 @@
   }
 
   .nav-profile-link {
-    @apply text-center text-slate-800 font-texturina leading-[-4rem]
+    @apply flex px-5 text-center text-slate-800 font-texturina leading-[-4rem]
     text-black-300 flex-1
     hover:text-white-500 transition-colors
     ;
