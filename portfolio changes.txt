@@ -1,20 +1,18 @@
-Design Changes: 
-Roundness on Persistent Layout 
+Design Changes:
+Fix Picture Zoomins
 Scrollbar Styling https://www.youtube.com/watch?v=yHF68UXQUI0
 
 Navbar Changes: 
 LinkedIn, Resume and contacts Icon 
 
 Home Page: 
-- Contact Me Button
 - See All Projects Button 
 - Swiper or Recent Work
 - Training Process Text
 
 About Me: 
-	Github "About Me" thing in About Page	
+Github "About Me" thing in About Page	
 	
-
 Contact Me Page 
 (name, email subject, message or email, phone, whatsapp, facebook, linkedin, github)
 

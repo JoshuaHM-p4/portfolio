@@ -1,6 +1,7 @@
 import Button from '../components/Button';
 import ProjectCard from '../components/ProjectCard';
 import SkillCard from '../components/SkillCard';
+import PictureCard from '../components/PictureCard';
 import { useNavbar } from '../context/NavbarContext';
 
 const Home = () => {
@@ -29,13 +30,10 @@ const Home = () => {
         className={`flex flex-col items-start justify-start transition-all duration-300 overflow-x-hidden lg:overflow-visible
         ${isCollapsed ? "lg:w-[80%]  mx-auto" : "w-full"}`}
       >
-        <div className='w-full flex h-fit items-start md:gap-5'>
+        <div className='w-full md:flex flex-row h-fit items-start md:gap-5'>
           {/* Personal Picture Card */}
           {isCollapsed &&
-            <div className="md:w-[700px] md:h-[240px] rounded-xl bg-white-500 bg-opacity-25 border border-white-100 shadow-md
-            hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out">
-              {/* Image */}
-            </div>
+            <PictureCard image={"./img/profile.jpg"} title={"Joshua Mistal"} description={"ML Specialization"} />
           }
 
           {/* Profile Heading */}
