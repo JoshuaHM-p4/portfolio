@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import PersistentLayout from "./components/PersistentLayout";
+import MainLayout from "./components/MainLayout";
 import Home from './pages/Home';
 import About from './pages/About';
 import Project from './pages/Project';
@@ -13,7 +13,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<PersistentLayout />}>
+        <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="interests" element={<Interest />} />

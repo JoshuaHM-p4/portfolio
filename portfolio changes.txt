@@ -1,0 +1,56 @@
+Design Changes: 
+Roundness on Persistent Layout 
+Scrollbar Styling https://www.youtube.com/watch?v=yHF68UXQUI0
+
+Navbar Changes: 
+LinkedIn, Resume and contacts Icon 
+
+Home Page: 
+- Contact Me Button
+- See All Projects Button 
+- Swiper or Recent Work
+- Training Process Text
+
+About Me: 
+	Github "About Me" thing in About Page	
+	
+
+Contact Me Page 
+(name, email subject, message or email, phone, whatsapp, facebook, linkedin, github)
+
+Animations: 
+Sidebar Animation for Navbar (collapsible)  with blur effect onto content 
+
+
+MLJosh Gradient Thing In Background 
+MLJosh Icon Animated 
+
+
+PROJECT LIST:
+Machine Learning 
+	Big DeepLearning Projects 
+	YoloV8 Crab Detector 
+
+Kaggle Notebooks
+	Image Classification : Is That Santa 
+	CNN : Handwritten Baybayin 
+	CNN : FashionMNIST Datacamp Project 
+	KNN : Terraria Weapon Recommender Model 
+	KMeans : Salmonella Pathogen 
+	NN : EMNIST Letters Model 
+	ML : Fraud Detection Model
+	ML : Gestational Diabetes Model
+
+Software Development
+	DSA Data Visualization Project RSCS 
+	PUP SIS 
+	SCAM App 
+	Tecnoquatro 
+
+Game Development 
+	Pygame Shuttle Endeavor
+	Pygame Speed Typer
+	Pygame Picross 
+
+UI/UX + Prototyping 
+	Hinyapp
