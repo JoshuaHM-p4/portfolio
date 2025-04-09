@@ -27,16 +27,18 @@ const Navbar = () => {
         <div className="flex flex-col items-center mt-2">
           <h1 className="header-1">Joshua Mistal</h1>
           <p className="description font-bold">ML Specialization</p>
-          <p className="description">Manila, PH</p>
+          <p className="caption">Manila, PH</p>
         </div>
 
         {/* Contacts and Resume */}
         <div className="flex justify-between align-bottom mt-2 transition-colors border-transparent border-b-2 hover:border-white-100 pb-3 self-stretch">
           <a className="nav-profile-link" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
-            <img src={`./icons/linkedin.svg`} alt={'linkedin-icon'} className="w-7" /> linkedin
+            {/* <img src={`./icons/linkedin.svg`} alt={'linkedin-icon'} className="w-7" /> */}
+            contact
           </a>
           <a className="nav-profile-link" href={linkData.resume} target="_blank" rel="noopener noreferrer">
-            <img src={`./icons/resume.svg`} alt={'linkedin-icon'} className="w-7" /> resume
+            {/* <img src={`./icons/resume.svg`} alt={'linkedin-icon'} className="w-7" />  */}
+            resume
           </a>
         </div>
       </div>
