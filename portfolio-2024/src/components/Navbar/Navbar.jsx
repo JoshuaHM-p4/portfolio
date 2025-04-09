@@ -8,7 +8,7 @@ const DummyIcon = () => (
   </svg>
 );
 
-const Navbar = () => {
+const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const navItems = [
     { icon: <DummyIcon />, text: 'home', destination: '/' },
     { icon: <DummyIcon />, text: 'about', destination: '/about' },
@@ -18,48 +18,64 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="h-full rounded-md items-center flex flex-col w-full md:w-72">
-      {/* Profile Container */}
-      <div className="flex flex-col h-fit w-full items-center pb-5 rounded-md hover:bg-opacity-30 transition-all ease-in-out">
-        <div className="rounded-full bg-slate-50 h-52 w-52 p-16"></div>
+    <div className={`h-full flex flex-col items-center transition-all duration-300
+      ${isCollapsed ? "w-20" : "w-full md:w-72"}`}>
 
-        {/* Profile Info */}
-        <div className="flex flex-col items-center mt-2">
-          <h1 className="header-1">Joshua Mistal</h1>
-          <p className="description font-bold">ML Specialization</p>
-          <p className="caption">Manila, PH</p>
+      {/* Toggle Button */}
+      <button
+        onClick={toggleNavbar}
+        className="self-end m-2 px-2 py-1 text-sm bg-white bg-opacity-20 rounded hover:bg-opacity-40 transition"
+      >
+        {isCollapsed ? "⮞" : "⮜"}
+      </button>
+
+      {/* Profile Section */}
+      {!isCollapsed && (
+        <div className="flex flex-col h-fit w-full items-center pb-5">
+          <div className="rounded-full bg-slate-50 h-52 w-52 p-16"></div>
+
+          <div className="flex flex-col items-center mt-2">
+            <h1 className="header-1">Joshua Mistal</h1>
+            <p className="description font-bold">ML Specialization</p>
+            <p className="caption">Manila, PH</p>
+          </div>
+
+          <div className="flex justify-between mt-2 border-b-2 border-transparent hover:border-white-100 pb-3 self-stretch">
+            <a className="nav-profile-link" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
+              contact
+            </a>
+            <a className="nav-profile-link" href={linkData.resume} target="_blank" rel="noopener noreferrer">
+              resume
+            </a>
+          </div>
         </div>
+      )}
 
-        {/* Contacts and Resume */}
-        <div className="flex justify-between align-bottom mt-2 transition-colors border-transparent border-b-2 hover:border-white-100 pb-3 self-stretch">
-          <a className="nav-profile-link" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
-            {/* <img src={`./icons/linkedin.svg`} alt={'linkedin-icon'} className="w-7" /> */}
-            contact
-          </a>
-          <a className="nav-profile-link" href={linkData.resume} target="_blank" rel="noopener noreferrer">
-            {/* <img src={`./icons/resume.svg`} alt={'linkedin-icon'} className="w-7" />  */}
-            resume
-          </a>
-        </div>
-      </div>
-
-      {/* Nav Container and Buttons */}
-      <div className="justify-between h-fit overflow-x-scroll flex md:flex-col md:gap-2 md:w-full md:overflow-hidden">
+      {/* Nav Buttons */}
+      <div className={`justify-center h-fit flex md:flex-col md:gap-2 md:w-full`}>
         {navItems.map((item, index) => (
-          <NavButton key={index} icon={item.icon} text={item.text} destination={item.destination} />
+          <NavButton
+            key={index}
+            icon={item.icon}
+            isCollapsed={isCollapsed}
+            text={item.text}
+            destination={item.destination}
+          />
         ))}
       </div>
     </div>
   );
-}
+};
 
-const NavButton = ({ icon, text = 'tooltip text', destination }) => {
+const NavButton = ({ icon, text = 'tooltip text', destination, isCollapsed=false }) => {
   return (
     <NavLink
-      className={({ isActive }) => (isActive ? 'nav-button nav-link nav-active' : 'nav-button nav-link')}
+      className={({ isActive }) => (
+        isActive ? 'nav-button nav-link nav-active ' + (isCollapsed ? 'opacity-50 rounded-l w-16 h-16' : '')
+        : 'nav-button nav-link' + (isCollapsed ? 'rounded-l w-16 h-16' : ''))}
       to={destination}
     >
-      &#91; {text} &#93;
+      &#91; {isCollapsed ? '' : text} &#93;
     </NavLink>
   );
 }
