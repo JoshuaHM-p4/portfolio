@@ -18,14 +18,13 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   ];
 
   return (
-    <div className={`fixed z-10 top-2 left-2 flex-col items-center transition-all duration-300 ease-in-out md:static h-full
-      ${isCollapsed ? "w-14" : "w-full  bg-opacity-70 backdrop-blur-xl md:backdrop-blur-none md:w-72 md:bg-transparent"}`}>
-
+    <div className={`${isCollapsed ? "w-14 bg-opacity-0 backdrop-blur-none bg-transparent" : "w-full bg-opacity-70 backdrop-blur-xl md:backdrop-blur-none md:w-72 md:bg-transparent"}
+      fixed z-10 top-0 left-0 rounded-lg flex-col items-center transition-all duration-800 ease-in-out md:static h-full`}>
       {/* Toggle Button */}
-      <div className={`flex ${isCollapsed ? 'justify-center' : 'justify-end items-end'} w-full h-10 hover:bg-white-500 hover:bg-opacity-25`}>
+      <div className={`flex ${isCollapsed ? 'justify-center' : 'justify-end items-end'} p-2 w-full h-10 hover:bg-white-500 hover:bg-opacity-25`}>
         <button
           onClick={toggleNavbar}
-          className={`${isCollapsed ? 'nav-button h-10' : 'md:hover:nav-button h-10'} w-14 max-w-14 transition-all duration-300`}
+          className={`${isCollapsed ? 'nav-button h-10' : 'md:hover:nav-button h-10'} w-14 max-w-14 transition-all duration-800`}
         >
           {isCollapsed ? "⮞" : "⮜"}
         </button>

@@ -18,30 +18,28 @@ const Home = () => {
 
   const projects = [
     { name: 'Image Classification', description: 'Classifying images using Convolutional Neural Networks', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
-    { name: 'Text Classification', description: 'Classifying text data using LSTM', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
+    { name: 'Text Classification', description: 'Classifying text data using LSTM', img: 'img/circuit.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
     { name: 'Image Generation', description: 'Generating images using GANs', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
     { name: 'Object Detection', description: 'Detecting objects in images using YOLO', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
   ]
 
   return (
-    <div className={`h-full w-full overflow-y-auto px-4 py-5 ${isCollapsed ? 'opacity-100' : 'md:opacity-100 opacity-10'}`}>
+    <div className={`h-full w-full overflow-y-auto md:mt-0 mt-4 px-4 py-5 ${isCollapsed ? 'opacity-100 flex flex-row' : 'md:opacity-100 opacity-10'}`}>
       <div
-        className={`flex flex-col items-start justify-start transition-all duration-300
-        ${isCollapsed ? "lg:w-[80%] mx-auto" : "w-full"}`}
+        className={`flex flex-col items-start justify-start transition-all duration-300 overflow-x-hidden lg:overflow-visible
+        ${isCollapsed ? "lg:w-[80%]  mx-auto" : "w-full"}`}
       >
-
-
-        <div className='w-full flex h-fit items-start gap-5'>
+        <div className='w-full flex h-fit items-start md:gap-5'>
           {/* Personal Picture Card */}
-          { isCollapsed &&
-          <div className="md:w-[700px] md:h-[240px] rounded-xl bg-white-500 bg-opacity-25 border border-white-100 shadow-md
+          {isCollapsed &&
+            <div className="md:w-[700px] md:h-[240px] rounded-xl bg-white-500 bg-opacity-25 border border-white-100 shadow-md
             hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out">
               {/* Image */}
-          </div>
+            </div>
           }
 
           {/* Profile Heading */}
-          <div className='flex-col'>
+          <div>
             <div className="flex w-full h-full justify-between my-1">
               {isCollapsed ? (
                 <>
@@ -61,14 +59,14 @@ const Home = () => {
               Computer Engineer with a focus on Machine Learning Specialization. I self-developed myself with experience adapted through organizational teams and software development, through technical expertise and active contributions to student developer communities, and knowledge-sharing efforts, and finding ways to bring real-world impact.
             </p>
             {/* Button */}
-            <Button text={"Let's Chat"} onClick={() => { }} />
+            <Button className="w-auto" text={"Let's Chat"} onClick={() => { }} />
           </div>
         </div>
 
 
         {/* skill grid  */}
         <h1 className='header-3 mt-5'>Skills</h1>
-        <div className="grid grid-cols-8 gap-2 mt-2">
+        <div className="grid lg:grid-cols-8 md:grid-cols-5 grid-cols-3 gap-2 mt-2">
           {skills.map((skill, index) =>
           (
             <SkillCard key={index} skill={skill} />
@@ -78,11 +76,13 @@ const Home = () => {
 
         {/* Recent Work */}
         <h1 className='header-3 mt-5'>Recent Work</h1>
-        <div className="grid grid-cols-3 gap-5 mt-2">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-2">
           {projects.map((project, index) =>
             <ProjectCard key={index} project={project} />
           )}
         </div >
+
+
       </div >
     </div>
   );
