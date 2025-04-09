@@ -22,12 +22,15 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
       ${isCollapsed ? "w-20" : "w-full md:w-72"}`}>
 
       {/* Toggle Button */}
-      <button
-        onClick={toggleNavbar}
-        className="self-end m-2 px-2 py-1 text-sm bg-white bg-opacity-20 rounded hover:bg-opacity-40 transition"
-      >
-        {isCollapsed ? "⮞" : "⮜"}
-      </button>
+      <div className={`flex ${isCollapsed ? 'w-fit justify-center' : 'w-full justify-end items-end'} h-10 hover:bg-white-500 hover:bg-opacity-25`}>
+        <button
+          onClick={toggleNavbar}
+          className={`${isCollapsed ? 'nav-button h-10' : 'hover:nav-button h-10'} w-16 max-w-16 transition-all duration-300`}
+        >
+          {isCollapsed ? "⮞" : "⮜"}
+        </button>
+      </div>
+
 
       {/* Profile Section */}
       {!isCollapsed && (
@@ -52,7 +55,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
       )}
 
       {/* Nav Buttons */}
-      <div className={`justify-center h-fit flex md:flex-col md:gap-2 md:w-full`}>
+      <div className={`justify-center items-center h-full flex md:flex-col md:gap-2 md:w-full`}>
         {navItems.map((item, index) => (
           <NavButton
             key={index}
@@ -67,12 +70,12 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   );
 };
 
-const NavButton = ({ icon, text = 'tooltip text', destination, isCollapsed=false }) => {
+const NavButton = ({ icon, text = 'tooltip text', destination, isCollapsed = false }) => {
   return (
     <NavLink
       className={({ isActive }) => (
         isActive ? 'nav-button nav-link nav-active ' + (isCollapsed ? 'opacity-50 rounded-l w-16 h-16' : '')
-        : 'nav-button nav-link' + (isCollapsed ? 'rounded-l w-16 h-16' : ''))}
+          : 'nav-button nav-link' + (isCollapsed ? 'rounded-l w-16 h-16' : ''))}
       to={destination}
     >
       &#91; {isCollapsed ? '' : text} &#93;
