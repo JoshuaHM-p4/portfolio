@@ -8,13 +8,13 @@
   /* TEXT  */
 
   .header-1 {
-    @apply text-center font-texturina text-slate-800 text-2xl
-    lg:text-4xl
+    @apply text-center font-texturina text-slate-800 text-lg
+    lg:text-2xl
   }
 
   .header-2 {
-    @apply text-center font-texturina text-black-400 text-2xl
-    lg:text-4xl
+    @apply text-center font-texturina text-black-400 text-sm
+    lg:text-4xl md:text-xl
   }
 
   .header-3 {
@@ -54,7 +54,7 @@
   }
 
   .nav-button {
-    @apply p-2 items-center content-center align-middle justify-center rounded-md
+    @apply p-2 items-center content-center align-middle justify-center md:rounded-md rounded-full
     flex w-full min-w-fit
     bg-white-500 bg-opacity-10 border border-white-100 shadow-md
     hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out
@@ -72,7 +72,7 @@
   }
 
   .nav-profile-link {
-    @apply flex text-center text-black-300 font-texturina leading-[-4rem] w-full justify-center
+    @apply flex text-center h-5 text-black-300 font-texturina leading-[-4rem] w-full justify-center
     text-black-300 flex-1
     hover:text-white-500 transition-colors
     ;

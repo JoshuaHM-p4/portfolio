@@ -1,4 +1,6 @@
 import Button from '../components/Button';
+import ProjectCard from '../components/ProjectCard';
+import SkillCard from '../components/SkillCard';
 import { useNavbar } from '../context/NavbarContext';
 
 const Home = () => {
@@ -15,23 +17,24 @@ const Home = () => {
   ]
 
   const projects = [
-    { name: 'Image Classification', description: 'Classifying images using Convolutional Neural Networks' },
-    { name: 'Object Detection', description: 'Detecting objects in images using YOLOv5' },
-    { name: 'Sentiment Analysis', description: 'Analyzing sentiment of text data using BERT' },
+    { name: 'Image Classification', description: 'Classifying images using Convolutional Neural Networks', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
+    { name: 'Text Classification', description: 'Classifying text data using LSTM', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
+    { name: 'Image Generation', description: 'Generating images using GANs', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
+    { name: 'Object Detection', description: 'Detecting objects in images using YOLO', img: 'img/yolo.png', codeLink: 'https://example.com', demoLink: 'https://example.com' },
   ]
 
   return (
-    <div className="h-full w-full overflow-y-auto px-4 py-5">
+    <div className={`h-full w-full overflow-y-auto px-4 py-5 ${isCollapsed ? 'opacity-100' : 'md:opacity-100 opacity-10'}`}>
       <div
         className={`flex flex-col items-start justify-start transition-all duration-300
-        ${isCollapsed ? "w-[80%] mx-auto" : "w-full"}`}
+        ${isCollapsed ? "lg:w-[80%] mx-auto" : "w-full"}`}
       >
 
 
         <div className='w-full flex h-fit items-start gap-5'>
           {/* Personal Picture Card */}
           { isCollapsed &&
-          <div className="w-[700px] h-[240px] rounded-xl bg-white-500 bg-opacity-25 border border-white-100 shadow-md
+          <div className="md:w-[700px] md:h-[240px] rounded-xl bg-white-500 bg-opacity-25 border border-white-100 shadow-md
             hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out">
               {/* Image */}
           </div>
@@ -68,11 +71,7 @@ const Home = () => {
         <div className="grid grid-cols-8 gap-2 mt-2">
           {skills.map((skill, index) =>
           (
-            <div key={index} className="p-2 flex flex-col justify-center items-center align-bottom rounded-md bg-white-500 bg-opacity-25 border border-white-100 shadow-md
-    hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out">
-              <img src={`./icons/${skill.icon}.svg`} alt={skill.name} className="w-12" />
-              <p className="skill-text">{skill.name}</p>
-            </div>
+            <SkillCard key={index} skill={skill} />
           )
           )}
         </div>
@@ -81,21 +80,8 @@ const Home = () => {
         <h1 className='header-3 mt-5'>Recent Work</h1>
         <div className="grid grid-cols-3 gap-5 mt-2">
           {projects.map((project, index) =>
-            <div key={index} className="w-full
-          bg-white-500 bg-opacity-25 rounded-md border border-white-100 shadow-md
-          hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out">
-              <div className="h-52 bg-white-500 bg-opacity-50 rounded-t-md"></div>
-              <div className="p-2">
-                <h1 className="header-3">{project.name}</h1>
-                <p className="paragraph">{project.description}</p>
-              </div>
-              <div className='w-full flex justify-evenly p-2'>
-                <button>view demo</button>
-                <button>view code</button>
-              </div>
-            </div>
-          )
-          }
+            <ProjectCard key={index} project={project} />
+          )}
         </div >
       </div >
     </div>
