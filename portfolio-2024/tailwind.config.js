@@ -11,6 +11,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        'custom-gradient': 'linear-gradient(180deg, #FFA752 0%, #F94348 46%, #6C3C9D 100%)',
+      },
       colors: {
         'primary': '#F94348',
         'secondary': {
