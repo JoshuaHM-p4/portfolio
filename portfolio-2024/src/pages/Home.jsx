@@ -2,6 +2,7 @@ import Button from '../components/Button';
 import ProjectCard from '../components/ProjectCard';
 import SkillCard from '../components/SkillCard';
 import PictureCard from '../components/PictureCard';
+import linkData from "../data/links.json";
 import { useNavbar } from '../context/NavbarContext';
 
 const Home = () => {
@@ -43,8 +44,8 @@ const Home = () => {
                 <>
                   <h1 className='header-1 mb-2 hidden md:block'>Joshua Mistal</h1>
                   <div className="flex">
-                    <p className="nav-profile-link">LinkedIn</p>
-                    <p className="nav-profile-link">Github</p>
+                    <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">LinkedIn</a>
+                    <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">Github</a>
                   </div>
                 </>
               ) : (
@@ -64,7 +65,7 @@ const Home = () => {
 
         {/* skill grid  */}
         <h1 className='header-3 mt-5'>Skills</h1>
-        <div className="grid lg:grid-cols-8 md:grid-cols-5 grid-cols-3 gap-2 mt-2">
+        <div className="w-full grid gap-2 mt-2 grid-cols-[repeat(auto-fill,minmax(86px,1fr))] auto-cols-[86px]">
           {skills.map((skill, index) =>
           (
             <SkillCard key={index} skill={skill} />
