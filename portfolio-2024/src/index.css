@@ -8,17 +8,17 @@
   /* TEXT  */
 
   .header-1 {
-    @apply text-center font-texturina text-slate-800 text-lg
-    lg:text-2xl
+    @apply font-bold text-center font-texturina text-slate-800 text-lg
+    lg:text-4xl
   }
 
   .header-2 {
-    @apply text-center font-texturina text-black-400 text-sm
-    lg:text-4xl md:text-xl
+    @apply font-bold text-center font-texturina text-black-400 text-base
+    lg:text-xl md:text-lg
   }
 
   .header-3 {
-    @apply text-center font-texturina text-black-400 text-xl
+    @apply font-bold text-center font-texturina text-black-400 text-xl
     lg:text-2xl
   }
 

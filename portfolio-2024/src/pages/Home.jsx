@@ -30,28 +30,28 @@ const Home = () => {
         className={`flex flex-col items-start justify-start transition-all duration-300 overflow-x-hidden lg:overflow-visible
         ${isCollapsed ? "lg:w-[80%]  mx-auto" : "w-full"}`}
       >
-        <div className='w-full md:flex flex-row h-fit items-start md:gap-5'>
+        <div className='w-full md:flex flex-row h-fit items-start md:gap-5 relative'>
           {/* Personal Picture Card */}
           {isCollapsed &&
             <PictureCard image={"./img/profile.jpg"} title={"Joshua Mistal"} description={"ML Specialization"} />
           }
 
           {/* Profile Heading */}
-          <div>
-            <div className="flex w-full h-full justify-between my-1">
+          <div className='relative z-20'>
+            <div className="flex w-full h-full md:justify-between justify-end my-1">
               {isCollapsed ? (
                 <>
-                  <h1 className='header-2 font-bold mb-2'>Joshua Mistal</h1>
+                  <h1 className='header-1 mb-2 hidden md:block'>Joshua Mistal</h1>
                   <div className="flex">
                     <p className="nav-profile-link">LinkedIn</p>
                     <p className="nav-profile-link">Github</p>
                   </div>
                 </>
               ) : (
-                <h1 className='header-2 font-bold mb-2'>About Me</h1>
+                <h1 className='header-2 mb-2'>About Me</h1>
               )}
             </div>
-            <p className="description italic font-normal">Manila, Ph</p>
+            <p className="hidden md:block description italic font-normal">Manila, PH</p>
             {/* About Me Description */}
             <p className='paragraph mt-2'>
               Computer Engineer with a focus on Machine Learning Specialization. I self-developed myself with experience adapted through organizational teams and software development, through technical expertise and active contributions to student developer communities, and knowledge-sharing efforts, and finding ways to bring real-world impact.

@@ -11,7 +11,7 @@ const MainLayout = () => {
       <Background />
       <div className='flex items-center justify-center w-full h-full'>
         <div className='bg-transparent max-w-[95vw] max-h-[80vh] md:max-w-[80vw] md:max-h-[90vh] w-full h-full flex items-center justify-center'>
-          <div className="mx-auto h-full w-full border border-white-500 bg-white-500 bg-opacity-30 backdrop-blur-sm rounded-2xl
+          <div className="mx-auto h-full w-full border border-white-500 bg-white-500 bg-opacity-30 backdrop-blur-lg rounded-2xl
             flex flex-col items-center justify-center p-5
             md:flex-row">
             <Navbar isCollapsed={isCollapsed} toggleNavbar={toggleNavbar}/>
