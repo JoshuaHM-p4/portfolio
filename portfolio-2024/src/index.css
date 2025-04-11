@@ -72,9 +72,9 @@
   }
 
   .nav-profile-link {
-    @apply flex text-center h-5 text-black-300 font-texturina leading-[-4rem] w-full justify-center
-    text-black-300 flex-1
-    hover:text-white-500 transition-colors
+    @apply flex text-center h-5  font-texturina leading-[-4rem] w-full justify-center
+    text-white-500 flex-1
+    hover:text-white-200 transition-colors
     ;
   }
 

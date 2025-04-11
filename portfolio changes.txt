@@ -1,17 +1,28 @@
 Design Changes:
-Fix Picture Zoomins
 Scrollbar Styling https://www.youtube.com/watch?v=yHF68UXQUI0
 
+Project Card
+- github icon + open link icon for deployment
+
+
 Navbar Changes: 
-LinkedIn, Resume and contacts Icon 
+LinkedIn, Resume and contacts Icon
+Profile border
 
 Home Page: 
 - See All Projects Button 
-- Swiper or Recent Work
-- Training Process Text
+- Swiper for Recent Work
+- Training Process Text	
+- I'm looking for work for 2025 
 
 About Me: 
-Github "About Me" thing in About Page	
+- Github "About Me" thing in About Page
+- Training Process Text	
+
+Experience: 
+- card with text  
+- view all projects
+- I'm looking for work for 2025 with download cv + contact me button  
 	
 Contact Me Page 
 (name, email subject, message or email, phone, whatsapp, facebook, linkedin, github)

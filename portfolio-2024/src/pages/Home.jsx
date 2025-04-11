@@ -2,6 +2,9 @@ import Button from '../components/Button';
 import ProjectCard from '../components/ProjectCard';
 import SkillCard from '../components/SkillCard';
 import PictureCard from '../components/PictureCard';
+import GithubIcon from '../svg/github.svg?react';
+import LinkedInIcon from '../svg/linkedin.svg?react';
+
 import linkData from "../data/links.json";
 import { useNavbar } from '../context/NavbarContext';
 
@@ -43,9 +46,13 @@ const Home = () => {
               {isCollapsed ? (
                 <>
                   <h1 className='header-1 mb-2 hidden md:block'>Joshua Mistal</h1>
-                  <div className="flex">
-                    <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">LinkedIn</a>
-                    <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">Github</a>
+                  <div className="flex gap-1">
+                    <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
+                      <LinkedInIcon className="w-8 h-8 stroke-current" />
+                    </a>
+                    <a href={linkData.github} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
+                      <GithubIcon className="w-8 h-8 fill-current" />
+                    </a>
                   </div>
                 </>
               ) : (

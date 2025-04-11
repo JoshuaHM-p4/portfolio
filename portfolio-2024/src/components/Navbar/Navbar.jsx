@@ -2,6 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import linkData from "../../data/links.json";
 
+//  icons
+import HomeIcon from "../../svg/home.svg?react";
+import AboutIcon from "../../svg/about.svg?react";
+import ExperienceIcon from "../../svg/experience.svg?react";
+import ProjectIcon from "../../svg/folder.svg?react";
+
 const DummyIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -10,10 +16,10 @@ const DummyIcon = () => (
 
 const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const navItems = [
-    { icon: <DummyIcon />, text: 'home', destination: '/' },
-    { icon: <DummyIcon />, text: 'about', destination: '/about' },
-    { icon: <DummyIcon />, text: 'experiences', destination: '/experiences' },
-    { icon: <DummyIcon />, text: 'projects', destination: '/projects' },
+    { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: '/' },
+    { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: '/about' },
+    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: '/experiences' },
+    { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: '/projects' },
     // { icon: <DummyIcon />, text: 'interests', destination: '/interests' },
   ];
 
@@ -44,7 +50,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
             <p className="caption">Manila, PH</p>
           </div>
 
-          <div className="flex justify-between mt-2 border-b-2 border-transparent hover:border-white-100 pb-3 self-stretch">
+          <div className="flex justify-between mt-2 border-b-2 border-transparent hover:border-white-100 transition-all ease-in-out pb-3 self-stretch">
             <a className="nav-profile-link" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
               contact
             </a>
@@ -53,7 +59,8 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
             </a>
           </div>
         </div>
-      )}
+      )
+      }
 
       {/* Nav Buttons */}
       <div className={`${isCollapsed ? 'hidden mt-2 align-middle items-center' : 'flex'}  md:flex flex-col gap-2 p-5 md:w-full`}>
@@ -67,7 +74,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
           />
         ))}
       </div>
-    </div>
+    </div >
   );
 };
 
@@ -79,7 +86,12 @@ const NavButton = ({ icon, text = 'tooltip text', destination, isCollapsed = fal
           : 'nav-button nav-link' + (isCollapsed ? 'rounded-l w-10 h-10' : ''))}
       to={destination}
     >
-      &#91; {isCollapsed ? '' : text} &#93;
+      {isCollapsed ?
+        (icon) :
+        <>
+          &#91; {isCollapsed ? '' : text} &#93;
+        </>
+      }
     </NavLink>
   );
 }
