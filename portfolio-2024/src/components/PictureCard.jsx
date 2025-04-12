@@ -1,3 +1,7 @@
+import GithubIcon from '../svg/github.svg?react';
+import LinkedInIcon from '../svg/linkedin.svg?react';
+import linkData from "../data/links.json";
+
 const PictureCard = ({ image, title, description }) => {
   return (
     <div
@@ -24,9 +28,22 @@ const PictureCard = ({ image, title, description }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
 
       {/* Optional content */}
-      <div className="md:hidden absolute bottom-0 z-20 text-white p-4">
-        <h2 className="header-2 text-white-400">{title}</h2>
-        <p className="description text-white-400">{description}</p>
+      <div className="md:hidden absolute bottom-0 z-20 text-white p-4 w-full">
+        <div className="flex w-full">
+          <div className='flex-1 justify-start'>
+            <h2 className="header-2 text-start text-white-400">{title}</h2>
+            <p className="description text-white-400">{description}</p>
+          </div>
+          <div className="flex gap-1">
+            <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link opacity-70 hover:opacity-100">
+              <LinkedInIcon className="linkIcon-dark" />
+            </a>
+            <a href={linkData.github} target="_blank" rel="noopener noreferrer" className="nav-profile-link opacity-70 hover:opacity-100">
+              <GithubIcon className="linkIcon-dark" />
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   );

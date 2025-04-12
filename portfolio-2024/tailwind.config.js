@@ -115,6 +115,38 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".scrollbar-thin": {
+          "@supports (-moz-appearance: none)": {
+            "scrollbar-width": "thin",
+            "scrollbar-color": "#fefdf9 #fefdf9",
+          },
+        },
+
+        ".scrollbar-webkit": {
+          "&::-webkit-scrollbar": {
+            width: "5px",
+          },
+          "&::-webkit-scrollbar-track": {
+            transition: "background-color 0.3s ease, background 1s ease",
+          },
+          "&::-webkit-scrollbar-track:hover": {
+            background: "rgba(254, 253, 249, 0.3)", // 50% transparent
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            backgroundColor: "#e63235", // darker red on hover
+          },
+
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#F94348",
+            borderRadius: "20px",
+          },
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 }
 

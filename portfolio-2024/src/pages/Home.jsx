@@ -29,7 +29,7 @@ const Home = () => {
   ]
 
   return (
-    <div className={`h-full w-full overflow-y-auto md:mt-0 mt-4 px-4 py-5 ${isCollapsed ? 'opacity-100 flex flex-row' : 'md:opacity-100 opacity-10'}`}>
+    <div className={`h-full w-full overflow-y-auto scrollbar-thin scrollbar-webkit md:mt-0 mt-4 px-4 py-5 ${isCollapsed ? 'opacity-100 flex flex-row' : 'md:opacity-100 opacity-10'}`}>
       <div
         className={`flex flex-col items-start justify-start transition-all duration-300 overflow-x-hidden lg:overflow-visible
         ${isCollapsed ? "lg:w-[80%]  mx-auto" : "w-full"}`}
@@ -46,18 +46,18 @@ const Home = () => {
               {isCollapsed ? (
                 <>
                   <h1 className='header-1 mb-2 hidden md:block'>Joshua Mistal</h1>
-                  <div className="flex gap-1">
-                    <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
-                      <LinkedInIcon className="w-8 h-8 stroke-current" />
-                    </a>
-                    <a href={linkData.github} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
-                      <GithubIcon className="w-8 h-8 fill-current" />
-                    </a>
-                  </div>
                 </>
               ) : (
                 <h1 className='header-2 mb-2'>About Me</h1>
               )}
+              <div className="gap-1 hidden md:flex ">
+                <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
+                  <LinkedInIcon className="linkIcon" />
+                </a>
+                <a href={linkData.github} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
+                  <GithubIcon className="linkIcon" />
+                </a>
+              </div>
             </div>
             <p className="hidden md:block description italic font-normal">Manila, PH</p>
             {/* About Me Description */}

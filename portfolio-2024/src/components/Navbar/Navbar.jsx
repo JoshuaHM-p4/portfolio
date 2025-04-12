@@ -24,10 +24,10 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   ];
 
   return (
-    <div className={`${isCollapsed ? "w-14 bg-opacity-0 backdrop-blur-none bg-transparent" : "w-full bg-opacity-70 backdrop-blur-xl md:backdrop-blur-none md:w-72 md:bg-transparent"}
+    <div className={`${isCollapsed ? "w-14 bg-opacity-0 backdrop-blur-none bg-transparent" : "w-full bg-opacity-70 backdrop-blur-xl md:backdrop-blur-none md:w-72 md:bg-transparent overflow-y-auto scrollbar-thin scrollbar-webkit"}
       fixed z-50 top-0 left-0 rounded-lg flex-col items-center transition-all duration-800 ease-in-out md:static h-full`}>
       {/* Toggle Button */}
-      <div className={`flex ${isCollapsed ? 'justify-center' : 'justify-end items-end'} p-2 w-full h-10 hover:bg-white-500 hover:bg-opacity-25`}>
+      <div className={`flex ${isCollapsed ? 'justify-center p-2' : 'justify-end items-center py-2 hover:bg-white-500 hover:bg-opacity-50 hover:shadow-sm mb-2'} w-full h-10`}>
         <button
           onClick={toggleNavbar}
           className={`${isCollapsed ? 'nav-button h-10' : 'md:hover:nav-button h-10'} w-14 max-w-14 transition-all duration-800`}
@@ -50,11 +50,11 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
             <p className="caption">Manila, PH</p>
           </div>
 
-          <div className="flex justify-between mt-2 border-b-2 border-transparent hover:border-white-100 transition-all ease-in-out pb-3 self-stretch">
-            <a className="nav-profile-link" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
+          <div className="flex justify-between mt-2 md:mx-0 mx-5 h-10 border-b-2 rounded-md border-transparent hover:border-white-100 transition-all ease-in-out self-stretch">
+            <a className="nav-profile-link rounded-tl-md rounded-bl-md" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
               contact
             </a>
-            <a className="nav-profile-link" href={linkData.resume} target="_blank" rel="noopener noreferrer">
+            <a className="nav-profile-link rounded-tr-md rounded-br-md" href={linkData.resume} target="_blank" rel="noopener noreferrer">
               resume
             </a>
           </div>
@@ -63,7 +63,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
       }
 
       {/* Nav Buttons */}
-      <div className={`${isCollapsed ? 'hidden mt-2 align-middle items-center' : 'flex'}  md:flex flex-col gap-2 p-5 md:w-full`}>
+      <div className={`${isCollapsed ? 'hidden mt-2 align-middle items-center' : 'flex'}  md:flex flex-col gap-2 p-5 md:w-full `}>
         {navItems.map((item, index) => (
           <NavButton
             key={index}

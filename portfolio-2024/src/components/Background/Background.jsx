@@ -12,7 +12,9 @@ const Background = () => {
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, mount.clientWidth / mount.clientHeight, 0.1, 1000);
-    camera.position.set(10, -3, 10);
+    camera.position.set(0,0,0);
+    // camera.position.set(3, 5, 20);
+    // camera.lookAt(0, 0, 0);
     cameraRef.current = camera;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -28,14 +30,14 @@ const Background = () => {
     // scene.add(cube);
 
     // Create blob
-    const blobGeometry = new THREE.IcosahedronGeometry(5, 20);
+    const blobGeometry = new THREE.IcosahedronGeometry(2, 20);
     const blobMaterial = new THREE.ShaderMaterial({
       uniforms: {
         u_intensity: {
           value: 1
         },
         u_time: {
-          value: 0
+          value: 0.0
         },
         color1: {
           value: new THREE.Color("#FFA752")
@@ -56,6 +58,7 @@ const Background = () => {
 
       // Classic Perlin 3D Noise
       // by Stefan Gustavson
+      //
       vec4 permute(vec4 x) {
           return mod(((x*34.0)+1.0)*x, 289.0);
       }
@@ -141,9 +144,9 @@ const Background = () => {
       void main() {
           vUv = uv;
 
-          vDisplacement = cnoise(position * 0.4 + vec3(2.0 * u_time));
+          vDisplacement = cnoise(position * 0.3 + vec3(3.0 * u_time));
 
-          vec3 newPosition = position + normal * (u_intensity * vDisplacement);
+          vec3 newPosition = position + normal * (u_intensity * vDisplacement * 1.5);
 
           vec4 modelPosition = modelMatrix * vec4(newPosition, 1.0);
           vec4 viewPosition = viewMatrix * modelPosition;
@@ -180,37 +183,59 @@ const Background = () => {
         // Output final color
         gl_FragColor = vec4(finalColor, 1.0);
       }
-      `
+      `,
     });
-    const blob1 = new THREE.Mesh(blobGeometry, blobMaterial);
-    const blob2 = new THREE.Mesh(blobGeometry, blobMaterial);
-    const blob3 = new THREE.Mesh(blobGeometry, blobMaterial);
+    const maxBlobs = 8;
+    const blobs = [];
+    for (let i = 0; i < maxBlobs; i++) {
+      const angle = (i / maxBlobs) * Math.PI * 2;
+      const radius = 5 + Math.random() * 10;
+      const y = -5 + Math.random() * 10;
 
-    blob1.position.set(0, 0, 0);
-    blob2.position.set(30, -10, -10);
-    blob3.position.set(0, 10, -30);
-    blob2.material = blobMaterial.clone();
-    blob3.material = blobMaterial.clone();
+      const x = Math.cos(angle) * radius;
+      const z = Math.sin(angle) * radius;
 
+      const blob = new THREE.Mesh(blobGeometry, blobMaterial.clone());
+      blob.position.set(x, y, z);
 
-    // add blobs
-    scene.add(blob1);
-    scene.add(blob2);
-    scene.add(blob3);
-    const blobs = [blob1, blob2, blob3];
+      // Save original Y and some motion properties
+      blob.userData = {
+        baseY: y,
+        floatSpeed: 0.5 + Math.random() * 1,
+        floatHeight: 0.5 + Math.random() * 1.5,
+        rotationSpeed: 0.005 + Math.random() * 0.02,
+        phaseOffset: Math.random() * Math.PI * 2,
+      };
+
+      scene.add(blob);
+      blobs.push(blob);
+    }
+
+    const axesHelper = new THREE.AxesHelper(5); // 5 is the length of the axes
+    scene.add(axesHelper);
 
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // update rotation and float position
-      blobs.forEach((blob, index) => {
-        blob.rotation.z += 0.01;
-        blob.position.y = 1 + index/3 * Math.sin(1 * Date.now() * 0.001);
+      const time = Date.now() * 0.001;
+
+      blobs.forEach((blob) => {
+        const { baseY, floatSpeed, floatHeight, rotationSpeed, phaseOffset } = blob.userData;
+
+        // Floating motion and rotation
+        blob.rotation.z += rotationSpeed;
+        blob.position.y = baseY + floatHeight * Math.sin(floatSpeed * time + phaseOffset);
+
+        // Animate blob deformation
+        blob.material.uniforms.u_time.value = 0.1 * performance.now() * 0.001;
       });
+      cameraRef.current.rotation.y += 0.001;
+      cameraRef.current.rotation.x += 0.0005;
 
       renderer.render(scene, camera);
     };
+
 
     animate();
 
@@ -218,8 +243,8 @@ const Background = () => {
     // Handle mouse movement
     const handleMouseMove = (event) => {
       if (cameraRef.current) {
-        const mouseX = -(event.clientX / window.innerWidth)+1;
-        const mouseY = -(event.clientY / window.innerHeight)+1 ;
+        const mouseX = -(event.clientX / window.innerWidth) + 1;
+        const mouseY = -(event.clientY / window.innerHeight) + 1;
 
         // Adjust the camera rotation based on mouse position
         cameraRef.current.rotation.x = mouseY * Math.PI / 6;  // Max rotation of PI/4 on the Y-axis

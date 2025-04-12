@@ -72,13 +72,20 @@
   }
 
   .nav-profile-link {
-    @apply flex text-center h-5  font-texturina leading-[-4rem] w-full justify-center
-    text-white-500 flex-1
-    hover:text-white-200 transition-colors
+    @apply flex text-center font-texturina leading-[-4rem] w-full justify-center
+    text-black-400 flex-1 p-1
+    hover:bg-white-200 hover:bg-opacity-20
+    hover:text-white-400 transition-colors
     ;
   }
 
+  .linkIcon {
+    @apply w-8 h-8 text-black-400 hover:text-black-300 fill-current stroke-current
+  }
 
+  .linkIcon-dark {
+    @apply w-8 h-8 text-white-100 fill-current stroke-current
+  }
 
   .dummy-icon {
     @apply rounded-full bg-slate-50 h-52 w-52 p-16;
