@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Bachelor of Science in Computer Engineering",
+        "institution": "Polytechnic University of the Philippines",
+        "date": "2023-2027 (expected)",
+        "description": "Currently pursuing a degree in Computer Engineering with a focus on software development and machine learning.",
+        "technologies": [
+            "Python",
+            "Graphing Calculators",
+            "AutoCAD (basic exposure)",
+            "Arduino (basic electronics and C/C++)",
+            "HTML/CSS/JS",
+            "Mathematical modeling",
+            "Team collaboration"
+        ]
+    },
+    {
+        "title": "Science Technology, Engineering and Mathematics (STEM) Track",
+        "institution": "Marinduque State University",
+        "date": "Graduated May 2023",
+        "description": "Completed the STEM track with a focus on advanced mathematics and programming, laying a strong foundation for further studies in computer engineering.",
+        "technologies": [
+            "Python (introductory)",
+            "Scratch",
+            "Scientific Method",
+            "Technical Writing"
+        ]
+    }
+]

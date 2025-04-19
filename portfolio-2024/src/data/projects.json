@@ -1,0 +1,5 @@
+[
+    { "name": "Image Classification", "date": "January 20, 2025", "description": "Classifying images using Convolutional Neural Networks", "img": "img/yolo.png", "codeLink": "https://example.com", "demoLink": "https://example.com", "technologies": ["Tensorflow", "React", "Tailwind"] },
+    { "name": "Image Generation", "date": "January 20, 2025", "description": "Generating images using GANs", "img": "img/yolo.png", "codeLink": "https://example.com", "demoLink": "https://example.com", "technologies": ["React", "Tailwind"] },
+    { "name": "Object Detection", "date": "January 20, 2025", "description": "Detecting objects in images using YOLO", "img": "img/yolo.png", "codeLink": "https://example.com", "demoLink": "https://example.com", "technologies": ["React", "Tailwind"] }
+]

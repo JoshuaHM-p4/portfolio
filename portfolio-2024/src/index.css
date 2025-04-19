@@ -22,10 +22,39 @@
     lg:text-2xl
   }
 
+  .header-4 {
+    @apply font-bold text-center font-texturina text-black-400 text-lg
+    lg:text-xl
+  }
+
+  .header-5 {
+    @apply font-bold text-center font-texturina text-black-400 text-base
+    lg:text-lg
+  }
+
+  .header-6 {
+    @apply font-bold text-center font-texturina text-black-400 text-sm
+    lg:text-base
+  }
+
+  .header-7 {
+    @apply font-bold text-center font-texturina text-black-400 text-xs
+    lg:text-sm
+  }
+
+  .header-8 {
+    @apply font-bold text-center font-texturina text-black-400 text-xs
+    lg:text-sm
+  }
+
   .paragraph {
     @apply text-black-400 font-texturina text-sm
     lg:text-base text-justify
     ;
+  }
+
+  .date {
+    @apply text-black-400 font-cinzel text-[0.625rem]
   }
 
   .skill-text {
@@ -90,8 +119,6 @@
   .dummy-icon {
     @apply rounded-full bg-slate-50 h-52 w-52 p-16;
   }
-
-
 }
 
 @layer utilities {

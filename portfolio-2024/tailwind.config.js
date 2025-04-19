@@ -144,7 +144,16 @@ export default {
             borderRadius: "20px",
           },
         },
-      }
+        ".image-smooth": {
+          imageRendering: "smooth", // smooth (browser-default antialiasing)
+        },
+        ".image-crisp": {
+          imageRendering: "crisp-edges",
+        },
+        ".image-pixelated": {
+          imageRendering: "pixelated",
+        },
+      };
       addUtilities(newUtilities, ['responsive', 'hover']);
     },
   ],

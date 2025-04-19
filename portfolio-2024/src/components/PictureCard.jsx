@@ -21,6 +21,7 @@ const PictureCard = ({ image, title, description }) => {
           scale-110 object-[50%_25%]
           md:scale-100 md:translate-y-0 md:object-center
           opacity-90
+          image-smooth
         `}
       />
 

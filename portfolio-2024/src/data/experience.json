@@ -1,0 +1,59 @@
+[
+    {
+        "title": "Senior Data/ML Associate Committee",
+        "company": "Google Developer Groups PUP",
+        "date": "January 2023 - Present",
+        "description": [
+            "Actively involved as a Senior Data/ML Associate in supporting various workshops and study jam lessons with machine learning topics under the Data/ML Team.",
+            "Facilitating sessions on Machine Learning Fundamentals through python and colab while engaging with the network of GDG Teams.",
+            "Former SME in the software development team, mentored new developers that facilitated their growth."
+        ],
+        "technologies": [
+            "Python",
+            "Google Colab",
+            "Scikit-learn",
+            "Jupyter Notebooks",
+            "Machine Learning Fundamentals",
+            "Team Collaboration",
+            "Mentorship"
+        ]
+    },
+    {
+        "title": "Frontend Freelance Developer",
+        "company": "PUP Graduate School",
+        "date": "June 2021 - December 2022",
+        "description": [
+            "Implementing web designs of core pages and components, including authentication (login/sign-up), settings, and main home pages, through Figma, React, and Tailwind while improving UX by analyzing user/client feedback.",
+            "Collaborated with a team of three developers to create a graduate school alumni portal website from scratch."
+        ],
+        "technologies": [
+            "ReactJS",
+            "Bootstrap CSS",
+            "Figma",
+            "PHP",
+            "MySQL",
+            "UX/UI Design",
+            "Responsive Design",
+            "Web Development"
+        ]
+    },
+    {
+        "title": "Chief Technology Officer & Co-founder",
+        "company": "HINYAPP",
+        "date": "Sep 2022 - July 2023",
+        "description": [
+            "Co-founded and led HinyApp, a mental health and wellness startup, and helped shape core support tools and resources to better serve students' well-being and engagement.",
+            "Pitched at the DICT 2022 Regional Pitching Competition in Palawan and gaining mentorship from the Palawan International Technology Business Incubator.",
+            "Designed the apps UI in Figma, developed the prototype, and worked with the university&apos;s ICT office to refine features and ensure seamless integration."
+        ],
+        "technologies": [
+            "Figma",
+            "React Native",
+            "Firebase",
+            "Google Cloud Platform",
+            "UX/UI Design",
+            "Prototyping",
+            "Mentorship"
+        ]
+    }
+]

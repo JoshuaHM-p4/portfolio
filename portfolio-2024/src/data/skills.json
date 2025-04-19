@@ -1,0 +1,30 @@
+[
+    {
+        "name": "python",
+        "icon": "python"
+    },
+    {
+        "name": "tensorflow",
+        "icon": "tensorflow"
+    },
+    {
+        "name": "pyTorch",
+        "icon": "pytorch"
+    },
+    {
+        "name": "skLearn",
+        "icon": "scikitlearn"
+    },
+    {
+        "name": "pandas",
+        "icon": "pandas"
+    },
+    {
+        "name": "numpy",
+        "icon": "numpy"
+    },
+    {
+        "name": "matplotlib",
+        "icon": "matplotlib"
+    }
+]
