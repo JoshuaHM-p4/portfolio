@@ -38,15 +38,15 @@ const Home = () => {
 
           {/* Profile Heading */}
           <div className='relative z-20'>
-            <div className="flex w-full h-full md:justify-between justify-end my-1">
+            <div className="flex w-full h-full sm:justify-between justify-end my-1">
               {isCollapsed ? (
                 <>
-                  <h1 className='header-1 mb-2 hidden md:block'>Joshua Mistal</h1>
+                  <h1 className='header-1 mb-2 hidden sm:block'>Joshua Mistal</h1>
                 </>
               ) : (
                 <h1 className='header-2 mb-2'>About Me</h1>
               )}
-              <div className="gap-1 hidden md:flex ">
+              <div className="gap-1 hidden sm:flex ">
                 <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
                   <LinkedInIcon className="linkIcon" />
                 </a>
@@ -55,7 +55,7 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <p className="hidden md:block description italic font-normal">Manila, PH</p>
+            <p className="hidden sm:block description italic font-normal">Manila, PH</p>
             {/* About Me Description */}
             <p className='paragraph mt-2'>
               Computer Engineer with a focus on Machine Learning Specialization. I self-developed myself with experience adapted through organizational teams and software development, through technical expertise and active contributions to student developer communities, and knowledge-sharing efforts, and finding ways to bring real-world impact.
