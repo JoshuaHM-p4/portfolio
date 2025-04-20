@@ -7,12 +7,14 @@ import GithubIcon from '../svg/github.svg?react';
 import LinkedInIcon from '../svg/linkedin.svg?react';
 import ExperienceCard from '../components/ExperienceCard';
 import EducationCard from '../components/EducationCard';
+import NotebookCard from '../components/NotebookCard';
 
 import linkData from "../data/links.json";
 import skills from "../data/skills.json";
 import experienceSummary from "../data/experienceSummary.json";
 import experienceList from "../data/experience.json";
 import educationList from "../data/education.json";
+import notebooksList from "../data/notebooks.json";
 import projects from "../data/projects.json";
 
 import { useNavbar } from '../context/NavbarContext';
@@ -28,7 +30,7 @@ const Home = () => {
         className={`flex flex-col items-start justify-start transition-all duration-300 overflow-x-hidden lg:overflow-visible
         ${isCollapsed ? "lg:w-[80%]  mx-auto" : "w-full"}`}
       >
-        <div className='w-full md:flex flex-row h-fit items-start md:gap-5 relative'>
+        <div className='w-full sm:flex flex-row h-fit items-start sm:gap-5 relative'>
           {/* Personal Picture Card */}
           {isCollapsed &&
             <PictureCard image={"./img/profile.jpg"} title={"Joshua Mistal"} description={"ML Specialization"} />
@@ -76,22 +78,31 @@ const Home = () => {
 
         {/* Recent Work */}
         <h1 className='header-3 mt-10'>Things I&apos;ve Recently Built</h1>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-2">
+        <div className="w-full grid gap-5 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
           {projects.map((project, index) =>
             <ProjectCard key={index} project={project} />
           )}
         </div >
         <Button className="w-auto rounded-md" text={"See All Projects"} onClick={() => { }} />
 
-        {/* <h1 className="header-3 mt-10">Jupyter Notebooks</h1>
-        <div className="w-full grid gap-2 mt-2 grid-cols-[repeat(auto-fill, minmax(130px, 1fr) auto-cols-[130px]"></div> */}
+        {/* Recent Notebooks */}
+        <h1 className="header-3 mt-10">Recent Notebooks</h1>
+        <div className="w-full gap-2 mt-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-cols-[200px]">
+          {
+            notebooksList.map((notebook, index) => (
+              <NotebookCard key={index} notebook={notebook} />
+            )
+            )
+          }
+        </div>
+        <Button className="w-auto rounded-md" text={"See all notebooks"} onClick={() => { }} />
 
         <div className="flex flex-col md:flex-row gap-2 w-full mt-10">
           {/* Experience Summary */}
           <div className="h-auto flex-1">
             <div className="flex flex-col gap-1 w-full md:sticky md:top-0 bg-white z-10">
               <h1 className="header-3 text-start">My Background Expertise</h1>
-              <div className="inline-flex rounded-md shadow-xs w-full" role="group">
+              <div className="inline-flex rounded-md shadow-xs w-full sticky top-0 md md:relative" role="group">
                 <Button
                   className="rounded-l-md border-r-0 flex-1"
                   active={activeTab === "experience"}
@@ -117,7 +128,7 @@ const Home = () => {
             </div>
           </div>
           {/* Experience / Education */}
-          <div className='flex flex-col gap-2 w-full items-center flex-1 px-10'>
+          <div className='flex flex-col gap-2 w-full items-center flex-1 md:px-10'>
             {
               activeTab === "experience" ? (
                 experienceList.map((experience, index) => (
@@ -132,8 +143,7 @@ const Home = () => {
             }
           </div>
         </div>
-
-      </div >
+      </div>
     </div>
   );
 }

@@ -112,6 +112,7 @@ export default {
       fontFamily: {
         cinzel: ['Cinzel', 'serif'],
         texturina: ['Texturina', 'serif'],
+        firacode: ['Fira Code', 'monospace'],
       }
     },
   },

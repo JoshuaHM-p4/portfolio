@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "data-train-ml",
+    "description": "A comprehensive data science notebook that covers data analysis, visualization, and machine learning.",
+    "technologies": [
+      {
+        "name": "Python",
+        "icon": "python"
+      },
+      {
+        "name": "Pandas",
+        "icon": "pandas"
+      },
+      {
+        "name": "Matplotlib",
+        "icon": "matplotlib"
+      },
+      {
+        "name": "Seaborn",
+        "icon": "seaborn"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://www.github.com/JoshuaHM-p4/kaggle-notebooks",
+        "icon": "github"
+      },
+      {
+        "label": "Kaggle",
+        "url": "url-to-live-demo",
+        "icon": "kaggle"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "machine-training",
+    "description": "An interactive notebook demonstrating various machine learning algorithms and their applications.",
+    "technologies": [
+      {
+        "name": "Python",
+        "icon": "python"
+      },
+      {
+        "name": "Scikit-learn",
+        "icon": "scikitlearn"
+      },
+      {
+        "name": "TensorFlow",
+        "icon": "tensorflow"
+      },
+      {
+        "name": "Keras",
+        "icon": "keras"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "url-to-github-repo",
+        "icon": "github"
+      },
+      {
+        "label": "Kaggle",
+        "url": "url-to-live-demo",
+        "icon": "kaggle"
+      }
+    ]
+  }
+]

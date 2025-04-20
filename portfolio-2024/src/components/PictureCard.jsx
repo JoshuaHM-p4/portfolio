@@ -29,7 +29,7 @@ const PictureCard = ({ image, title, description }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
 
       {/* Optional content */}
-      <div className="md:hidden absolute bottom-0 z-20 text-white p-4 w-full">
+      <div className="sm:hidden absolute bottom-0 z-20 text-white p-4 w-full">
         <div className="flex w-full">
           <div className='flex-1 justify-start'>
             <h2 className="header-2 text-start text-white-400">{title}</h2>

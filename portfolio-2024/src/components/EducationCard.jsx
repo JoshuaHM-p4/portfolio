@@ -1,7 +1,7 @@
-const EducationCard = ({education}) => {
+const EducationCard = ({ education }) => {
   return (
     <div className="w-full
-    bg-white-opacity-25 rounded-md border border-white-100 shadow-md
+    bg-white-500 bg-opacity-25 rounded-md border border-white-100 shadow-md
     flex flex-col gap-2
     hover:bg-white-500  hover:bg-opacity-60 p-2 hover:shadow-lg transition-all ease-in-out">
       <p className="date">{education?.date}</p>
