@@ -59,7 +59,7 @@ const Home = () => {
               Computer Engineer with a focus on Machine Learning Specialization. I self-developed myself with experience adapted through organizational teams and software development, through technical expertise and active contributions to student developer communities, and knowledge-sharing efforts, and finding ways to bring real-world impact.
             </p>
             {/* Button */}
-            <Button className="rounded-md w-auto rounded-md" text={"Let's Chat"} onClick={() => { }} />
+            <Button className="rounded-md w-auto" text={"Let's Chat"} onClick={() => { }} />
           </div>
         </div>
 
@@ -112,7 +112,7 @@ const Home = () => {
                     <li key={index} className="text-sm my-2">♦️ {text}</li>
                   ))}
                 </ul>
-                <Button className="rounded-md w-auto rounded-md" text={"Open CV"} onClick={() => { window.open(linkData.resume, "_blank") }} />
+                <Button className="w-auto rounded-md" text={"Open CV"} onClick={() => { window.open(linkData.resume, "_blank") }} />
               </p>
             </div>
           </div>
