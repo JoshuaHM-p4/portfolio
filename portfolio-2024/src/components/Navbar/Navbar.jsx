@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import linkData from "../../data/links.json";
+import { useSectionObserver } from '../../context/SectionObserverContext';
 
 //  icons
 import HomeIcon from "../../svg/home.svg?react";
@@ -8,18 +9,16 @@ import AboutIcon from "../../svg/about.svg?react";
 import ExperienceIcon from "../../svg/experience.svg?react";
 import ProjectIcon from "../../svg/folder.svg?react";
 
-const DummyIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-  </svg>
-);
+const sections = ['home', 'about', 'projects', 'contact'];
 
 const Navbar = ({ isCollapsed, toggleNavbar }) => {
+  const { activeSection } = useSectionObserver();
+
   const navItems = [
-    { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: '/' },
-    { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: '/about' },
-    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: '/experiences' },
-    { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: '/projects' },
+    { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: 'home' },
+    { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: 'about' },
+    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences' },
+    { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: 'projects' },
     // { icon: <DummyIcon />, text: 'interests', destination: '/interests' },
   ];
 
@@ -70,6 +69,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
             icon={item.icon}
             isCollapsed={isCollapsed}
             text={item.text}
+            activeSection={activeSection}
             destination={item.destination}
           />
         ))}
@@ -78,13 +78,21 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   );
 };
 
-const NavButton = ({ icon, text = 'tooltip text', destination, isCollapsed = false }) => {
+const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, isCollapsed = false }) => {
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  const baseClass = 'nav-link nav-button';
+  const activeClass = activeSection === destination ? 'nav-active' : '';
+  const collapsedClass = isCollapsed ? 'opacity-50 rounded-l w-10 h-10' : '';
+
   return (
-    <NavLink
-      className={({ isActive }) => (
-        isActive ? 'nav-button nav-link nav-active ' + (isCollapsed ? 'opacity-50 rounded-l w-10 h-10' : '')
-          : 'nav-button nav-link' + (isCollapsed ? 'rounded-l w-10 h-10' : ''))}
-      to={destination}
+    <button
+      className={`${baseClass} ${activeClass} ${collapsedClass}`}
+      onClick={() => handleScroll(destination)}
     >
       {isCollapsed ?
         (icon) :
@@ -92,7 +100,25 @@ const NavButton = ({ icon, text = 'tooltip text', destination, isCollapsed = fal
           &#91; {isCollapsed ? '' : text} &#93;
         </>
       }
-    </NavLink>
+    </button>
   );
 }
+
+/* const NavLink = ({ icon, text = 'tooltip text', destination, isCollapsed = false }) => { */
+/*   return ( */
+/*     <NavLink */
+/*       className={({ isActive }) => ( */
+/*         isActive ? 'nav-button nav-link nav-active ' + (isCollapsed ? 'opacity-50 rounded-l w-10 h-10' : '') */
+/*           : 'nav-button nav-link' + (isCollapsed ? 'rounded-l w-10 h-10' : ''))} */
+/*       to={destination} */
+/*     > */
+/*       {isCollapsed ? */
+/*         (icon) : */
+/*         <> */
+/*           &#91; {isCollapsed ? '' : text} &#93; */
+/*         </> */
+/*       } */
+/*     </NavLink> */
+/*   ); */
+/* } */
 export default Navbar;
