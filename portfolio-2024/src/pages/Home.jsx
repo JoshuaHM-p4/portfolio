@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useSectionObserver } from '../context/SectionObserverContext';
 import Button from '../components/Button';
 import ProjectCard from '../components/ProjectCard';
 import ExperienceCard from '../components/ExperienceCard';
@@ -18,7 +20,24 @@ import { useNavbar } from '../context/NavbarContext';
 
 const Home = () => {
   const { isCollapsed } = useNavbar();
-  const [activeTab, setActiveTab] = useState("home")
+  const [activeTab, setActiveTab] = useState("experience");
+  const { setActiveSection } = useSectionObserver();
+
+  // Intersection Observers for Sections
+  const { ref: projectsRef, inView: projectsInView } = useInView({ threshold: 0.2 });
+  const { ref: experienceRef, inView: experienceInView } = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (projectsInView) {
+      setActiveSection('projects');
+    }
+  }, [projectsInView, setActiveSection]);
+
+  useEffect(() => {
+    if (experienceInView) {
+      setActiveSection('experiences');
+    }
+  }, [experienceInView, setActiveSection]);
 
   return (
     <div className={`h-full w-full overflow-y-auto scrollbar-thin scrollbar-webkit md:mt-0 mt-4 px-4 py-5 ${isCollapsed ? 'opacity-100 flex flex-row' : 'md:opacity-100 opacity-10'}`}>
@@ -29,30 +48,34 @@ const Home = () => {
 
         <About />
 
-        <h1 className='header-3 mt-10'>Things I&apos;ve Recently Built</h1>
-        <div className="w-full grid gap-5 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
-          {projects.map((project, index) =>
-            <ProjectCard key={index} project={project} />
-          )}
-        </div >
-        <Button className="w-auto rounded-md" text={"See All Projects"} onClick={() => { }} />
+        <section id="projects" ref={projectsRef} className="w-full mt-10">
+          <h1 className='header-3'>Things I&apos;ve Recently Built</h1>
+          <div className="w-full grid gap-5 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
+            {projects.map((project, index) =>
+              <ProjectCard key={index} project={project} />
+            )}
+          </div >
+          <Button className="w-auto rounded-md" text={"See All Projects"} onClick={() => { }} />
+        </section>
 
         {/* Recent Notebooks */}
-        <h1 className="header-3 mt-10">Recent Notebooks</h1>
-        <div className="w-full gap-2 mt-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-cols-[200px]">
-          {
-            notebooksList.map((notebook, index) => (
-              <NotebookCard key={index} notebook={notebook} />
-            )
-            )
-          }
-        </div>
-        <Button className="w-auto rounded-md" text={"See all notebooks"} onClick={() => { }} />
+        <section className="w-full mt-10">
+          <h1 className="header-3">Recent Notebooks</h1>
+          <div className="w-full gap-2 mt-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-cols-[200px]">
+            {
+              notebooksList.map((notebook, index) => (
+                <NotebookCard key={index} notebook={notebook} />
+              )
+              )
+            }
+          </div>
+          <Button className="w-auto rounded-md" text={"See all notebooks"} onClick={() => { }} />
+        </section>
 
-        <div className="flex flex-col md:flex-row gap-2 w-full mt-10">
+        <section id="experiences" ref={experienceRef} className="flex flex-col md:flex-row gap-2 w-full mt-10">
           {/* Experience Summary */}
           <div className="h-auto flex-1">
-            <div className="flex flex-col gap-1 w-full md:sticky md:top-0 bg-white z-10">
+            <div className="flex flex-col gap-1 w-full md:sticky md:top-0 z-10">
               <h1 className="header-3 text-start">My Background Expertise</h1>
               <div className="inline-flex rounded-md shadow-xs w-full sticky top-0 md md:relative" role="group">
                 <Button
@@ -68,7 +91,7 @@ const Home = () => {
                   onClick={() => { setActiveTab("education") }}
                 />
               </div>
-              <p className="paragraph text-justify my-5">
+              <div className="paragraph text-justify my-5">
                 <ul>
                   What I bring to the table:
                   {experienceSummary.map((text, index) => (
@@ -76,7 +99,7 @@ const Home = () => {
                   ))}
                 </ul>
                 <Button className="w-auto rounded-md" text={"Open CV"} onClick={() => { window.open(linkData.resume, "_blank") }} />
-              </p>
+              </div>
             </div>
           </div>
           {/* Experience / Education */}
@@ -94,7 +117,7 @@ const Home = () => {
                 )
             }
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

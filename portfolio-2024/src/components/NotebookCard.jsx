@@ -4,7 +4,7 @@ import StreamlitIcon from '../svg/streamlit.svg?react';
 
 const NotebookCard = ({ notebook }) => {
   return (
-    <div className="bg-white-500 bg-opacity-25 rounded-md border border-white-100 shadow-md
+    <div className="bg-white-500/25 rounded-md border border-white-100 shadow-md
       w-full flex flex-col gap-2 p-2 py-3 items-start">
       <p className="notebook-title">{notebook?.title}</p>
       <div className="flex gap-2 flex-wrap">{notebook?.technologies?.map((technology, index) => (

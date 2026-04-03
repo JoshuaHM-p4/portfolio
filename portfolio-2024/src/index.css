@@ -1,144 +1,205 @@
-/* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer components {
+@theme {
+  --font-cinzel: "Cinzel", serif;
+  --font-texturina: "Texturina", serif;
+  --font-firacode: "Fira Code", monospace;
 
-  /* TEXT  */
+  --color-primary: #f94348;
+  --color-secondary-100: #9363fb;
+  --color-secondary-200: #6c3c9d;
 
-  .header-1 {
-    @apply font-bold text-center font-texturina text-slate-800 text-lg
-    lg:text-4xl
-  }
+  --color-red-100: #fed9da;
+  --color-red-200: #fdb4b6;
+  --color-red-300: #fb8e91;
+  --color-red-400: #fa696d;
+  --color-red-500: #f94348;
+  --color-red-600: #c7363a;
+  --color-red-700: #95282b;
+  --color-red-800: #641b1d;
+  --color-red-900: #320d0e;
 
-  .header-2 {
-    @apply font-bold text-center font-texturina text-black-400 text-base
-    lg:text-xl md:text-lg
-  }
+  --color-purple-100: #e9e0fe;
+  --color-purple-200: #d4c1fd;
+  --color-purple-300: #bea1fd;
+  --color-purple-400: #a982fc;
+  --color-purple-500: #9363fb;
+  --color-purple-600: #764fc9;
+  --color-purple-700: #583b97;
+  --color-purple-800: #3b2864;
+  --color-purple-900: #1d1432;
 
-  .header-3 {
-    @apply font-bold text-center font-texturina text-black-400 text-xl
-    lg:text-2xl
-  }
+  --color-blue-100: #d8f3fe;
+  --color-blue-200: #b1e8fc;
+  --color-blue-300: #8adcfb;
+  --color-blue-400: #63d1f9;
+  --color-blue-500: #3cc5f8;
+  --color-blue-600: #309ec6;
+  --color-blue-700: #247695;
+  --color-blue-800: #184f63;
+  --color-blue-900: #0c2732;
 
-  .header-4 {
-    @apply font-bold text-center font-texturina text-black-400 text-lg
-    lg:text-xl
-  }
+  --color-green-100: #dbf5e8;
+  --color-green-200: #b7ead0;
+  --color-green-300: #92e0b9;
+  --color-green-400: #6ed5a1;
+  --color-green-500: #4acb8a;
+  --color-green-600: #3ba26e;
+  --color-green-700: #2c7a53;
+  --color-green-800: #1e5137;
+  --color-green-900: #0f291c;
 
-  .header-5 {
-    @apply font-bold text-center font-texturina text-black-400 text-base
-    lg:text-lg
-  }
+  --color-yellow-100: #fff7d9;
+  --color-yellow-200: #ffeeb4;
+  --color-yellow-300: #ffe68e;
+  --color-yellow-400: #ffdd69;
+  --color-yellow-500: #ffd543;
+  --color-yellow-600: #ccaa36;
+  --color-yellow-700: #998028;
+  --color-yellow-800: #66551b;
+  --color-yellow-900: #332b0d;
 
-  .header-6 {
-    @apply font-bold text-center font-texturina text-black-400 text-sm
-    lg:text-base
-  }
+  --color-orange-100: #ffe9db;
+  --color-orange-200: #ffd4b6;
+  --color-orange-300: #ffbe92;
+  --color-orange-400: #ffa96d;
+  --color-orange-500: #ff9349;
+  --color-orange-600: #cc763a;
+  --color-orange-700: #99582c;
+  --color-orange-800: #663b1d;
+  --color-orange-900: #331d0f;
 
-  .header-7 {
-    @apply font-bold text-center font-texturina text-black-400 text-xs
-    lg:text-sm
-  }
+  --color-black-100: #d0d0d2;
+  --color-black-200: #bcb9ad;
+  --color-black-300: #7d8073;
+  --color-black-400: #313337;
+  --color-black-500: #121520;
+  --color-black-600: #0e111a;
+  --color-black-700: #0b0d13;
+  --color-black-800: #07080d;
+  --color-black-900: #040406;
 
-  .header-8 {
-    @apply font-bold text-center font-texturina text-black-400 text-xs
-    lg:text-sm
-  }
+  --color-white-100: #fffffe;
+  --color-white-200: #fffefc;
+  --color-white-300: #fefefb;
+  --color-white-400: #fefdf9;
+  --color-white-500: #fefdf8;
+  --color-white-600: #cbcac6;
+  --color-white-700: #989895;
+  --color-white-800: #666563;
+  --color-white-900: #333332;
+}
 
-  .paragraph {
-    @apply text-black-400 font-texturina text-sm
-    lg:text-base text-justify
-    ;
-  }
-
-  .date {
-    @apply text-black-400 font-cinzel text-[0.625rem]
-  }
-
-  .skill-text {
-    @apply text-blue-500 font-texturina text-sm
-    lg:text-base font-medium
-    ;
-  }
-
-  .description {
-    @apply text-black-400 font-texturina text-sm
-    lg:text-base
-    ;
-  }
-
-  .caption {
-    @apply text-center text-black-400 font-cinzel text-xs
-    lg:text-sm font-bold
-    ;
-  }
-
-  .notebook-title {
-    @apply text-start font-firacode text-black-400 text-sm
-     lg:text-base font-medium
-    ;
-  }
-
-  .notebook-description {
-    @apply text-justify font-texturina text-black-400 text-xs
-    ;
-  }
-
-  /* Elements */
-
-  .background {
-    @apply bg-gradient-to-t from-[#A05645] via-[#FFA752] to-[#F9F5F1]
-    -z-50 w-screen h-screen absolute bg-fixed;
-  }
-
-  .nav-button {
-    @apply p-2 items-center content-center align-middle justify-center md:rounded-md rounded-full
-    flex w-full min-w-fit
-    bg-white-500 bg-opacity-10 border border-white-100 shadow-md
-    hover:bg-white-500  hover:bg-opacity-60 hover:shadow-lg transition-all ease-in-out
-    ;
-  }
-
-  .nav-active {
-    @apply bg-white-500 bg-opacity-70
-    ;
-  }
-
-  .nav-link {
-    @apply text-center text-slate-800 font-texturina leading-[-4rem]
-    ;
-  }
-
-  .nav-profile-link {
-    @apply flex text-center font-texturina leading-[-4rem] w-full justify-center
-    text-black-400 flex-1 p-1
-    hover:bg-white-200 hover:bg-opacity-20
-    hover:text-white-400 transition-colors
-    ;
-  }
-
-  .linkIcon {
-    @apply w-8 h-8 text-black-400 hover:text-black-300 fill-current stroke-current
-  }
-
-  .linkIcon-dark {
-    @apply w-8 h-8 text-white-100 fill-current stroke-current
-  }
-  
-  .linkIcon-special {
-    @apply w-4 h-4 text-purple-500 fill-current stroke-current
-  }
-
-  .dummy-icon {
-    @apply rounded-full bg-slate-50 h-52 w-52 p-16;
+@utility scrollbar-thin {
+  @supports (-moz-appearance: none) {
+    scrollbar-width: thin;
+    scrollbar-color: #fefdf9 #fefdf9;
   }
 }
 
-@layer utilities {
-  .z-50 {
-    z-index: 50;
+@utility scrollbar-webkit {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    transition: background-color 0.3s ease, background 1s ease;
+  }
+  &::-webkit-scrollbar-track:hover {
+    background: rgba(254, 253, 249, 0.3);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #e63235;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #f94348;
+    border-radius: 20px;
+  }
+}
+
+@utility image-smooth {
+  image-rendering: smooth;
+}
+
+@utility image-crisp {
+  image-rendering: crisp-edges;
+}
+
+@utility image-pixelated {
+  image-rendering: pixelated;
+}
+
+@layer components {
+  .header-1 {
+    @apply font-bold text-center font-texturina text-slate-800 text-lg lg:text-4xl;
+  }
+  .header-2 {
+    @apply font-bold text-center font-texturina text-black-400 text-base lg:text-xl md:text-lg;
+  }
+  .header-3 {
+    @apply font-bold text-center font-texturina text-black-400 text-xl lg:text-2xl;
+  }
+  .header-4 {
+    @apply font-bold text-center font-texturina text-black-400 text-lg lg:text-xl;
+  }
+  .header-5 {
+    @apply font-bold text-center font-texturina text-black-400 text-base lg:text-lg;
+  }
+  .header-6 {
+    @apply font-bold text-center font-texturina text-black-400 text-sm lg:text-base;
+  }
+  .header-7 {
+    @apply font-bold text-center font-texturina text-black-400 text-xs lg:text-sm;
+  }
+  .header-8 {
+    @apply font-bold text-center font-texturina text-black-400 text-xs lg:text-sm;
+  }
+  .paragraph {
+    @apply text-black-400 font-texturina text-sm lg:text-base text-justify;
+  }
+  .date {
+    @apply text-black-400 font-cinzel text-[0.625rem];
+  }
+  .skill-text {
+    @apply text-blue-500 font-texturina text-sm lg:text-base font-medium;
+  }
+  .description {
+    @apply text-black-400 font-texturina text-sm lg:text-base;
+  }
+  .caption {
+    @apply text-center text-black-400 font-cinzel text-xs lg:text-sm font-bold;
+  }
+  .notebook-title {
+    @apply text-start font-firacode text-black-400 text-sm lg:text-base font-medium;
+  }
+  .notebook-description {
+    @apply text-justify font-texturina text-black-400 text-xs;
+  }
+  .background {
+    @apply bg-gradient-to-t from-[#A05645] via-[#FFA752] to-[#F9F5F1] -z-50 w-screen h-screen absolute bg-fixed;
+  }
+  .nav-button {
+    @apply p-2 items-center content-center align-middle justify-center md:rounded-md rounded-full flex w-full min-w-fit bg-white-500/10 border border-white-100 shadow-md hover:bg-white-500/60 hover:shadow-lg transition-all ease-in-out;
+  }
+  .nav-active {
+    @apply bg-white-500/70;
+  }
+  .nav-link {
+    @apply text-center text-slate-800 font-texturina;
+  }
+  .nav-profile-link {
+    @apply flex text-center font-texturina w-full justify-center text-black-400 flex-1 p-1 hover:bg-white-200/20 hover:text-white-400 transition-colors;
+  }
+  .linkIcon {
+    @apply w-8 h-8 text-black-400 hover:text-black-300 fill-current stroke-current;
+  }
+  .linkIcon-dark {
+    @apply w-8 h-8 text-white-100 fill-current stroke-current;
+  }
+  .linkIcon-special {
+    @apply w-4 h-4 text-purple-500 fill-current stroke-current;
+  }
+  .dummy-icon {
+    @apply rounded-full bg-slate-50 h-52 w-52 p-16;
   }
 }
 
@@ -146,9 +207,7 @@
   body {
     @apply font-texturina;
   }
-
   p {
     @apply font-cinzel;
   }
 }
-

@@ -3,9 +3,9 @@ import TechnologyCard from './TechnologyCard';
 const ExperienceCard = ({ experience }) => {
   return (
     <div className="w-full
-    bg-white-500 bg-opacity-25 rounded-md border border-white-100 shadow-md
+    bg-white-500/25 rounded-md border border-white-100 shadow-md
     flex flex-col gap-2
-    hover:bg-white-500  hover:bg-opacity-60 p-2 hover:shadow-lg transition-all ease-in-out">
+    hover:bg-white-500/60 p-2 hover:shadow-lg transition-all ease-in-out">
       <p className="date">{experience?.date}</p>
       <h1 className="header-5 text-start">{experience.title}</h1>
       <h2 className="header-6 italic text-start font-normal">{experience.company}</h2>
