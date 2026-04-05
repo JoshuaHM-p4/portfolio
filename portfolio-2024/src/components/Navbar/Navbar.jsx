@@ -9,8 +9,6 @@ import AboutIcon from "../../svg/about.svg?react";
 import ExperienceIcon from "../../svg/experience.svg?react";
 import ProjectIcon from "../../svg/folder.svg?react";
 
-const sections = ['home', 'about', 'projects', 'contact'];
-
 const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const { activeSection } = useSectionObserver();
 
@@ -19,17 +17,18 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
     { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: 'about' },
     { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences' },
     { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: 'projects' },
-    // { icon: <DummyIcon />, text: 'interests', destination: '/interests' },
   ];
 
   return (
-    <div className={`${isCollapsed ? "w-14 bg-white-500/0 backdrop-blur-none bg-transparent" : "w-full bg-white-500/70 backdrop-blur-xl md:backdrop-blur-none md:w-72 md:bg-transparent overflow-y-auto scrollbar-thin scrollbar-webkit"}
-      fixed z-50 top-0 left-0 rounded-lg flex-col items-center transition-all duration-800 ease-in-out md:static h-full`}>
+    <div
+      className={`${isCollapsed ? "w-14 bg-white/0 bg-transparent h-auto" : "h-full w-full bg-white-500/10 backdrop-blur-xl md:w-72 md:bg-transparent overflow-y-auto scrollbar-thin scrollbar-webkit rounded-xl md:rounded-xl"}
+      fixed z-50 top-0 left-0 flex-col items-center transition-all duration-800 ease-in-out md:static  shadow-lg md:shadow-none`}
+    >
       {/* Toggle Button */}
-      <div className={`flex ${isCollapsed ? 'justify-center p-2' : 'justify-end items-center py-2 hover:bg-white-500/50 hover:shadow-sm mb-2'} w-full h-10`}>
+      <div className={`flex rounded-2xl ${isCollapsed ? 'justify-center p-2' : 'justify-end items-center py-2 hover:bg-white-500/50 hover:shadow-sm m-2'} w-auto h-10`}>
         <button
           onClick={toggleNavbar}
-          className={`${isCollapsed ? 'nav-button h-10' : 'md:hover:nav-button h-10'} w-14 max-w-14 transition-all duration-800`}
+          className={`${isCollapsed ? 'nav-button h-10' : 'md:hover:nav-button h-10'} w-14 max-w-14 hover:bg-white-500/50 rounded-2xl`}
         >
           {isCollapsed ? "⮞" : "⮜"}
         </button>
@@ -74,7 +73,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
           />
         ))}
       </div>
-    </div >
+    </div>
   );
 };
 
@@ -87,7 +86,7 @@ const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, is
   };
   const baseClass = 'nav-link nav-button';
   const activeClass = activeSection === destination ? 'nav-active' : '';
-  const collapsedClass = isCollapsed ? 'opacity-50 rounded-l w-10 h-10' : '';
+  const collapsedClass = isCollapsed ? 'opacity-50 rounded-2xl w-10 h-10' : '';
 
   return (
     <button
@@ -104,21 +103,4 @@ const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, is
   );
 }
 
-/* const NavLink = ({ icon, text = 'tooltip text', destination, isCollapsed = false }) => { */
-/*   return ( */
-/*     <NavLink */
-/*       className={({ isActive }) => ( */
-/*         isActive ? 'nav-button nav-link nav-active ' + (isCollapsed ? 'opacity-50 rounded-l w-10 h-10' : '') */
-/*           : 'nav-button nav-link' + (isCollapsed ? 'rounded-l w-10 h-10' : ''))} */
-/*       to={destination} */
-/*     > */
-/*       {isCollapsed ? */
-/*         (icon) : */
-/*         <> */
-/*           &#91; {isCollapsed ? '' : text} &#93; */
-/*         </> */
-/*       } */
-/*     </NavLink> */
-/*   ); */
-/* } */
 export default Navbar;

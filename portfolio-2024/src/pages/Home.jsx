@@ -95,7 +95,7 @@ const Home = () => {
                 <ul>
                   What I bring to the table:
                   {experienceSummary.map((text, index) => (
-                    <li key={index} className="text-sm my-2">♦️ {text}</li>
+                    <li key={index} className="text-xs my-2">♦️ {text}</li>
                   ))}
                 </ul>
                 <Button className="w-auto rounded-md" text={"Open CV"} onClick={() => { window.open(linkData.resume, "_blank") }} />
