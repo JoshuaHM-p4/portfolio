@@ -1,12 +1,12 @@
 const ProjectCard = ({ project }) => {
   return (
-    <div 
-      className="w-full bg-white-500/10 border border-white-100 shadow-md hover:bg-white-500/40 pb-2 hover:shadow-lg backdrop-blur-md rounded-lg transition-all ease-in-out"
+    <div
+      className="w-full h-full flex flex-col bg-white-500/10 border border-white-100 shadow-md hover:bg-white-500/40 pb-2 hover:shadow-lg backdrop-blur-md rounded-lg transition-all ease-in-out"
     >
-      <div className="h-52 bg-white-500/30 rounded-t-md flex items-center justify-center">
-        <img src={project?.img} alt={project?.name} className="h-full object-center object-cover rounded-t-md transition-all ease-in-out opacity-80 hover:opacity-100" />
+      <div className="h-52 shrink-0 bg-white-500/30 rounded-t-md flex items-center justify-center overflow-hidden">
+        <img src={project?.img} alt={project?.name} className="w-full h-full object-center object-cover rounded-t-md transition-all ease-in-out opacity-80 hover:opacity-100" />
       </div>
-      <div className="flex flex-col gap-1 p-2">
+      <div className="flex flex-col gap-1 p-2 flex-1">
         <p className="date">{project?.date}</p>
         <h1 className="header-4 text-start">{project?.name}</h1>
         <p className="description line-clamp-2">{project?.description}</p>

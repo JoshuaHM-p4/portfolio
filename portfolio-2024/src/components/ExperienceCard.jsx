@@ -10,7 +10,7 @@ const ExperienceCard = ({ experience }) => {
       <h2 className="header-6 italic text-start font-normal">{experience.company}</h2>
       <ul className="list-none flex flex-col gap-1">
         {experience.description.map((desc, index) => (
-          <li key={index} className="description">{desc}</li>
+          <li key={index} className="description indent-6">{desc}</li>
         ))}
       </ul>
       <div className='w-full flex gap-2 flex-wrap'>

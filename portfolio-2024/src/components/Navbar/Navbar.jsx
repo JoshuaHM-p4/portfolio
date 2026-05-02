@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import linkData from "../../data/links.json";
 import { useSectionObserver } from '../../context/SectionObserverContext';
 
@@ -11,12 +11,15 @@ import ProjectIcon from "../../svg/folder.svg?react";
 
 const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const { activeSection } = useSectionObserver();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   const navItems = [
     { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: 'home' },
     { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: 'about' },
-    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences' },
     { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: 'projects' },
+    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences' },
   ];
 
   return (
@@ -70,6 +73,8 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
             text={item.text}
             activeSection={activeSection}
             destination={item.destination}
+            isHome={isHome}
+            navigate={navigate}
           />
         ))}
       </div>
@@ -77,11 +82,21 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   );
 };
 
-const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, isCollapsed = false }) => {
+const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, isCollapsed = false, isHome = true, navigate }) => {
   const handleScroll = (id) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleClick = () => {
+    if (!isHome) {
+      navigate('/', { state: { scrollTo: destination } });
+    } else {
+      handleScroll(destination);
     }
   };
   const baseClass = 'nav-link nav-button';
@@ -91,7 +106,7 @@ const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, is
   return (
     <button
       className={`${baseClass} ${activeClass} ${collapsedClass}`}
-      onClick={() => handleScroll(destination)}
+      onClick={handleClick}
     >
       {isCollapsed ?
         (icon) :

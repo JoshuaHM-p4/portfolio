@@ -1,5 +1,48 @@
 [
     {
+        "title": "Co-Lead | Department of AI",
+        "company": "AWSCC PUP",
+        "date": "Oct 2025 - Present",
+        "description": [
+            "Led and facilitated hands-on workshops including Python, Machine Learning fundamentals, and Langflow, helping 50+ participants build foundational machine learning and AI knowledge and skills.",
+            "Collaborated with the tech department team to design workshop content and improve learning outcomes through feedback."
+        ],
+        "technologies": [
+            "Python",
+            "Langflow",
+            "Langchain",
+            "RAG",
+            "AI",
+            "PyTorch",
+            "Leadership",
+            "Teaching",
+            "Workshop"
+        ]
+    },
+    {
+        "title": "R&D Intern – Computer Vision",
+        "company": "DOST-ASTI",
+        "date": "July 2025 - Sep 2025",
+        "description": [
+            "Developed deep learning face-embedding models achieving 0.99+ AUC (ResNet-50, Vision Transformers with ArcFace loss) on standard benchmarks (VGGFace2, LFW, CPLFW) through computer vision pipelines using PyTorch, Torchvision, and scikit-learn on a single HPC GPU (A100, SLURM, Conda).",
+            "Delivered a comparative analysis of 5+ model architectures and validated results with ROC AUC and EER metrics across 10K+ tested pairs.",
+            "Ensured reproducibility through modular codebases, configuration files, and documentation for peer review."
+        ],
+        "technologies": [
+            "PyTorch",
+            "Torchvision",
+            "scikit-learn",
+            "Image Processing",
+            "Optimization",
+            "Software Development",
+            "HPC",
+            "Linux",
+            "Git",
+            "Deep Learning",
+            "Research"
+        ]
+    },
+    {
         "title": "Senior Data/ML Associate Committee",
         "company": "Google Developer Groups PUP",
         "date": "January 2023 - Present",
@@ -43,8 +86,8 @@
         "date": "Sep 2022 - July 2023",
         "description": [
             "Co-founded and led HinyApp, a mental health and wellness startup, and helped shape core support tools and resources to better serve students' well-being and engagement.",
-            "Pitched at the DICT 2022 Regional Pitching Competition in Palawan and gaining mentorship from the Palawan International Technology Business Incubator.",
-            "Designed the apps UI in Figma, developed the prototype, and worked with the university&apos;s ICT office to refine features and ensure seamless integration."
+            "Pitched at the DICT 2022 Regional Pitching Competition in Palawan and gained mentorship from the Palawan International Technology Business Incubator.",
+            "Designed the app's UI in Figma, developed the prototype, and worked with the university's ICT office to refine features and ensure seamless integration."
         ],
         "technologies": [
             "Figma",
