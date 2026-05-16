@@ -17,11 +17,11 @@ const About = () => {
   const { setActiveSection } = useSectionObserver();
 
   useEffect(() => {
-    if (inView) setActiveSection('home');
+    if (inView) setActiveSection('about');
   }, [inView]);
 
   return (
-    <section id="home" ref={ref} className="bg-transparent">
+    <section id="about" ref={ref} className="bg-transparent">
       <div className='w-full sm:flex flex-row h-fit items-start sm:gap-5 relative'>
         {/* Personal Picture Card */}
         {isCollapsed &&
