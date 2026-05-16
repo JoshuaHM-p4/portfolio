@@ -183,6 +183,9 @@
   .nav-active {
     @apply bg-white-500/70;
   }
+  .nav-armed {
+    @apply ring-2 ring-black/20 ring-offset-1 ring-offset-white/10 animate-pulse;
+  }
   .nav-link {
     @apply text-center text-slate-800 font-texturina;
   }

@@ -15,12 +15,13 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const navigate = useNavigate();
   const isHome = location.pathname === '/';
 
-  const navItems = [
-    { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: 'home' },
-    { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: 'about' },
-    { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: 'projects' },
-    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences' },
+  const allNavItems = [
+    { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: 'home', path: '/', showOnlyOffHome: true },
+    { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: 'about', path: '/about' },
+    { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: 'projects', path: '/projects' },
+    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences', path: '/experience' },
   ];
+  const navItems = allNavItems.filter((item) => !(item.showOnlyOffHome && isHome));
 
   return (
     <div
@@ -73,7 +74,9 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
             text={item.text}
             activeSection={activeSection}
             destination={item.destination}
+            path={item.path}
             isHome={isHome}
+            currentPath={location.pathname}
             navigate={navigate}
           />
         ))}
@@ -82,7 +85,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   );
 };
 
-const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, isCollapsed = false, isHome = true, navigate }) => {
+const NavButton = ({ icon, text = 'tooltip text', destination, path, activeSection, isCollapsed = false, isHome = true, currentPath = '/', navigate }) => {
   const handleScroll = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -92,28 +95,55 @@ const NavButton = ({ icon, text = 'tooltip text', destination, activeSection, is
     }
   };
 
+  const isHomeBtn = destination === 'home';
+  const isActiveSection = isHome && activeSection === destination;
+  const isActivePage = !isHome && path && path !== '/' && currentPath === path;
+  // "armed" — already at this section on home AND a detail page exists → next click opens the page
+  const armed = isHome && isActiveSection && !!path && !isHomeBtn;
+
   const handleClick = () => {
+    if (isHomeBtn) {
+      // Home button: when off-home, return to /; never armed.
+      navigate('/', { state: { scrollTo: 'home' } });
+      return;
+    }
     if (!isHome) {
-      navigate('/', { state: { scrollTo: destination } });
+      // Off-home: any other button → jump straight to its dedicated page.
+      if (path) navigate(path);
+      else navigate('/', { state: { scrollTo: destination } });
+      return;
+    }
+    if (armed) {
+      navigate(path);
     } else {
       handleScroll(destination);
     }
   };
+
   const baseClass = 'nav-link nav-button';
-  const activeClass = activeSection === destination ? 'nav-active' : '';
+  const activeClass = isActiveSection || isActivePage ? 'nav-active' : '';
+  const armedClass = armed ? 'nav-armed' : '';
   const collapsedClass = isCollapsed ? 'opacity-50 rounded-2xl w-10 h-10' : '';
 
   return (
     <button
-      className={`${baseClass} ${activeClass} ${collapsedClass}`}
+      className={`${baseClass} ${activeClass} ${armedClass} ${collapsedClass}`}
       onClick={handleClick}
+      title={armed ? `Open ${text} page` : path ? `Scroll to ${text} — click again to open page` : text}
+      aria-label={armed ? `Open ${text} page` : text}
     >
-      {isCollapsed ?
-        (icon) :
+      {isCollapsed ? (
+        <span className="relative inline-flex">
+          {icon}
+          {armed && (
+            <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-black/70" />
+          )}
+        </span>
+      ) : (
         <>
-          &#91; {isCollapsed ? '' : text} &#93;
+          &#91; {text}{armed ? ' ›' : ''} &#93;
         </>
-      }
+      )}
     </button>
   );
 }
