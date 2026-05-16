@@ -11,7 +11,8 @@
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
-        "streamlit": ""
+        "streamlit": "",
+        "highlight": true
     },
     {
         "id": 2,
@@ -25,7 +26,8 @@
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
-        "streamlit": ""
+        "streamlit": "",
+        "highlight": true
     },
     {
         "id": 3,
@@ -39,6 +41,7 @@
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "",
-        "streamlit": "https://terraria-weapons-knn.streamlit.app/"
+        "streamlit": "https://terraria-weapons-knn.streamlit.app/",
+        "highlight": true
     }
 ]
