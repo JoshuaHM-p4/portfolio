@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSectionObserver } from '../context/SectionObserverContext';
 import Button from '../components/Button';
 import ProjectCard from '../components/ProjectCard';
 import ExperienceCard from '../components/ExperienceCard';
 import EducationCard from '../components/EducationCard';
 import NotebookCard from '../components/NotebookCard';
+import { slugify } from '../utils/slug';
 
 import linkData from "../data/links.json";
 import experienceSummary from "../data/experienceSummary.json";
@@ -22,10 +24,27 @@ const Home = () => {
   const { isCollapsed } = useNavbar();
   const [activeTab, setActiveTab] = useState("experience");
   const { setActiveSection } = useSectionObserver();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Intersection Observers for Sections
   const { ref: projectsRef, inView: projectsInView } = useInView({ threshold: 0.2 });
   const { ref: experienceRef, inView: experienceInView } = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    const target = location.state?.scrollTo;
+    if (!target) return;
+    const tryScroll = () => {
+      if (target === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const el = document.getElementById(target);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    const t = setTimeout(tryScroll, 350);
+    return () => clearTimeout(t);
+  }, [location.state]);
 
   useEffect(() => {
     if (projectsInView) {
@@ -52,10 +71,12 @@ const Home = () => {
           <h1 className='header-3'>Things I&apos;ve Recently Built</h1>
           <div className="w-full grid gap-5 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
             {projects.map((project, index) =>
-              <ProjectCard key={index} project={project} />
+              <Link key={index} to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
+                <ProjectCard project={project} />
+              </Link>
             )}
           </div >
-          <Button className="w-auto rounded-md" text={"See All Projects"} onClick={() => { }} />
+          <Button className="w-auto rounded-md" text={"See All Projects"} onClick={() => navigate('/projects')} />
         </section>
 
         {/* Recent Notebooks */}
@@ -64,12 +85,14 @@ const Home = () => {
           <div className="w-full gap-2 mt-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-cols-[200px]">
             {
               notebooksList.map((notebook, index) => (
-                <NotebookCard key={index} notebook={notebook} />
+                <Link key={index} to={`/notebooks/${notebook.id}`} className="block h-full hover:scale-[1.01] transition-transform">
+                  <NotebookCard notebook={notebook} />
+                </Link>
               )
               )
             }
           </div>
-          <Button className="w-auto rounded-md" text={"See all notebooks"} onClick={() => { }} />
+          <Button className="w-auto rounded-md" text={"See all notebooks"} onClick={() => navigate('/notebooks')} />
         </section>
 
         <section id="experiences" ref={experienceRef} className="flex flex-col md:flex-row gap-2 w-full mt-10">

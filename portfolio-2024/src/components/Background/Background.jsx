@@ -214,6 +214,11 @@ const Background = () => {
     const axesHelper = new THREE.AxesHelper(5); // 5 is the length of the axes
     scene.add(axesHelper);
 
+    // Inertia state — target rotation tracks mouse, current rotation lerps toward it
+    const targetRotation = { x: 0, y: 0 };
+    const currentRotation = { x: 0, y: 0 };
+    const damping = 0.05; // lower = more inertia / slower easing
+
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
@@ -230,8 +235,12 @@ const Background = () => {
         // Animate blob deformation
         blob.material.uniforms.u_time.value = 0.1 * performance.now() * 0.001;
       });
-      cameraRef.current.rotation.y += 0.001;
-      cameraRef.current.rotation.x += 0.0005;
+
+      // Ease camera rotation toward the mouse-driven target
+      currentRotation.x += (targetRotation.x - currentRotation.x) * damping;
+      currentRotation.y += (targetRotation.y - currentRotation.y) * damping;
+      cameraRef.current.rotation.x = currentRotation.x;
+      cameraRef.current.rotation.y = currentRotation.y;
 
       renderer.render(scene, camera);
     };
@@ -240,16 +249,13 @@ const Background = () => {
     animate();
 
 
-    // Handle mouse movement
+    // Handle mouse movement — update target only; the animation loop eases toward it
     const handleMouseMove = (event) => {
-      if (cameraRef.current) {
-        const mouseX = -(event.clientX / window.innerWidth) + 1;
-        const mouseY = -(event.clientY / window.innerHeight) + 1;
+      const mouseX = -(event.clientX / window.innerWidth) + 1;
+      const mouseY = -(event.clientY / window.innerHeight) + 1;
 
-        // Adjust the camera rotation based on mouse position
-        cameraRef.current.rotation.x = mouseY * Math.PI / 6;  // Max rotation of PI/4 on the Y-axis
-        cameraRef.current.rotation.y = mouseX * Math.PI / 6;  // Max rotation of PI/4 on the X-axis
-      }
+      targetRotation.x = mouseY * Math.PI / 6;
+      targetRotation.y = mouseX * Math.PI / 6;
     };
     // Add event listener for mouse move
     window.addEventListener('mousemove', handleMouseMove);
@@ -267,7 +273,7 @@ const Background = () => {
 
     // Cleanup on unmount
     return () => {
-      // window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
       mount.removeChild(renderer.domElement);
       window.removeEventListener('resize', handleResize);
     };

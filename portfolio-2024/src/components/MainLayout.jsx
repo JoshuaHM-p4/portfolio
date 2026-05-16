@@ -1,7 +1,7 @@
 import React from 'react';
-import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import Background from "./Background/Background";
+import PageTransition from "./PageTransition";
 import { useNavbar } from '../context/NavbarContext';
 import { SectionObserverProvider } from '../context/SectionObserverContext';
 import { refractive } from "@hashintel/refractive";
@@ -26,7 +26,7 @@ const MainLayout = () => {
               }}
             >
               <Navbar isCollapsed={isCollapsed} toggleNavbar={toggleNavbar} />
-              <Outlet />
+              <PageTransition />
             </refractive.div>
           </SectionObserverProvider>
         </div>
