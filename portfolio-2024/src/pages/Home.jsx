@@ -70,7 +70,7 @@ const Home = () => {
         <section id="projects" ref={projectsRef} className="w-full mt-10">
           <h1 className='header-3'>Things I&apos;ve Recently Built</h1>
           <div className="w-full grid gap-5 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
-            {projects.map((project, index) =>
+            {projects.filter((p) => p.highlight).map((project, index) =>
               <Link key={index} to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
                 <ProjectCard project={project} />
               </Link>
@@ -84,7 +84,7 @@ const Home = () => {
           <h1 className="header-3">Recent Notebooks</h1>
           <div className="w-full gap-2 mt-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-cols-[200px]">
             {
-              notebooksList.map((notebook, index) => (
+              notebooksList.filter((n) => n.highlight).map((notebook, index) => (
                 <Link key={index} to={`/notebooks/${notebook.id}`} className="block h-full hover:scale-[1.01] transition-transform">
                   <NotebookCard notebook={notebook} />
                 </Link>
