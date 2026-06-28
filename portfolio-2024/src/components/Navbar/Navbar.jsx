@@ -27,7 +27,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
 
   return (
     <div
-      className={`${isCollapsed ? "w-14 bg-white/0 bg-transparent h-auto" : "h-full w-full bg-white-500/10 backdrop-blur-xl md:w-72 md:bg-transparent overflow-y-auto scrollbar-thin scrollbar-webkit rounded-xl md:rounded-xl"}
+      className={`${isCollapsed ? "w-14 bg-white/0 bg-transparent h-auto" : "h-full w-full bg-white-500/10 backdrop-blur-xl md:w-72 md:bg-transparent overflow-y-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none] rounded-xl md:rounded-xl"}
       fixed z-50 top-0 left-0 flex-col items-center transition-all duration-800 ease-in-out md:static  shadow-lg md:shadow-none`}
     >
       {/* Toggle Button */}
