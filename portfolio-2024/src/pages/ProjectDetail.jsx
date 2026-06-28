@@ -6,6 +6,7 @@ import { slugify } from '../utils/slug';
 import GithubIcon from '../svg/github.svg?react';
 import HyperlinkIcon from '../svg/hyperlink.svg?react';
 import HuggingFaceIcon from '../svg/huggingface.svg?react';
+import TechnologyCard from '../components/TechnologyCard';
 
 const IconLink = ({ href, icon: Icon, label }) => (
   <a
@@ -57,7 +58,7 @@ const ProjectDetail = () => {
 
         <div className="flex gap-2 flex-wrap mt-4">
           {project.technologies?.map((t, i) => (
-            <span key={i} className="font-texturina text-[0.7rem] font-medium text-black-400 bg-blue-200/20 border border-white-100 rounded px-2 py-1">{t}</span>
+            <TechnologyCard key={i} technology={t} />
           ))}
         </div>
 

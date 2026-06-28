@@ -29,6 +29,7 @@ const Home = () => {
 
   // Intersection Observers for Sections
   const { ref: projectsRef, inView: projectsInView } = useInView({ threshold: 0.2 });
+  const { ref: notebooksRef, inView: notebooksInView } = useInView({ threshold: 0.2 });
   const { ref: experienceRef, inView: experienceInView } = useInView({ threshold: 0.2 });
 
   useEffect(() => {
@@ -53,13 +54,19 @@ const Home = () => {
   }, [projectsInView, setActiveSection]);
 
   useEffect(() => {
+    if (notebooksInView) {
+      setActiveSection('notebooks');
+    }
+  }, [notebooksInView, setActiveSection]);
+
+  useEffect(() => {
     if (experienceInView) {
       setActiveSection('experiences');
     }
   }, [experienceInView, setActiveSection]);
 
   return (
-    <div className={`h-full w-full overflow-y-auto scrollbar-thin scrollbar-webkit md:mt-0 mt-4 px-4 py-5 ${isCollapsed ? 'opacity-100 flex flex-row' : 'md:opacity-100 opacity-10'}`}>
+    <div className={`h-full w-full overflow-y-auto scrollbar-thin scrollbar-webkit md:mt-0 mt-4 px-4 py-5 ${isCollapsed ? 'opacity-100' : 'md:opacity-100 opacity-10'}`}>
       <div
         className={`flex flex-col items-start justify-start transition-all duration-300 overflow-x-hidden lg:overflow-visible
         ${isCollapsed ? "lg:w-[80%]  mx-auto" : "w-full"}`}
@@ -69,7 +76,7 @@ const Home = () => {
 
         <section id="projects" ref={projectsRef} className="w-full mt-10">
           <h1 className={`header-3 ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Things I&apos;ve Recently Built</h1>
-          <div className="w-full grid gap-5 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
+          <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
             {projects.filter((p) => p.highlight).map((project, index) =>
               <Link key={index} to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
                 <ProjectCard project={project} />
@@ -80,9 +87,9 @@ const Home = () => {
         </section>
 
         {/* Recent Notebooks */}
-        <section className="w-full mt-10">
+        <section id="notebooks" ref={notebooksRef} className="w-full mt-10">
           <h1 className={`header-3 ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Recent Notebooks</h1>
-          <div className="w-full gap-2 mt-2 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-cols-[200px]">
+          <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(220px,1fr))] auto-cols-[220px]">
             {
               notebooksList.filter((n) => n.highlight).map((notebook, index) => (
                 <Link key={index} to={`/notebooks/${notebook.id}`} className="block h-full hover:scale-[1.01] transition-transform">

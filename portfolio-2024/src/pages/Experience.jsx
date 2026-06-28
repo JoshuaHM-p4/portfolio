@@ -24,7 +24,7 @@ const Experience = () => {
         <section className="flex flex-col md:flex-row gap-2 w-full mt-4">
           <div className="h-auto flex-1">
             <div className="flex flex-col gap-1 w-full md:sticky md:top-0 z-10">
-              <h1 className="header-3 text-start">My Background Expertise</h1>
+              <h1 className="header-3 text-center md:text-start">My Background Expertise</h1>
               <div className="inline-flex shadow-xs w-full sticky top-0 md md:relative" role="group">
                 <Button
                   className="!rounded-none !rounded-l-full md:!rounded-l-2xl border-r-0 flex-1"

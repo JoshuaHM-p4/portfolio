@@ -13,7 +13,7 @@ const Projects = () => {
       <div className={`flex flex-col items-start justify-start ${isCollapsed ? 'lg:w-[80%] mx-auto' : 'w-full'}`}>
         <Button className="w-auto !mt-0 mb-4" text={"← Back to Home"} onClick={() => navigate('/')} />
         <h1 className="header-2 mb-2">All Projects</h1>
-        <div className="w-full grid gap-5 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
+        <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
           {projects.map((project, index) => (
             <Link key={index} to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
               <ProjectCard project={project} />

@@ -5,6 +5,7 @@ import { useNavbar } from '../context/NavbarContext';
 import KaggleIcon from '../svg/kaggle.svg?react';
 import StreamlitIcon from '../svg/streamlit.svg?react';
 import HuggingFaceIcon from '../svg/huggingface.svg?react';
+import TechnologyCard from '../components/TechnologyCard';
 
 const IconLink = ({ href, icon: Icon, label }) => (
   <a
@@ -43,7 +44,7 @@ const NotebookDetail = () => {
 
         <div className="flex gap-2 flex-wrap mt-4">
           {notebook.technologies?.map((t, i) => (
-            <span key={i} className="font-texturina text-[0.7rem] font-medium text-blue-500 bg-blue-100/20 border border-white-100 rounded px-2 py-1">{t.name}</span>
+            <TechnologyCard key={i} technology={t.name} />
           ))}
         </div>
 

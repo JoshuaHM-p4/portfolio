@@ -8,6 +8,7 @@ import HomeIcon from "../../svg/home.svg?react";
 import AboutIcon from "../../svg/about.svg?react";
 import ExperienceIcon from "../../svg/experience.svg?react";
 import ProjectIcon from "../../svg/folder.svg?react";
+import NotebookIcon from "../../svg/notebook.svg?react";
 
 const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const { activeSection } = useSectionObserver();
@@ -19,6 +20,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
     { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: 'home', path: '/', showOnlyOffHome: true },
     { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: 'about', path: '/about' },
     { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: 'projects', path: '/projects' },
+    { icon: <NotebookIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'notebooks', destination: 'notebooks', path: '/notebooks' },
     { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences', path: '/experience' },
   ];
   const navItems = allNavItems.filter((item) => !(item.showOnlyOffHome && isHome));
