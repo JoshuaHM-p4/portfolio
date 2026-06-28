@@ -53,13 +53,13 @@ const About = () => {
             Computer Engineer with a focus on Machine Learning Specialization. I self-developed myself with experience adapted through organizational teams and software development, through technical expertise and active contributions to student developer communities, and knowledge-sharing efforts, and finding ways to bring real-world impact.
           </p>
           {/* Button */}
-          <Button className="rounded-md w-auto" text={"Let's Chat"} onClick={() => { }} />
+          <Button className="w-auto" text={"Let's Chat"} onClick={() => { }} />
         </div>
       </div>
 
 
       {/* skill grid  */}
-      <h1 className='header-3 mt-10 text-start'>Skills</h1>
+      <h1 className={`header-3 mt-10 ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Skills</h1>
       <div className="w-full grid gap-2 mt-2 grid-cols-[repeat(auto-fill,minmax(86px,1fr))] auto-cols-[86px]">
         {skills.map((skill, index) =>
         (

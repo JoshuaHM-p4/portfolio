@@ -1,12 +1,131 @@
 [
   {
+    "name": "sema-sidlak",
+    "date": "2026",
+    "description": "An MLOps pipeline for semantic segmentation combining SAM 3.1 (Segment Anything Model) and YOLOv8 for automated track annotation. Engineered for high-performance visual analysis of racing circuits, implementing a production-ready workflow for real-time segmentation and object detection.",
+    "img": "/img/sema_pipeline.png",
+    "video": "/video/annotated-silesia-track.mp4",
+    "codeLink": "",
+    "demoLink": "",
+    "technologies": [
+      "Computer Vision",
+      "Semantic Segmentation",
+      "SAM 3.1",
+      "YOLOv8",
+      "MLOps",
+      "PyTorch",
+      "OpenCV",
+      "Python"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "IskoChatAI",
+    "date": "2025",
+    "description": "A specialized RAG-based chatbot designed to navigate the complexities of Philippine scholarship and enrollment processes. Engineered a system that retrieves real-time data from Google Docs and Custom Search APIs to provide accurate, 'Taglish' responses.",
+    "img": "/img/iskochat.png",
+    "codeLink": "https://github.com/DavidBatoDev/iskochatai",
+    "demoLink": "",
+    "technologies": [
+      "Generative AI & RAG",
+      "Data Engineering",
+      "Prompt Engineering",
+      "Gemini API",
+      "Google Cloud",
+      "Custom Search API"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Underwater Sealife Crab and Solid Waste Detection (YOLOv8)",
+    "date": "2025",
+    "description": "Freelance project implementing a real-time object detection system using YOLOv8 to identify and differentiate between marine life (crabs) and anthropogenic solid waste in underwater environments. Trained on a public 10k image dataset to address the visual challenges of aquatic environments.",
+    "img": "/img/underwater-sealife.png",
+    "codeLink": "",
+    "demoLink": "",
+    "technologies": [
+      "Object Detection",
+      "Computer Vision (Marine)",
+      "Data Annotation & Augmentation",
+      "Model Deployment",
+      "YOLOv8"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Plant Disease Classification using ResNet",
+    "date": "2025",
+    "description": "A ResNet-powered deep learning project that automates the classification of 15 plant disease categories across peppers, potatoes, and tomatoes. Leveraging Residual Learning and Computer Vision, the model achieves 96% accuracy, providing a high-precision solution for early crop diagnosis.",
+    "img": "/img/plant-disease.png",
+    "codeLink": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
+    "demoLink": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
+    "technologies": [
+      "Computer Vision",
+      "CNN Residual",
+      "Network Architecture",
+      "Transfer Learning",
+      "Image Preprocessing",
+      "Multi-class Classification"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Handwritten Baybayin Classification using Custom CNN",
+    "date": "2025",
+    "description": "A custom CNN in PyTorch that classifies handwritten Baybayin script, a traditional pre-colonial Philippine writing system. Using an EMNIST-style dataset, the model handles complex stroke patterns and diacritics (kudlits), achieving an overall accuracy of 89.5%.",
+    "img": "/img/handwritten-baybayin.png",
+    "codeLink": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
+    "demoLink": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
+    "technologies": [
+      "Computer Vision",
+      "Deep Learning Architecture",
+      "PyTorch",
+      "OCR & Script Analysis",
+      "Performance Evaluation"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Unsupervised KNN Recommender System",
+    "date": "2024",
+    "description": "An Unsupervised KNN Recommender System that identifies similar weaponry within the game Terraria. Built with Scikit-Learn, the model analyzes weapon attributes to suggest mathematically 'near' alternatives to a given item. Includes extensive Exploratory Data Analysis (EDA).",
+    "img": "/img/terraria-weapon.png",
+    "codeLink": "https://terraria-weapons-knn.streamlit.app/",
+    "demoLink": "https://terraria-weapons-knn.streamlit.app/",
+    "technologies": [
+      "Unsupervised Learning",
+      "Feature Engineering",
+      "Exploratory Data Analysis (EDA)",
+      "Recommender Systems",
+      "Scikit-Learn"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "PUP Graduate School Alumni Website",
+    "date": "2022",
+    "description": "Freelance project as a core Frontend Developer in a three-person team. Co-engineered and deployed a high-impact alumni portal designed for Tracer Study Research. The platform successfully onboarded 130+ alumni, earning client praise for its intuitive UI and data collection efficiency.",
+    "img": "/img/pupgs.png",
+    "codeLink": "",
+    "demoLink": "https://pupgs.com/",
+    "technologies": [
+      "Frontend Engineering",
+      "JavaScript",
+      "React",
+      "UI/UX",
+      "Collaborative Development",
+      "Product Lifecycle"
+    ],
+    "highlight": true
+  },
+  {
     "name": "Tinig Manila: AI Voice Hotline for Filipino Senior Citizens",
     "date": "2026",
     "description": "A toll-free conversational AI hotline that helps Filipino senior citizens access eGovPH government services in natural Tagalog/Taglish. Built as a monorepo: a Node.js/Express backend with a transport-agnostic agent layer (Groq llama-3.3-70b for replies, llama-3.1-8b-instant for identity extraction + analytics) wired to Twilio's Filipino TTS/STT for phone callers, plus a React/Vite dashboard streaming live transcripts, caller profiles, and sentiment analytics over Socket.io. Stays entirely on free tiers (Groq + Twilio trial) while supporting fuzzy Tagalog name/birthdate matching against a mock eGovPH database.",
     "img": "/img/tinig-manila.png",
     "codeLink": "https://github.com/Alexandre-Nevero/tinig-manila",
     "demoLink": "",
-    "highlight": true,
+    "highlight": false,
     "technologies": [
       "Node.js & Express",
       "Groq LLM API",
@@ -25,7 +144,7 @@
     "img": "/img/kiro-portfolio.png",
     "codeLink": "https://github.com/JoshuaHM-p4/portfolio-aws-kiro",
     "demoLink": "https://d3nmv1fwrvv40c.cloudfront.net/",
-    "highlight": true,
+    "highlight": false,
     "technologies": [
       "Next.js 15",
       "React & TypeScript",
@@ -43,7 +162,7 @@
     "img": "/img/luna-rag.png",
     "codeLink": "https://github.com/JoshuaHM-p4/luna-api-streamlit",
     "demoLink": "",
-    "highlight": true,
+    "highlight": false,
     "technologies": [
       "Generative AI & RAG",
       "LangChain & LlamaIndex",
@@ -52,88 +171,6 @@
       "Gemini API",
       "NLP Evaluation Pipelines",
       "Vector Database Management"
-    ]
-  },
-  {
-    "name": "IskoChatAI",
-    "date": "2025",
-    "description": "A specialized RAG-based chatbot designed to navigate the complexities of Philippine scholarship and enrollment processes. Engineered a system that retrieves real-time data from Google Docs and Custom Search APIs to provide accurate, 'Taglish' responses.",
-    "img": "/img/iskochat.png",
-    "codeLink": "https://github.com/DavidBatoDev/iskochatai",
-    "demoLink": "",
-    "highlight": true,
-    "technologies": [
-      "Generative AI & RAG",
-      "Data Engineering",
-      "Prompt Engineering",
-      "Gemini API",
-      "Google Cloud",
-      "Custom Search API"
-    ]
-  },
-  {
-    "name": "Underwater Sealife Crab and Solid Waste Detection (YOLOv8)",
-    "date": "2025",
-    "description": "Freelance project implementing a real-time object detection system using YOLOv8 to identify and differentiate between marine life (crabs) and anthropogenic solid waste in underwater environments. Trained on a public 10k image dataset to address the visual challenges of aquatic environments.",
-    "img": "/img/underwater-sealife.png",
-    "codeLink": "",
-    "demoLink": "",
-    "highlight": true,
-    "technologies": [
-      "Object Detection",
-      "Computer Vision (Marine)",
-      "Data Annotation & Augmentation",
-      "Model Deployment",
-      "YOLOv8"
-    ]
-  },
-  {
-    "name": "Plant Disease Classification using ResNet",
-    "date": "2025",
-    "description": "A ResNet-powered deep learning project that automates the classification of 15 plant disease categories across peppers, potatoes, and tomatoes. Leveraging Residual Learning and Computer Vision, the model achieves 96% accuracy, providing a high-precision solution for early crop diagnosis.",
-    "img": "/img/plant-disease.png",
-    "codeLink": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
-    "demoLink": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
-    "highlight": true,
-    "technologies": [
-      "Computer Vision",
-      "CNN Residual",
-      "Network Architecture",
-      "Transfer Learning",
-      "Image Preprocessing",
-      "Multi-class Classification"
-    ]
-  },
-  {
-    "name": "Handwritten Baybayin Classification using Custom CNN",
-    "date": "2025",
-    "description": "A custom CNN in PyTorch that classifies handwritten Baybayin script, a traditional pre-colonial Philippine writing system. Using an EMNIST-style dataset, the model handles complex stroke patterns and diacritics (kudlits), achieving an overall accuracy of 89.5%.",
-    "img": "/img/handwritten-baybayin.png",
-    "codeLink": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
-    "demoLink": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
-    "highlight": true,
-    "technologies": [
-      "Computer Vision",
-      "Deep Learning Architecture",
-      "PyTorch",
-      "OCR & Script Analysis",
-      "Performance Evaluation"
-    ]
-  },
-  {
-    "name": "Unsupervised KNN Recommender System",
-    "date": "2024",
-    "description": "An Unsupervised KNN Recommender System that identifies similar weaponry within the game Terraria. Built with Scikit-Learn, the model analyzes weapon attributes to suggest mathematically 'near' alternatives to a given item. Includes extensive Exploratory Data Analysis (EDA).",
-    "img": "/img/terraria-weapon.png",
-    "codeLink": "https://terraria-weapons-knn.streamlit.app/",
-    "demoLink": "https://terraria-weapons-knn.streamlit.app/",
-    "highlight": true,
-    "technologies": [
-      "Unsupervised Learning",
-      "Feature Engineering",
-      "Exploratory Data Analysis (EDA)",
-      "Recommender Systems",
-      "Scikit-Learn"
     ]
   },
   {
@@ -153,23 +190,6 @@
       "Algorithms",
       "Web Audio API",
       "CSS Animations"
-    ]
-  },
-  {
-    "name": "PUP Graduate School Alumni Website",
-    "date": "2024",
-    "description": "Freelance project as a core Frontend Developer in a three-person team. Co-engineered and deployed a high-impact alumni portal designed for Tracer Study Research. The platform successfully onboarded 130+ alumni, earning client praise for its intuitive UI and data collection efficiency.",
-    "img": "/img/pupgs.png",
-    "codeLink": "",
-    "demoLink": "https://pupgs.com/",
-    "highlight": false,
-    "technologies": [
-      "Frontend Engineering",
-      "JavaScript",
-      "React",
-      "UI/UX",
-      "Collaborative Development",
-      "Product Lifecycle"
     ]
   },
   {

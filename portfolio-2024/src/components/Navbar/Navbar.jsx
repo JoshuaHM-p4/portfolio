@@ -52,11 +52,11 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
             <p className="caption">Manila, PH</p>
           </div>
 
-          <div className="flex justify-between mt-2 md:mx-0 mx-5 h-10 border-b-2 rounded-md border-transparent hover:border-white-100 transition-all ease-in-out self-stretch">
-            <a className="nav-profile-link rounded-tl-md rounded-bl-md" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
+          <div className="flex justify-between mt-2 md:mx-0 mx-5 h-10 border-b-2 md:rounded-2xl rounded-full border-transparent hover:border-white-100 transition-all ease-in-out self-stretch">
+            <a className="nav-profile-link rounded-l-full md:rounded-l-2xl" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
               contact
             </a>
-            <a className="nav-profile-link rounded-tr-md rounded-br-md" href={linkData.resume} target="_blank" rel="noopener noreferrer">
+            <a className="nav-profile-link rounded-r-full md:rounded-r-2xl" href={linkData.resume} target="_blank" rel="noopener noreferrer">
               resume
             </a>
           </div>
