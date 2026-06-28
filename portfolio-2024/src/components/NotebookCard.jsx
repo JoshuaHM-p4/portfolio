@@ -2,12 +2,11 @@ import React from 'react';
 import KaggleIcon from '../svg/kaggle.svg?react';
 import StreamlitIcon from '../svg/streamlit.svg?react';
 import TechnologyCard from './TechnologyCard';
+import GSAPHoverCard from './GSAPHoverCard';
 
 const NotebookCard = ({ notebook }) => {
   return (
-    <div 
-      className="bg-white-500/10 border border-white-100 shadow-md hover:bg-white-500/40 hover:shadow-lg transition-all ease-in-out w-full h-full flex flex-col gap-2 p-2 py-3 items-start backdrop-blur-md rounded-lg"
-    >
+    <GSAPHoverCard className="w-full h-full flex flex-col gap-2 p-2 py-3 items-start">
       <p className="notebook-title">{notebook?.title}</p>
       <p className="notebook-description">{notebook?.description}</p>
       <div className="flex gap-2 flex-wrap">{notebook?.technologies?.map((technology, index) => (
@@ -25,7 +24,7 @@ const NotebookCard = ({ notebook }) => {
           </a>
         )}
       </div>
-    </div>
+    </GSAPHoverCard>
   );
 }
 
