@@ -35,21 +35,32 @@ const Home = () => {
   const scrollerRef = useRef(null);
 
   useGSAP(() => {
-    const elements = gsap.utils.toArray('.gsap-animate-up');
-    elements.forEach((el) => {
-      gsap.from(el, {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          scroller: scrollerRef.current,
-          start: 'top 95%',
-          toggleActions: 'play none none none'
-        }
+    const timer = setTimeout(() => {
+      if (!scrollerRef.current) return;
+      const elements = gsap.utils.toArray('.gsap-animate-up');
+      elements.forEach((el) => {
+        gsap.fromTo(el, 
+          { y: 40, opacity: 0, scale: 0.95, filter: 'blur(8px)' },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              scroller: scrollerRef.current,
+              start: 'top 85%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
       });
-    });
+      ScrollTrigger.refresh();
+    }, 350); // wait for page-transition to finish
+
+    return () => clearTimeout(timer);
   }, { scope: scrollerRef, dependencies: [activeTab] });
 
   // Intersection Observers for Sections
@@ -100,31 +111,39 @@ const Home = () => {
         <About />
 
         <section id="projects" ref={projectsRef} className="w-full mt-10">
-          <h1 className={`header-3 ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Things I&apos;ve Recently Built</h1>
+          <h1 className={`header-3 gsap-animate-up ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Things I&apos;ve Recently Built</h1>
           <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
             {projects.filter((p) => p.highlight).map((project, index) =>
-              <Link key={index} to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
-                <ProjectCard project={project} />
-              </Link>
+              <div key={index} className="gsap-animate-up h-full">
+                <Link to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
+                  <ProjectCard project={project} />
+                </Link>
+              </div>
             )}
           </div >
-          <SeeAllButton text="See All Projects" onClick={() => navigate('/projects')} />
+          <div className="gsap-animate-up">
+            <SeeAllButton text="See All Projects" onClick={() => navigate('/projects')} />
+          </div>
         </section>
 
         {/* Recent Notebooks */}
         <section id="notebooks" ref={notebooksRef} className="w-full mt-10">
-          <h1 className={`header-3 ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Recent Notebooks</h1>
+          <h1 className={`header-3 gsap-animate-up ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Recent Notebooks</h1>
           <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(220px,1fr))] auto-cols-[220px]">
             {
               notebooksList.filter((n) => n.highlight).map((notebook, index) => (
-                <Link key={index} to={`/notebooks/${notebook.id}`} className="block h-full hover:scale-[1.01] transition-transform">
-                  <NotebookCard notebook={notebook} />
-                </Link>
+                <div key={index} className="gsap-animate-up h-full">
+                  <Link to={`/notebooks/${notebook.id}`} className="block h-full hover:scale-[1.01] transition-transform">
+                    <NotebookCard notebook={notebook} />
+                  </Link>
+                </div>
               )
               )
             }
           </div>
-          <SeeAllButton text="See All Notebooks" onClick={() => navigate('/notebooks')} />
+          <div className="gsap-animate-up">
+            <SeeAllButton text="See All Notebooks" onClick={() => navigate('/notebooks')} />
+          </div>
         </section>
 
         <section id="experiences" ref={experienceRef} className="flex flex-col md:flex-row gap-4 w-full mt-10">

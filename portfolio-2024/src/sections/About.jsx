@@ -22,14 +22,14 @@ const About = () => {
 
   return (
     <section id="about" ref={ref} className="bg-transparent">
-      <div className='w-full sm:flex flex-row h-fit items-start sm:gap-5 relative'>
+      <div className='w-full sm:flex flex-row h-fit items-start sm:gap-5 relative gsap-animate-up'>
         {/* Personal Picture Card */}
         {isCollapsed &&
           <PictureCard image={"./img/profile.jpg"} title={"Joshua Mistal"} description={"ML Specialization"} />
         }
 
         {/* Profile Heading */}
-        <div className='relative z-20'>
+        <div className='relative z-20 gsap-animate-up'>
           <div className="flex w-full h-full sm:justify-between justify-end my-1">
             {isCollapsed ? (
               <>
@@ -59,11 +59,13 @@ const About = () => {
 
 
       {/* skill grid  */}
-      <h1 className={`header-3 mt-10 ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Skills</h1>
+      <h1 className={`header-3 mt-10 gsap-animate-up ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Skills</h1>
       <div className="w-full grid gap-2 mt-2 grid-cols-[repeat(auto-fill,minmax(86px,1fr))] auto-cols-[86px]">
         {skills.map((skill, index) =>
         (
-          <SkillCard key={index} skill={skill} />
+          <div key={index} className="gsap-animate-up h-full">
+            <SkillCard skill={skill} />
+          </div>
         )
         )}
       </div>

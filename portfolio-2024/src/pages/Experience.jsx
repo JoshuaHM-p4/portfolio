@@ -24,21 +24,32 @@ const Experience = () => {
   const scrollerRef = useRef(null);
 
   useGSAP(() => {
-    const elements = gsap.utils.toArray('.gsap-animate-up');
-    elements.forEach((el) => {
-      gsap.from(el, {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          scroller: scrollerRef.current,
-          start: 'top 95%',
-          toggleActions: 'play none none none'
-        }
+    const timer = setTimeout(() => {
+      if (!scrollerRef.current) return;
+      const elements = gsap.utils.toArray('.gsap-animate-up');
+      elements.forEach((el) => {
+        gsap.fromTo(el, 
+          { y: 40, opacity: 0, scale: 0.95, filter: 'blur(8px)' },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              scroller: scrollerRef.current,
+              start: 'top 85%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
       });
-    });
+      ScrollTrigger.refresh();
+    }, 350); // wait for page-transition to finish
+
+    return () => clearTimeout(timer);
   }, { scope: containerRef, dependencies: [activeTab] });
 
   const list = activeTab === 'experience' ? experienceList : educationList;
