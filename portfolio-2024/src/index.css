@@ -178,7 +178,7 @@
     @apply bg-gradient-to-t from-[#A05645] via-[#FFA752] to-[#F9F5F1] -z-50 w-screen h-screen absolute bg-fixed;
   }
   .nav-button {
-    @apply p-2 items-center content-center align-middle justify-center md:rounded-2xl rounded-full flex w-full min-w-fit bg-white-500/10 border border-white-100 shadow-md hover:bg-white-500/60 hover:shadow-lg transition-all ease-in-out;
+    @apply p-2 items-center content-center align-middle justify-center md:rounded-2xl rounded-full flex w-full min-w-fit bg-white-500/10 border border-white-100 shadow-inner hover:bg-white-500/60 transition-all ease-in-out;
   }
   .nav-active {
     @apply bg-white-500/70;
@@ -218,7 +218,7 @@
     transform: translateX(0);
   }
   .water-fill-btn.is-active {
-    @apply text-white-100 shadow-lg border-transparent ring-0;
+    @apply text-white-100 border-transparent ring-0;
   }
 }
 
