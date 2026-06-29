@@ -4,10 +4,22 @@
         "title": "plant-disease-resnet",
         "description": "ResNet-based classifier for 15 plant disease categories across peppers, potatoes, and tomatoes. 96% accuracy with transfer learning and residual connections.",
         "technologies": [
-            { "name": "Python", "icon": "python" },
-            { "name": "PyTorch", "icon": "pytorch" },
-            { "name": "ResNet", "icon": "pytorch" },
-            { "name": "Transfer Learning", "icon": "python" }
+            {
+                "name": "Python",
+                "icon": "python"
+            },
+            {
+                "name": "PyTorch",
+                "icon": "pytorch"
+            },
+            {
+                "name": "ResNet",
+                "icon": "pytorch"
+            },
+            {
+                "name": "Transfer Learning",
+                "icon": "python"
+            }
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
@@ -19,10 +31,22 @@
         "title": "baybayin-cnn",
         "description": "Custom CNN in PyTorch for handwritten Baybayin script classification. Handles complex stroke patterns and diacritics (kudlits) on EMNIST-style data with 89.5% accuracy.",
         "technologies": [
-            { "name": "Python", "icon": "python" },
-            { "name": "PyTorch", "icon": "pytorch" },
-            { "name": "CNN", "icon": "pytorch" },
-            { "name": "OCR", "icon": "python" }
+            {
+                "name": "Python",
+                "icon": "python"
+            },
+            {
+                "name": "PyTorch",
+                "icon": "pytorch"
+            },
+            {
+                "name": "CNN",
+                "icon": "pytorch"
+            },
+            {
+                "name": "OCR",
+                "icon": "python"
+            }
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
@@ -34,10 +58,22 @@
         "title": "terraria-weapons-knn",
         "description": "Unsupervised KNN recommender that suggests similar Terraria weapons by analyzing weapon attributes. Includes extensive EDA and feature engineering with Scikit-Learn.",
         "technologies": [
-            { "name": "Python", "icon": "python" },
-            { "name": "Scikit-learn", "icon": "scikitlearn" },
-            { "name": "Pandas", "icon": "pandas" },
-            { "name": "Matplotlib", "icon": "matplotlib" }
+            {
+                "name": "Python",
+                "icon": "python"
+            },
+            {
+                "name": "Scikit-learn",
+                "icon": "scikitlearn"
+            },
+            {
+                "name": "Pandas",
+                "icon": "pandas"
+            },
+            {
+                "name": "Matplotlib",
+                "icon": "matplotlib"
+            }
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "",

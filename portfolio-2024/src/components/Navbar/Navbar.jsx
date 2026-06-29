@@ -8,6 +8,7 @@ import HomeIcon from "../../svg/home.svg?react";
 import AboutIcon from "../../svg/about.svg?react";
 import ExperienceIcon from "../../svg/experience.svg?react";
 import ProjectIcon from "../../svg/folder.svg?react";
+import NotebookIcon from "../../svg/notebook.svg?react";
 
 const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const { activeSection } = useSectionObserver();
@@ -19,12 +20,13 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
     { icon: <HomeIcon className="w-5 h-5 stroke-current fill-current transition-colors" />, text: 'home', destination: 'home', path: '/', showOnlyOffHome: true },
     { icon: <AboutIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'about', destination: 'about', path: '/about' },
     { icon: <ProjectIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'projects', destination: 'projects', path: '/projects' },
+    { icon: <NotebookIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'notebooks', destination: 'notebooks', path: '/notebooks' },
     { icon: <ExperienceIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'experiences', destination: 'experiences', path: '/experience' },
   ];
 
   return (
     <div
-      className={`${isCollapsed ? "w-14 bg-white/0 bg-transparent h-auto" : "h-full w-full bg-white-500/10 backdrop-blur-xl md:w-72 md:bg-transparent overflow-y-auto scrollbar-thin scrollbar-webkit rounded-xl md:rounded-xl"}
+      className={`${isCollapsed ? "w-14 bg-white/0 bg-transparent h-auto" : "h-full w-full bg-white-500/10 backdrop-blur-xl md:w-72 md:bg-transparent overflow-y-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none] rounded-xl md:rounded-xl"}
       fixed z-50 top-0 left-0 flex-col items-center transition-all duration-800 ease-in-out md:static  shadow-lg md:shadow-none`}
     >
       {/* Toggle Button */}
@@ -50,11 +52,11 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
           <p className="caption">Manila, PH</p>
         </div>
 
-        <div className="flex justify-between mt-2 md:mx-0 mx-5 h-10 border-b-2 rounded-md border-transparent hover:border-white-100 transition-all ease-in-out self-stretch">
-          <a className="nav-profile-link rounded-tl-md rounded-bl-md" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
+        <div className="flex justify-between mt-2 md:mx-0 mx-5 h-10 border-b-2 md:rounded-2xl rounded-full border-transparent hover:border-white-100 transition-all ease-in-out self-stretch">
+          <a className="nav-profile-link rounded-l-full md:rounded-l-2xl" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
             contact
           </a>
-          <a className="nav-profile-link rounded-tr-md rounded-br-md" href={linkData.resume} target="_blank" rel="noopener noreferrer">
+          <a className="nav-profile-link rounded-r-full md:rounded-r-2xl" href={linkData.resume} target="_blank" rel="noopener noreferrer">
             resume
           </a>
         </div>
