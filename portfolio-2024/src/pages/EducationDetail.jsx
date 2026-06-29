@@ -3,12 +3,21 @@ import educations from '../data/education.json';
 import Button from '../components/Button';
 import { useNavbar } from '../context/NavbarContext';
 import TechnologyCard from '../components/TechnologyCard';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const EducationDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { isCollapsed } = useNavbar();
   const education = educations.find((e) => String(e.id) === String(id));
+
+  useGSAP(() => {
+    gsap.fromTo('.gsap-mask-text',
+      { y: '100%', opacity: 0 },
+      { y: '0%', opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out' }
+    );
+  }, [education]);
 
   if (!education) {
     return (
@@ -30,7 +39,9 @@ const EducationDetail = () => {
 
         <div className="flex flex-col gap-3 mt-2">
           {education.longDescription?.map((desc, i) => (
-            <p key={i} className="paragraph text-justify">{desc}</p>
+            <div key={i} className="overflow-hidden">
+              <p className="paragraph text-justify gsap-mask-text">{desc}</p>
+            </div>
           ))}
         </div>
 

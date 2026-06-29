@@ -3,12 +3,21 @@ import experiences from '../data/experience.json';
 import Button from '../components/Button';
 import { useNavbar } from '../context/NavbarContext';
 import TechnologyCard from '../components/TechnologyCard';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const ExperienceDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { isCollapsed } = useNavbar();
   const experience = experiences.find((e) => String(e.id) === String(id));
+
+  useGSAP(() => {
+    gsap.fromTo('.gsap-mask-text',
+      { y: '100%', opacity: 0 },
+      { y: '0%', opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out' }
+    );
+  }, [experience]);
 
   if (!experience) {
     return (
@@ -30,7 +39,9 @@ const ExperienceDetail = () => {
 
         <div className="flex flex-col gap-3 mt-2">
           {experience.longDescription?.map((desc, i) => (
-            <p key={i} className="paragraph text-justify">{desc}</p>
+            <div key={i} className="overflow-hidden">
+              <p className="paragraph text-justify gsap-mask-text">{desc}</p>
+            </div>
           ))}
         </div>
 

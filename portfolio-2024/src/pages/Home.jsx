@@ -57,6 +57,25 @@ const Home = () => {
           }
         );
       });
+      const textElements = gsap.utils.toArray('.gsap-animate-text');
+      textElements.forEach((el) => {
+        gsap.fromTo(el, 
+          { y: -15, opacity: 0, filter: 'blur(10px)' },
+          {
+            y: 0,
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              scroller: scrollerRef.current,
+              start: 'top 85%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
+      });
       ScrollTrigger.refresh();
     }, 350); // wait for page-transition to finish
 
@@ -111,7 +130,7 @@ const Home = () => {
         <About />
 
         <section id="projects" ref={projectsRef} className="w-full mt-10">
-          <h1 className={`header-3 gsap-animate-up ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Things I&apos;ve Recently Built</h1>
+          <h1 className={`header-3 gsap-animate-text ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Things I&apos;ve Recently Built</h1>
           <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
             {projects.filter((p) => p.highlight).map((project, index) =>
               <div key={index} className="gsap-animate-up h-full">
@@ -128,7 +147,7 @@ const Home = () => {
 
         {/* Recent Notebooks */}
         <section id="notebooks" ref={notebooksRef} className="w-full mt-10">
-          <h1 className={`header-3 gsap-animate-up ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Recent Notebooks</h1>
+          <h1 className={`header-3 gsap-animate-text ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Recent Notebooks</h1>
           <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(220px,1fr))] auto-cols-[220px]">
             {
               notebooksList.filter((n) => n.highlight).map((notebook, index) => (

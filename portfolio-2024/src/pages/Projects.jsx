@@ -39,6 +39,25 @@ const Projects = () => {
           }
         );
       });
+      const textElements = gsap.utils.toArray('.gsap-animate-text');
+      textElements.forEach((el) => {
+        gsap.fromTo(el, 
+          { y: -15, opacity: 0, filter: 'blur(10px)' },
+          {
+            y: 0,
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              scroller: scrollerRef.current,
+              start: 'top 85%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
+      });
       ScrollTrigger.refresh();
     }, 350);
     return () => clearTimeout(timer);
@@ -48,7 +67,7 @@ const Projects = () => {
     <div ref={scrollerRef} className={`h-full w-full overflow-y-auto scrollbar-thin scrollbar-webkit md:mt-0 mt-4 px-4 py-5 ${isCollapsed ? 'opacity-100' : 'md:opacity-100 opacity-10'}`}>
       <div className={`flex flex-col items-start justify-start ${isCollapsed ? 'lg:w-[80%] mx-auto' : 'w-full'}`}>
         <Button className="w-auto !mt-0 mb-4 gsap-animate-up" text={"← Back to Home"} onClick={() => navigate('/')} />
-        <h1 className="header-2 mb-2 gsap-animate-up">All Projects</h1>
+        <h1 className="header-2 mb-2 gsap-animate-text">All Projects</h1>
         <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
           {projects.map((project, index) => (
             <div key={index} className="gsap-animate-up h-full">

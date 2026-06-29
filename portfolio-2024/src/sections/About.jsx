@@ -10,6 +10,8 @@ import LinkedInIcon from '../svg/linkedin.svg?react';
 import linkData from "../data/links.json";
 import skills from "../data/skills.json";
 import { useNavbar } from '../context/NavbarContext';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const About = () => {
   const { isCollapsed } = useNavbar();
@@ -20,6 +22,13 @@ const About = () => {
     if (inView) setActiveSection('about');
   }, [inView]);
 
+  useGSAP(() => {
+    gsap.fromTo('.gsap-title-horizontal', 
+      { x: -30, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }
+    );
+  }, [isCollapsed]);
+
   return (
     <section id="about" ref={ref} className="bg-transparent">
       <div className='w-full sm:flex flex-row h-fit items-start sm:gap-5 relative gsap-animate-up'>
@@ -29,14 +38,14 @@ const About = () => {
         }
 
         {/* Profile Heading */}
-        <div className='relative z-20 gsap-animate-up'>
+        <div className='relative z-20 gsap-animate-text'>
           <div className="flex w-full h-full sm:justify-between justify-end my-1">
             {isCollapsed ? (
               <>
-                <h1 className='header-1 mb-2 hidden sm:block'>Joshua Mistal</h1>
+                <h1 className='header-1 mb-2 hidden sm:block gsap-title-horizontal'>Joshua Mistal</h1>
               </>
             ) : (
-              <h1 className='header-2 mb-2'>About Me</h1>
+              <h1 className='header-2 mb-2 gsap-title-horizontal'>About Me</h1>
             )}
             <div className="gap-1 hidden sm:flex ">
               <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
@@ -59,7 +68,7 @@ const About = () => {
 
 
       {/* skill grid  */}
-      <h1 className={`header-3 mt-10 gsap-animate-up ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Skills</h1>
+      <h1 className={`header-3 mt-10 gsap-animate-text ${isCollapsed ? 'md:text-center' : 'md:text-start'}`}>Skills</h1>
       <div className="w-full grid gap-2 mt-2 grid-cols-[repeat(auto-fill,minmax(86px,1fr))] auto-cols-[86px]">
         {skills.map((skill, index) =>
         (
