@@ -16,12 +16,11 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const isHome = location.pathname === '/';
 
   const allNavItems = [
-    { icon: <HomeIcon className="w-5 h-5 text-black-400 stroke-current fill-current" />, text: 'home', destination: 'home', path: '/', showOnlyOffHome: true },
-    { icon: <AboutIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'about', destination: 'about', path: '/about' },
-    { icon: <ProjectIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'projects', destination: 'projects', path: '/projects' },
-    { icon: <ExperienceIcon className="w-5 h-5 text-black-400 stroke-current" />, text: 'experiences', destination: 'experiences', path: '/experience' },
+    { icon: <HomeIcon className="w-5 h-5 stroke-current fill-current transition-colors" />, text: 'home', destination: 'home', path: '/', showOnlyOffHome: true },
+    { icon: <AboutIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'about', destination: 'about', path: '/about' },
+    { icon: <ProjectIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'projects', destination: 'projects', path: '/projects' },
+    { icon: <ExperienceIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'experiences', destination: 'experiences', path: '/experience' },
   ];
-  const navItems = allNavItems.filter((item) => !(item.showOnlyOffHome && isHome));
 
   return (
     <div
@@ -40,46 +39,47 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
 
 
       {/* Profile Section */}
-      {!isCollapsed && (
-        <div className="flex flex-col h-fit w-full items-center">
-          <div className="rounded-full bg-slate-50 md:w-32 md:h-32 w-52 h-52 relative opacity-90">
-            <img src="./img/profile.jpg" alt="Profile" className="rounded-full w-full h-full object-cover" />
-          </div>
-
-          <div className="flex flex-col items-center mt-2">
-            <h1 className="header-2">Joshua Mistal</h1>
-            <p className="description font-bold">ML Specialization</p>
-            <p className="caption">Manila, PH</p>
-          </div>
-
-          <div className="flex justify-between mt-2 md:mx-0 mx-5 h-10 border-b-2 rounded-md border-transparent hover:border-white-100 transition-all ease-in-out self-stretch">
-            <a className="nav-profile-link rounded-tl-md rounded-bl-md" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
-              contact
-            </a>
-            <a className="nav-profile-link rounded-tr-md rounded-br-md" href={linkData.resume} target="_blank" rel="noopener noreferrer">
-              resume
-            </a>
-          </div>
+      <div className={`flex flex-col w-full items-center overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isCollapsed ? 'max-h-0 opacity-0 scale-90 mb-0' : 'max-h-[500px] opacity-100 scale-100 mb-5'}`}>
+        <div className="rounded-full bg-slate-50 md:w-32 md:h-32 w-52 h-52 relative opacity-90 mt-2">
+          <img src="./img/profile.jpg" alt="Profile" className="rounded-full w-full h-full object-cover" />
         </div>
-      )
-      }
+
+        <div className="flex flex-col items-center mt-2">
+          <h1 className="header-2">Joshua Mistal</h1>
+          <p className="description font-bold">ML Specialization</p>
+          <p className="caption">Manila, PH</p>
+        </div>
+
+        <div className="flex justify-between mt-2 md:mx-0 mx-5 h-10 border-b-2 rounded-md border-transparent hover:border-white-100 transition-all ease-in-out self-stretch">
+          <a className="nav-profile-link rounded-tl-md rounded-bl-md" href={linkData.linkedin} target="_blank" rel="noopener noreferrer">
+            contact
+          </a>
+          <a className="nav-profile-link rounded-tr-md rounded-br-md" href={linkData.resume} target="_blank" rel="noopener noreferrer">
+            resume
+          </a>
+        </div>
+      </div>
 
       {/* Nav Buttons */}
-      <div className={`${isCollapsed ? 'hidden mt-2 align-middle items-center' : 'flex'}  md:flex flex-col gap-2 p-5 md:w-full `}>
-        {navItems.map((item, index) => (
-          <NavButton
-            key={index}
-            icon={item.icon}
-            isCollapsed={isCollapsed}
-            text={item.text}
-            activeSection={activeSection}
-            destination={item.destination}
-            path={item.path}
-            isHome={isHome}
-            currentPath={location.pathname}
-            navigate={navigate}
-          />
-        ))}
+      <div className={`flex flex-col gap-2 transition-all duration-700 md:w-full ${isCollapsed ? 'p-2' : 'p-5'} w-full items-center`}>
+        {allNavItems.map((item, index) => {
+          const isHidden = item.showOnlyOffHome && isHome;
+          return (
+            <div key={index} className={`transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden w-full flex justify-center ${isHidden ? 'h-0 opacity-0 scale-50 m-0' : 'h-10 opacity-100 scale-100'}`}>
+              <NavButton
+                icon={item.icon}
+                isCollapsed={isCollapsed}
+                text={item.text}
+                activeSection={activeSection}
+                destination={item.destination}
+                path={item.path}
+                isHome={isHome}
+                currentPath={location.pathname}
+                navigate={navigate}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -120,30 +120,27 @@ const NavButton = ({ icon, text = 'tooltip text', destination, path, activeSecti
     }
   };
 
-  const baseClass = 'nav-link nav-button';
-  const activeClass = isActiveSection || isActivePage ? 'nav-active' : '';
+  const baseClass = 'nav-link nav-button water-fill-btn';
+  const activeClass = isActiveSection || isActivePage ? 'is-active' : '';
   const armedClass = armed ? 'nav-armed' : '';
-  const collapsedClass = isCollapsed ? 'opacity-50 rounded-2xl w-10 h-10' : '';
 
   return (
     <button
-      className={`${baseClass} ${activeClass} ${armedClass} ${collapsedClass}`}
+      className={`${baseClass} ${activeClass} ${armedClass} relative flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isCollapsed ? 'w-10 h-10 rounded-2xl mx-auto' : 'w-full h-10'}`}
       onClick={handleClick}
       title={armed ? `Open ${text} page` : path ? `Scroll to ${text} — click again to open page` : text}
       aria-label={armed ? `Open ${text} page` : text}
     >
-      {isCollapsed ? (
-        <span className="relative inline-flex">
-          {icon}
-          {armed && (
-            <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-black/70" />
-          )}
-        </span>
-      ) : (
-        <>
-          &#91; {text}{armed ? ' ›' : ''} &#93;
-        </>
-      )}
+      <div className={`absolute flex items-center justify-center transition-all duration-500 ${isCollapsed ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+        {icon}
+        {armed && (
+          <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-black/70" />
+        )}
+      </div>
+      
+      <div className={`absolute whitespace-nowrap transition-all duration-500 ${isCollapsed ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
+        &#91; {text}{armed ? ' ›' : ''} &#93;
+      </div>
     </button>
   );
 }
