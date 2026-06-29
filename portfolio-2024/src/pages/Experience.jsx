@@ -83,15 +83,15 @@ const Experience = () => {
           <div className="h-auto flex-1 gsap-animate-up">
             <div className="flex flex-col gap-1 w-full md:sticky md:top-0 z-10">
               <h1 className="header-3 text-center md:text-start">My Background Expertise</h1>
-              <div className="inline-flex shadow-xs w-full sticky top-0 md md:relative" role="group">
+              <div className="flex md:rounded-2xl rounded-full shadow-sm w-full bg-white-500/10 border border-white-100 mt-2 p-1 relative z-10" role="group">
                 <Button
-                  className="!rounded-none !rounded-l-full md:!rounded-l-2xl border-r-0 flex-1"
+                  className="!mt-0 !border-none !shadow-none !bg-transparent hover:!bg-white-500/20 md:rounded-xl rounded-full flex-1"
                   active={activeTab === 'experience'}
                   text={'Experience'}
                   onClick={() => setActiveTab('experience')}
                 />
                 <Button
-                  className="!rounded-none !rounded-r-full md:!rounded-r-2xl flex-1"
+                  className="!mt-0 !border-none !shadow-none !bg-transparent hover:!bg-white-500/20 md:rounded-xl rounded-full flex-1"
                   active={activeTab === 'education'}
                   text={'Education'}
                   onClick={() => setActiveTab('education')}
