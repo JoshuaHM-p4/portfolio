@@ -30,10 +30,11 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
       fixed z-50 top-0 left-0 flex-col items-center transition-all duration-800 ease-in-out md:static  shadow-lg md:shadow-none`}
     >
       {/* Toggle Button */}
-      <div className={`flex rounded-2xl ${isCollapsed ? 'justify-center p-2' : 'justify-end items-center py-2 hover:bg-white-500/50 hover:shadow-sm m-2'} w-auto h-10`}>
+      <div className={`flex items-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isCollapsed ? 'w-full h-14 justify-center mt-0' : 'w-[calc(100%-1rem)] mx-auto h-10 px-1 mt-2 bg-white-500/10 rounded-full shadow-inner'}`}>
+        <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isCollapsed ? 'w-[0%]' : 'w-full'}`} />
         <button
           onClick={toggleNavbar}
-          className={`${isCollapsed ? 'nav-button h-10' : 'md:hover:nav-button h-10'} w-14 max-w-14 hover:bg-white-500/50 rounded-2xl`}
+          className={`flex-shrink-0 flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white-500/80 hover:shadow-md ${isCollapsed ? 'h-10 w-10 rounded-2xl bg-transparent' : 'h-8 w-12 rounded-full bg-white-500/50 shadow-sm'}`}
         >
           {isCollapsed ? "⮞" : "⮜"}
         </button>
@@ -139,7 +140,7 @@ const NavButton = ({ icon, text = 'tooltip text', destination, path, activeSecti
           <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-black/70" />
         )}
       </div>
-      
+
       <div className={`absolute whitespace-nowrap transition-all duration-500 ${isCollapsed ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
         &#91; {text}{armed ? ' ›' : ''} &#93;
       </div>
