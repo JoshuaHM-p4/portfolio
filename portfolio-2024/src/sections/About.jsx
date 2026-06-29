@@ -33,21 +33,22 @@ const About = () => {
     <section id="about" ref={ref} className="bg-transparent">
       <div className='w-full sm:flex flex-row h-fit items-start sm:gap-5 relative gsap-animate-up'>
         {/* Personal Picture Card */}
-        {isCollapsed &&
-          <PictureCard image={"./img/profile.jpg"} title={"Joshua Mistal"} description={"ML Specialization"} />
-        }
+        <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden origin-left flex-shrink-0 ${isCollapsed ? 'w-56 opacity-100 scale-100' : 'w-0 opacity-0 scale-50'}`}>
+          <div className="w-56 h-full">
+            <PictureCard image={"./img/profile.jpg"} title={"Joshua Mistal"} description={"ML Specialization"} />
+          </div>
+        </div>
 
-        {/* Profile Heading */}
-        <div className='relative z-20 gsap-animate-text'>
-          <div className="flex w-full h-full sm:justify-between justify-end my-1">
+        <div className='relative z-20 gsap-animate-text flex-1'>
+          <div className="flex w-full h-full sm:justify-between justify-end my-1 items-center">
+            
             {isCollapsed ? (
-              <>
-                <h1 className='header-1 mb-2 hidden sm:block gsap-title-horizontal'>Joshua Mistal</h1>
-              </>
+              <h1 className='header-1 mb-2 hidden sm:block gsap-title-horizontal'>Joshua Mistal</h1>
             ) : (
               <h1 className='header-2 mb-2 gsap-title-horizontal'>About Me</h1>
             )}
-            <div className="gap-1 hidden sm:flex ">
+
+            <div className="gap-1 hidden sm:flex z-10">
               <a href={linkData.linkedin} target="_blank" rel="noopener noreferrer" className="nav-profile-link">
                 <LinkedInIcon className="linkIcon" />
               </a>
