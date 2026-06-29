@@ -12,7 +12,11 @@
             "HTML/CSS/JS",
             "Mathematical modeling",
             "Team collaboration"
-        ]
+        ],
+        "longDescription": [
+            "Currently pursuing a degree in Computer Engineering with a focus on software development and machine learning."
+        ],
+        "id": "1"
     },
     {
         "title": "Science Technology, Engineering and Mathematics (STEM) Track",
@@ -24,6 +28,10 @@
             "Scratch",
             "Scientific Method",
             "Technical Writing"
-        ]
+        ],
+        "longDescription": [
+            "Completed the STEM track with a focus on advanced mathematics and programming, laying a strong foundation for further studies in computer engineering."
+        ],
+        "id": "2"
     }
 ]

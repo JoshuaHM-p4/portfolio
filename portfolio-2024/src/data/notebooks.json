@@ -1,72 +1,83 @@
 [
-  {
-    "id": 1,
-    "title": "data-train-ml",
-    "description": "A comprehensive data science notebook that covers data analysis, visualization, and machine learning.",
-    "technologies": [
-      {
-        "name": "Python",
-        "icon": "python"
-      },
-      {
-        "name": "Pandas",
-        "icon": "pandas"
-      },
-      {
-        "name": "Matplotlib",
-        "icon": "matplotlib"
-      },
-      {
-        "name": "Seaborn",
-        "icon": "seaborn"
-      }
-    ],
-    "links": [
-      {
-        "label": "GitHub",
-        "url": "https://www.github.com/JoshuaHM-p4/kaggle-notebooks",
-        "icon": "github"
-      },
-      {
-        "label": "Kaggle",
-        "url": "url-to-live-demo",
-        "icon": "kaggle"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "machine-training",
-    "description": "An interactive notebook demonstrating various machine learning algorithms and their applications.",
-    "technologies": [
-      {
-        "name": "Python",
-        "icon": "python"
-      },
-      {
-        "name": "Scikit-learn",
-        "icon": "scikitlearn"
-      },
-      {
-        "name": "TensorFlow",
-        "icon": "tensorflow"
-      },
-      {
-        "name": "Keras",
-        "icon": "keras"
-      }
-    ],
-    "links": [
-      {
-        "label": "GitHub",
-        "url": "url-to-github-repo",
-        "icon": "github"
-      },
-      {
-        "label": "Kaggle",
-        "url": "url-to-live-demo",
-        "icon": "kaggle"
-      }
-    ]
-  }
+    {
+        "id": 1,
+        "title": "plant-disease-resnet",
+        "description": "ResNet-based classifier for 15 plant disease categories across peppers, potatoes, and tomatoes. 96% accuracy with transfer learning and residual connections.",
+        "technologies": [
+            {
+                "name": "Python",
+                "icon": "python"
+            },
+            {
+                "name": "PyTorch",
+                "icon": "pytorch"
+            },
+            {
+                "name": "ResNet",
+                "icon": "pytorch"
+            },
+            {
+                "name": "Transfer Learning",
+                "icon": "python"
+            }
+        ],
+        "kaggle": "https://www.kaggle.com/joshuamistal",
+        "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
+        "streamlit": "",
+        "highlight": true
+    },
+    {
+        "id": 2,
+        "title": "baybayin-cnn",
+        "description": "Custom CNN in PyTorch for handwritten Baybayin script classification. Handles complex stroke patterns and diacritics (kudlits) on EMNIST-style data with 89.5% accuracy.",
+        "technologies": [
+            {
+                "name": "Python",
+                "icon": "python"
+            },
+            {
+                "name": "PyTorch",
+                "icon": "pytorch"
+            },
+            {
+                "name": "CNN",
+                "icon": "pytorch"
+            },
+            {
+                "name": "OCR",
+                "icon": "python"
+            }
+        ],
+        "kaggle": "https://www.kaggle.com/joshuamistal",
+        "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
+        "streamlit": "",
+        "highlight": true
+    },
+    {
+        "id": 3,
+        "title": "terraria-weapons-knn",
+        "description": "Unsupervised KNN recommender that suggests similar Terraria weapons by analyzing weapon attributes. Includes extensive EDA and feature engineering with Scikit-Learn.",
+        "technologies": [
+            {
+                "name": "Python",
+                "icon": "python"
+            },
+            {
+                "name": "Scikit-learn",
+                "icon": "scikitlearn"
+            },
+            {
+                "name": "Pandas",
+                "icon": "pandas"
+            },
+            {
+                "name": "Matplotlib",
+                "icon": "matplotlib"
+            }
+        ],
+        "kaggle": "https://www.kaggle.com/joshuamistal",
+        "huggingface": "",
+        "streamlit": "https://terraria-weapons-knn.streamlit.app/",
+        "highlight": true
+    }
 ]

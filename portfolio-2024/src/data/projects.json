@@ -1,5 +1,260 @@
 [
-    { "name": "Image Classification", "date": "January 20, 2025", "description": "Classifying images using Convolutional Neural Networks", "img": "img/yolo.png", "codeLink": "https://example.com", "demoLink": "https://example.com", "technologies": ["Tensorflow", "React", "Tailwind"] },
-    { "name": "Image Generation", "date": "January 20, 2025", "description": "Generating images using GANs", "img": "img/yolo.png", "codeLink": "https://example.com", "demoLink": "https://example.com", "technologies": ["React", "Tailwind"] },
-    { "name": "Object Detection", "date": "January 20, 2025", "description": "Detecting objects in images using YOLO", "img": "img/yolo.png", "codeLink": "https://example.com", "demoLink": "https://example.com", "technologies": ["React", "Tailwind"] }
+  {
+    "name": "sema-sidlak",
+    "date": "2026",
+    "description": "An MLOps pipeline for semantic segmentation combining SAM 3.1 (Segment Anything Model) and YOLOv8 for automated track annotation. Engineered for high-performance visual analysis of racing circuits, implementing a production-ready workflow for real-time segmentation and object detection.",
+    "img": "/img/sema_pipeline.png",
+    "video": "/video/annotated-silesia-track.mp4",
+    "codeLink": "",
+    "demoLink": "",
+    "technologies": [
+      "Computer Vision",
+      "Semantic Segmentation",
+      "SAM 3.1",
+      "YOLOv8",
+      "MLOps",
+      "PyTorch",
+      "OpenCV",
+      "Python"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "IskoChatAI",
+    "date": "2025",
+    "description": "A specialized RAG-based chatbot designed to navigate the complexities of Philippine scholarship and enrollment processes. Engineered a system that retrieves real-time data from Google Docs and Custom Search APIs to provide accurate, 'Taglish' responses.",
+    "img": "/img/iskochat.png",
+    "codeLink": "https://github.com/DavidBatoDev/iskochatai",
+    "demoLink": "",
+    "technologies": [
+      "Generative AI & RAG",
+      "Data Engineering",
+      "Prompt Engineering",
+      "Gemini API",
+      "Google Cloud",
+      "Custom Search API"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Underwater Sealife Crab and Solid Waste Detection (YOLOv8)",
+    "date": "2025",
+    "description": "Freelance project implementing a real-time object detection system using YOLOv8 to identify and differentiate between marine life (crabs) and anthropogenic solid waste in underwater environments. Trained on a public 10k image dataset to address the visual challenges of aquatic environments.",
+    "img": "/img/underwater-sealife.png",
+    "codeLink": "",
+    "demoLink": "",
+    "technologies": [
+      "Object Detection",
+      "Computer Vision (Marine)",
+      "Data Annotation & Augmentation",
+      "Model Deployment",
+      "YOLOv8"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Plant Disease Classification using ResNet",
+    "date": "2025",
+    "description": "A ResNet-powered deep learning project that automates the classification of 15 plant disease categories across peppers, potatoes, and tomatoes. Leveraging Residual Learning and Computer Vision, the model achieves 96% accuracy, providing a high-precision solution for early crop diagnosis.",
+    "img": "/img/plant-disease.png",
+    "codeLink": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
+    "demoLink": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
+    "technologies": [
+      "Computer Vision",
+      "CNN Residual",
+      "Network Architecture",
+      "Transfer Learning",
+      "Image Preprocessing",
+      "Multi-class Classification"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Handwritten Baybayin Classification using Custom CNN",
+    "date": "2025",
+    "description": "A custom CNN in PyTorch that classifies handwritten Baybayin script, a traditional pre-colonial Philippine writing system. Using an EMNIST-style dataset, the model handles complex stroke patterns and diacritics (kudlits), achieving an overall accuracy of 89.5%.",
+    "img": "/img/handwritten-baybayin.png",
+    "codeLink": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
+    "demoLink": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
+    "technologies": [
+      "Computer Vision",
+      "Deep Learning Architecture",
+      "PyTorch",
+      "OCR & Script Analysis",
+      "Performance Evaluation"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Unsupervised KNN Recommender System",
+    "date": "2024",
+    "description": "An Unsupervised KNN Recommender System that identifies similar weaponry within the game Terraria. Built with Scikit-Learn, the model analyzes weapon attributes to suggest mathematically 'near' alternatives to a given item. Includes extensive Exploratory Data Analysis (EDA).",
+    "img": "/img/terraria-weapon.png",
+    "codeLink": "https://terraria-weapons-knn.streamlit.app/",
+    "demoLink": "https://terraria-weapons-knn.streamlit.app/",
+    "technologies": [
+      "Unsupervised Learning",
+      "Feature Engineering",
+      "Exploratory Data Analysis (EDA)",
+      "Recommender Systems",
+      "Scikit-Learn"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "PUP Graduate School Alumni Website",
+    "date": "2022",
+    "description": "Freelance project as a core Frontend Developer in a three-person team. Co-engineered and deployed a high-impact alumni portal designed for Tracer Study Research. The platform successfully onboarded 130+ alumni, earning client praise for its intuitive UI and data collection efficiency.",
+    "img": "/img/pupgs.png",
+    "codeLink": "",
+    "demoLink": "https://pupgs.com/",
+    "technologies": [
+      "Frontend Engineering",
+      "JavaScript",
+      "React",
+      "UI/UX",
+      "Collaborative Development",
+      "Product Lifecycle"
+    ],
+    "highlight": true
+  },
+  {
+    "name": "Tinig Manila: AI Voice Hotline for Filipino Senior Citizens",
+    "date": "2026",
+    "description": "A toll-free conversational AI hotline that helps Filipino senior citizens access eGovPH government services in natural Tagalog/Taglish. Built as a monorepo: a Node.js/Express backend with a transport-agnostic agent layer (Groq llama-3.3-70b for replies, llama-3.1-8b-instant for identity extraction + analytics) wired to Twilio's Filipino TTS/STT for phone callers, plus a React/Vite dashboard streaming live transcripts, caller profiles, and sentiment analytics over Socket.io. Stays entirely on free tiers (Groq + Twilio trial) while supporting fuzzy Tagalog name/birthdate matching against a mock eGovPH database.",
+    "img": "/img/tinig-manila.png",
+    "codeLink": "https://github.com/Alexandre-Nevero/tinig-manila",
+    "demoLink": "",
+    "highlight": false,
+    "technologies": [
+      "Node.js & Express",
+      "Groq LLM API",
+      "Twilio Voice (Filipino TTS/STT)",
+      "Socket.io",
+      "React & Vite",
+      "Tailwind CSS",
+      "Conversational AI",
+      "Tagalog NLP"
+    ]
+  },
+  {
+    "name": "Kiro: Immersive Portfolio for AI/ML Engineering",
+    "date": "2026",
+    "description": "A high-performance, visually immersive portfolio engineered to showcase advanced AI and Computer Vision research. Developed with Next.js 15 and GSAP, it features a complex 3D orbiting collage in the Hero section, a 'glass-morphic' UI utilizing refractive shaders, and a fully responsive layout. The project emphasizes a professional-grade aesthetic to highlight technical expertise in deep learning, face-embedding models, and RAG systems.",
+    "img": "/img/kiro-portfolio.png",
+    "codeLink": "https://github.com/JoshuaHM-p4/portfolio-aws-kiro",
+    "demoLink": "https://d3nmv1fwrvv40c.cloudfront.net/",
+    "highlight": false,
+    "technologies": [
+      "Next.js 15",
+      "React & TypeScript",
+      "GSAP (GreenSock)",
+      "Tailwind CSS",
+      "Refractive Shaders",
+      "Immersive UI/UX Design",
+      "Responsive Engineering"
+    ]
+  },
+  {
+    "name": "Luna: Dog Health Expert RAG System",
+    "date": "2026",
+    "description": "An advanced Retrieval-Augmented Generation (RAG) system providing expert-level advice on canine health, behavior, and nutrition. Engineered a high-performance pipeline that ingests authoritative medical guidelines (AAHA, AVMA, WSAVA) into a ChromaDB vector store. Features a FastAPI backend and a Streamlit UI, achieving 100% context precision by utilizing Gemini 2.5 Flash for nuanced, safety-first response generation with integrated veterinary disclaimers.",
+    "img": "/img/luna-rag.png",
+    "codeLink": "https://github.com/JoshuaHM-p4/luna-api-streamlit",
+    "demoLink": "",
+    "highlight": false,
+    "technologies": [
+      "Generative AI & RAG",
+      "LangChain & LlamaIndex",
+      "FastAPI & Streamlit",
+      "ChromaDB",
+      "Gemini API",
+      "NLP Evaluation Pipelines",
+      "Vector Database Management"
+    ]
+  },
+  {
+    "name": "Data Structures & Algorithms Visualizer",
+    "date": "2025",
+    "description": "An immersive Data Structures and Algorithms visualizer that transforms abstract computer science concepts into interactive, game-like experiences. Built with React and Tailwind CSS, it features dynamic visualizations for key data structures (Stacks, Queues, Binary Search Trees) and sorting algorithms (Quick, Merge, Heap, etc.). The application incorporates a rich aesthetic using assets and soundtracks from Stardew Valley, Mario, and Streetfighter, enhancing user engagement through gamified learning and the Web Audio API.",
+    "img": "/img/dsa-visualizer.png",
+    "codeLink": "https://github.com/JoshuaHM-p4/data-structures-vis-project",
+    "demoLink": "https://rs-cs.vercel.app/",
+    "highlight": false,
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "Vite",
+      "Data Structures",
+      "Algorithms",
+      "Web Audio API",
+      "CSS Animations"
+    ]
+  },
+  {
+    "name": "PUP SIS Grades & Contact Grabber",
+    "date": "2024",
+    "description": "A specialized Chrome extension engineered to automate the extraction and analysis of academic records from the Polytechnic University of the Philippines Student Information System (PUPSIS). It features a robust web scraping engine that parses complex SIS tables to calculate GWA (General Weighted Average) in real-time, determine Latin Honor eligibility, and track scholarship maintenance requirements. Built with Manifest V3, it provides a seamless user experience for students to manage their academic data.",
+    "img": "/img/pupsis-grabber.png",
+    "codeLink": "https://github.com/JoshuaHM-p4/PUPSIS-Grades-and-Contact-Grabber",
+    "demoLink": "",
+    "highlight": false,
+    "technologies": [
+      "Chrome Extension (Manifest V3)",
+      "JavaScript (ES6+)",
+      "DOM Scraping & Parsing",
+      "GWA Calculation Algorithms",
+      "HTML5 & CSS3",
+      "Browser Scripting API"
+    ]
+  },
+  {
+    "name": "Space Shuttle Endeavor",
+    "date": "2020",
+    "description": "A physics-driven space shuttle simulation that challenges players to navigate through orbital obstacles. Developed with Pygame, it features realistic shuttle movement, multi-stage rocket detachment mechanics (boosters and tank), and an immersive audio-visual experience. This project emphasizes accurate physics integration and dynamic object generation.",
+    "img": "/img/shuttle-endeavor.png",
+    "codeLink": "https://github.com/JoshuaHM-p4/shuttle-game-project",
+    "demoLink": "https://papesjoshers.itch.io/space-shuttle-endeavor",
+    "highlight": false,
+    "technologies": [
+      "Python",
+      "Pygame",
+      "Physics Simulation",
+      "Game Design",
+      "Sound Engineering"
+    ]
+  },
+  {
+    "name": "Pygame Picross",
+    "date": "2020",
+    "description": "A faithful recreation of the classic 'Picross' (Nonograms) puzzle game developed using Pygame and NumPy. Features include a Level Editor (Creative Mode) for custom puzzle creation and a Solve Mode with intuitive grid-based interactions. Built as a foundational project to master game loop logic and state management.",
+    "img": "/img/pygame-picross.png",
+    "codeLink": "https://github.com/JoshuaHM-p4/pygame-picross",
+    "demoLink": "",
+    "highlight": false,
+    "technologies": [
+      "Python",
+      "Pygame",
+      "NumPy",
+      "Grid-based Logic",
+      "Game State Management"
+    ]
+  },
+  {
+    "name": "Speed Type Pygame",
+    "date": "2020",
+    "description": "A minimalist typing speed trainer inspired by typings.gg, designed for offline accessibility. Built with Pygame, it utilizes the GMK Dots color scheme for a sleek aesthetic. The application features real-time performance tracking, multiple difficulty modes, and a responsive typing engine.",
+    "img": "/img/speed-type.png",
+    "codeLink": "https://github.com/JoshuaHM-p4/speed-type-pygame",
+    "demoLink": "",
+    "highlight": false,
+    "technologies": [
+      "Python",
+      "Pygame",
+      "UI/UX Design",
+      "Typing Mechanics",
+      "Real-time Data Processing"
+    ]
+  }
 ]
