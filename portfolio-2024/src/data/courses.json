@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "CCNA: Switching, Routing, and Wireless Essentials",
+    "issuer": "Cisco Networking Academy (via PUP Sta. Mesa – College of Engineering)",
+    "date": "Jun 12, 2026",
+    "img": "/certificates/img/ccna-switching-routing-wireless-essentials.png",
+    "pdf": "/certificates/pdf/ccna-switching-routing-wireless-essentials.pdf",
+    "credentialLink": ""
+  },
+  {
+    "id": 2,
+    "title": "Deep Learning for Images with PyTorch",
+    "issuer": "DataCamp",
+    "date": "Jul 6, 2025",
+    "img": "/certificates/img/deep-learning-images.png",
+    "pdf": "/certificates/pdf/deep-learning-images.pdf",
+    "credentialLink": ""
+  },
+  {
+    "id": 3,
+    "title": "Image Processing in Python",
+    "issuer": "DataCamp",
+    "date": "Jul 11, 2025",
+    "img": "/certificates/img/image-processing-python.png",
+    "pdf": "/certificates/pdf/image-processing-python.pdf",
+    "credentialLink": ""
+  },
+  {
+    "id": 4,
+    "title": "Intermediate Deep Learning with PyTorch",
+    "issuer": "DataCamp",
+    "date": "Nov 28, 2024",
+    "img": "/certificates/img/intermediate-deep-learning-with-pytorch.png",
+    "pdf": "/certificates/pdf/intermediate-deep-learning-with-pytorch.pdf",
+    "credentialLink": ""
+  },
+  {
+    "id": 5,
+    "title": "Machine Learning Specialization",
+    "issuer": "DeepLearning.AI & Stanford Online (via Coursera)",
+    "date": "Aug 24, 2024",
+    "img": "/certificates/img/machine-learning-specialization.png",
+    "pdf": "/certificates/pdf/machine-learning-specialization.pdf",
+    "credentialLink": "https://coursera.org/verify/specialization/IUSRFKDYUNDB"
+  },
+  {
+    "id": 6,
+    "title": "Introduction to Machine Learning on AWS",
+    "issuer": "AWS Training and Certification (via Coursera)",
+    "date": "Apr 17, 2025",
+    "img": "/certificates/img/machine-learning-with-aws.png",
+    "pdf": "/certificates/pdf/machine-learning-with-aws.pdf",
+    "credentialLink": "https://coursera.org/verify/KOIPSL7VD6ME"
+  }
+]

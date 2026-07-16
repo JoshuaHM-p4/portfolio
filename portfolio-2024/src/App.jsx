@@ -12,6 +12,8 @@ import Notebooks from './pages/Notebooks';
 import NotebookDetail from './pages/NotebookDetail';
 import ExperienceDetail from './pages/ExperienceDetail';
 import EducationDetail from './pages/EducationDetail';
+import Courses from './pages/Courses';
+import Community from './pages/Community';
 
 const App = () => {
   return (
@@ -27,6 +29,8 @@ const App = () => {
           <Route path="notebooks/:id" element={<NotebookDetail />} />
           <Route path="experience/:id" element={<ExperienceDetail />} />
           <Route path="education/:id" element={<EducationDetail />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="community" element={<Community />} />
         </Route>
       </Routes>
     </Router>

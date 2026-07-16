@@ -33,6 +33,12 @@ const ExperienceDetail = () => {
       <div className={`flex flex-col items-start ${isCollapsed ? 'lg:w-[80%] mx-auto' : 'w-full'}`}>
         <Button className="w-auto !mt-0 mb-4" text={"← Experience & Education"} onClick={() => navigate('/experience')} />
 
+        {experience.img && (
+          <div className="w-full h-72 mb-4 overflow-hidden rounded-lg">
+            <img src={experience.img} alt={experience.company} className="w-full h-full object-cover" />
+          </div>
+        )}
+
         <p className="date">{experience.date}</p>
         <h1 className="header-2 text-start mt-1">{experience.title}</h1>
         <h2 className="header-3 text-start mb-4 text-blue-400">{experience.company}</h2>

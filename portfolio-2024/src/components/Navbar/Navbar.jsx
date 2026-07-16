@@ -9,6 +9,8 @@ import AboutIcon from "../../svg/about.svg?react";
 import ExperienceIcon from "../../svg/experience.svg?react";
 import ProjectIcon from "../../svg/folder.svg?react";
 import NotebookIcon from "../../svg/notebook.svg?react";
+import CoursesIcon from "../../svg/courses.svg?react";
+import CommunityIcon from "../../svg/community.svg?react";
 
 const Navbar = ({ isCollapsed, toggleNavbar }) => {
   const { activeSection } = useSectionObserver();
@@ -22,6 +24,8 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
     { icon: <ProjectIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'projects', destination: 'projects', path: '/projects' },
     { icon: <NotebookIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'notebooks', destination: 'notebooks', path: '/notebooks' },
     { icon: <ExperienceIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'experiences', destination: 'experiences', path: '/experience' },
+    { icon: <CoursesIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'courses', destination: 'courses', path: '/courses' },
+    { icon: <CommunityIcon className="w-5 h-5 stroke-current transition-colors" />, text: 'community', destination: 'community', path: '/community' },
   ];
 
   return (

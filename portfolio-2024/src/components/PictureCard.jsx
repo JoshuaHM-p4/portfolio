@@ -25,8 +25,8 @@ const PictureCard = ({ image, title, description }) => {
         `}
       />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+      {/* Gradient Overlay (mobile-only, backs the caption below) */}
+      <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
 
       {/* Optional content */}
       <div className="sm:hidden absolute bottom-0 z-20 text-white p-4 w-full">

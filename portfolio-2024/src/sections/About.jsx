@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { useSectionObserver } from '../context/SectionObserverContext';
 import Button from '../components/Button';
 import SkillCard from '../components/SkillCard';
 import PictureCard from '../components/PictureCard';
@@ -15,12 +12,6 @@ import { useGSAP } from '@gsap/react';
 
 const About = () => {
   const { isCollapsed } = useNavbar();
-  const { ref, inView } = useInView({ threshold: 0.5 });
-  const { setActiveSection } = useSectionObserver();
-
-  useEffect(() => {
-    if (inView) setActiveSection('about');
-  }, [inView]);
 
   useGSAP(() => {
     gsap.fromTo('.gsap-title-horizontal', 
@@ -30,7 +21,7 @@ const About = () => {
   }, [isCollapsed]);
 
   return (
-    <section id="about" ref={ref} className="bg-transparent">
+    <section id="about" className="bg-transparent lg:min-h-[80vh] lg:flex lg:flex-col lg:justify-center">
       <div className='w-full sm:flex flex-row h-fit items-start sm:gap-5 relative gsap-animate-up'>
         {/* Personal Picture Card */}
         <div className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden origin-left flex-shrink-0 ${isCollapsed ? 'w-56 opacity-100 scale-100' : 'w-0 opacity-0 scale-50'}`}>

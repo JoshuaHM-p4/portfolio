@@ -23,7 +23,7 @@
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
-        "streamlit": "",
+        "streamlit": "https://huggingface.co/spaces/JoshuaHM-p4/plant-disease",
         "highlight": true
     },
     {
@@ -50,7 +50,7 @@
         ],
         "kaggle": "https://www.kaggle.com/joshuamistal",
         "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
-        "streamlit": "",
+        "streamlit": "https://huggingface.co/spaces/JoshuaHM-p4/baybayin-cnn",
         "highlight": true
     },
     {
@@ -79,5 +79,32 @@
         "huggingface": "",
         "streamlit": "https://terraria-weapons-knn.streamlit.app/",
         "highlight": true
+    },
+    {
+        "id": 4,
+        "title": "gtsrb-alexnet-classifier",
+        "description": "AlexNet-based CNN trained on the German Traffic Sign Recognition Benchmark (GTSRB) to classify traffic sign images across dozens of categories for autonomous driving and ADAS applications.",
+        "technologies": [
+            {
+                "name": "Python",
+                "icon": "python"
+            },
+            {
+                "name": "PyTorch",
+                "icon": "pytorch"
+            },
+            {
+                "name": "AlexNet",
+                "icon": "pytorch"
+            },
+            {
+                "name": "CNN",
+                "icon": "pytorch"
+            }
+        ],
+        "kaggle": "https://www.kaggle.com/joshuamistal",
+        "huggingface": "https://huggingface.co/spaces/JoshuaHM-p4/gtsrb-alexnet-classifier",
+        "streamlit": "https://huggingface.co/spaces/JoshuaHM-p4/gtsrb-alexnet-classifier",
+        "highlight": false
     }
 ]
