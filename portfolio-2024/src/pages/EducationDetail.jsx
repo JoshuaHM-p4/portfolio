@@ -35,7 +35,7 @@ const EducationDetail = () => {
 
         <p className="date">{education.date}</p>
         <h1 className="header-2 text-start mt-1">{education.title}</h1>
-        <h2 className="header-3 text-start mb-4 text-blue-400">{education.institution}</h2>
+        <h2 className="header-3 text-start mb-4">{education.institution}</h2>
 
         <div className="flex flex-col gap-3 mt-2">
           {education.longDescription?.map((desc, i) => (

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "arduino-day",
+    "name": "Arduino Day",
+    "date": "2026-03",
+    "cover": "/gallery/arduino-day/cover.webp",
+    "photos": [
+      "/gallery/arduino-day/01.webp",
+      "/gallery/arduino-day/02.webp",
+      "/gallery/arduino-day/03.webp",
+      "/gallery/arduino-day/04.webp",
+      "/gallery/arduino-day/05.webp",
+      "/gallery/arduino-day/06.webp",
+      "/gallery/arduino-day/07.webp",
+      "/gallery/arduino-day/08.webp",
+      "/gallery/arduino-day/09.webp",
+      "/gallery/arduino-day/10.webp",
+      "/gallery/arduino-day/11.webp",
+      "/gallery/arduino-day/12.webp",
+      "/gallery/arduino-day/13.webp",
+      "/gallery/arduino-day/14.webp"
+    ],
+    "category": "Event"
+  },
+  {
+    "id": "awscc-aws-dai",
+    "name": "AWSCC PUP \u2014 AWS Data & AI Workshop",
+    "date": "2025-10",
+    "cover": "/gallery/awscc-aws-dai/cover.webp",
+    "photos": [
+      "/gallery/awscc-aws-dai/01.webp",
+      "/gallery/awscc-aws-dai/02.webp",
+      "/gallery/awscc-aws-dai/03.webp",
+      "/gallery/awscc-aws-dai/04.webp",
+      "/gallery/awscc-aws-dai/05.webp",
+      "/gallery/awscc-aws-dai/06.webp",
+      "/gallery/awscc-aws-dai/07.webp",
+      "/gallery/awscc-aws-dai/08.webp",
+      "/gallery/awscc-aws-dai/09.webp",
+      "/gallery/awscc-aws-dai/10.webp",
+      "/gallery/awscc-aws-dai/11.webp",
+      "/gallery/awscc-aws-dai/12.webp",
+      "/gallery/awscc-aws-dai/13.webp",
+      "/gallery/awscc-aws-dai/14.webp",
+      "/gallery/awscc-aws-dai/15.webp"
+    ],
+    "category": "Organization"
+  },
+  {
+    "id": "academic-innovation-challenge-2026",
+    "name": "2026 Academic Innovation Challenge",
+    "date": "2026-01",
+    "cover": "/gallery/academic-innovation-challenge-2026/cover.webp",
+    "photos": [
+      "/gallery/academic-innovation-challenge-2026/01.webp"
+    ],
+    "category": "Event"
+  },
+  {
+    "id": "agora-hackathon-philippines-2026",
+    "name": "Agora Hackathon Philippines 2026",
+    "date": "2026-01",
+    "cover": "/gallery/agora-hackathon-philippines-2026/cover.webp",
+    "photos": [
+      "/gallery/agora-hackathon-philippines-2026/01.webp"
+    ],
+    "category": "Event"
+  },
+  {
+    "id": "build-on-stellar-bootcamp-manila",
+    "name": "Build on Stellar Bootcamp Manila",
+    "date": "2026-01",
+    "cover": "/gallery/build-on-stellar-bootcamp-manila/cover.webp",
+    "photos": [
+      "/gallery/build-on-stellar-bootcamp-manila/01.webp"
+    ],
+    "category": "Event"
+  },
+  {
+    "id": "cursor-manila-hack-sprint",
+    "name": "Cursor Manila Hack Sprint",
+    "date": "2026-01",
+    "cover": "/gallery/cursor-manila-hack-sprint/cover.webp",
+    "photos": [
+      "/gallery/cursor-manila-hack-sprint/01.webp"
+    ],
+    "category": "Event"
+  },
+  {
+    "id": "gdg-pup",
+    "name": "Google Developer Groups PUP",
+    "date": "2024-10",
+    "cover": "/gallery/gdg-pup/cover.webp",
+    "photos": [
+      "/gallery/gdg-pup/01.webp",
+      "/gallery/gdg-pup/02.webp",
+      "/gallery/gdg-pup/03.webp",
+      "/gallery/gdg-pup/04.webp",
+      "/gallery/gdg-pup/05.webp",
+      "/gallery/gdg-pup/06.webp",
+      "/gallery/gdg-pup/07.webp",
+      "/gallery/gdg-pup/08.webp",
+      "/gallery/gdg-pup/09.webp",
+      "/gallery/gdg-pup/10.webp",
+      "/gallery/gdg-pup/11.webp"
+    ],
+    "category": "Organization"
+  },
+  {
+    "id": "community-workshops",
+    "name": "Community Workshops",
+    "date": "2024-06",
+    "cover": "/gallery/community-workshops/cover.webp",
+    "photos": [
+      "/gallery/community-workshops/01.webp",
+      "/gallery/community-workshops/02.webp",
+      "/gallery/community-workshops/03.webp",
+      "/gallery/community-workshops/04.webp"
+    ],
+    "category": "Organization"
+  }
+]

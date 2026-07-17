@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const NavbarContext = createContext();
 
 export const NavbarProvider = ({ children }) => {
-  const [isCollapsed, setIsCollapsed] = useState(window.innerWidth < 768);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleNavbar = () => {
     console.log('Navbar toggled');
@@ -12,18 +12,14 @@ export const NavbarProvider = ({ children }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      // Collapse if below md (768px), else expand
+      // Always force collapsed on mobile widths; never auto-expand on resize,
+      // so collapsed stays the default until the user manually toggles it.
       if (window.innerWidth < 768) {
         setIsCollapsed(true);
-      } else {
-        setIsCollapsed(false);
       }
     };
 
     window.addEventListener('resize', handleResize);
-
-    // Set initial state
-    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);

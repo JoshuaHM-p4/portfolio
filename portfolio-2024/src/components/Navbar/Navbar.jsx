@@ -48,7 +48,7 @@ const Navbar = ({ isCollapsed, toggleNavbar }) => {
       {/* Profile Section */}
       <div className={`flex flex-col w-full items-center overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isCollapsed ? 'max-h-0 opacity-0 scale-90 mb-0' : 'max-h-[500px] opacity-100 scale-100 mb-5'}`}>
         <div className="rounded-full bg-slate-50 md:w-32 md:h-32 w-52 h-52 relative opacity-90 mt-2">
-          <img src="./img/profile.jpg" alt="Profile" className="rounded-full w-full h-full object-cover" />
+          <img src="/img/profile.jpg" alt="Profile" className="rounded-full w-full h-full object-cover" />
         </div>
 
         <div className="flex flex-col items-center mt-2">

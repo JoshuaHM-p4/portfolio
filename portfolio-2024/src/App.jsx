@@ -14,6 +14,7 @@ import ExperienceDetail from './pages/ExperienceDetail';
 import EducationDetail from './pages/EducationDetail';
 import Courses from './pages/Courses';
 import Community from './pages/Community';
+import CommunityDetail from './pages/CommunityDetail';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="education/:id" element={<EducationDetail />} />
           <Route path="courses" element={<Courses />} />
           <Route path="community" element={<Community />} />
+          <Route path="community/:id" element={<CommunityDetail />} />
         </Route>
       </Routes>
     </Router>

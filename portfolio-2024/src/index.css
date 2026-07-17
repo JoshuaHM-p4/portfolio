@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-cinzel: "Cinzel", serif;
+  --font-inter: "Inter", sans-serif;
   --font-texturina: "Texturina", serif;
   --font-firacode: "Fira Code", monospace;
 
@@ -115,49 +115,61 @@
 
 @layer components {
   .header-1 {
-    @apply font-bold text-center font-texturina text-slate-800 text-lg lg:text-4xl;
+    @apply font-bold text-center font-texturina text-slate-800;
+    font-size: clamp(1.125rem, calc(0.73rem + 1.69vw), 2.25rem);
   }
   .header-2 {
-    @apply font-bold text-center font-texturina text-black-400 text-base lg:text-xl md:text-lg;
+    @apply font-bold text-center font-texturina text-black-400;
+    font-size: clamp(1rem, calc(0.91rem + 0.38vw), 1.25rem);
   }
   .header-3 {
-    @apply font-bold text-center font-texturina text-black-400 text-xl lg:text-2xl;
+    @apply font-bold text-center font-texturina text-black-400;
+    font-size: clamp(1.25rem, calc(1.16rem + 0.38vw), 1.5rem);
   }
   .header-4 {
-    @apply font-bold text-center font-texturina text-black-400 text-lg lg:text-xl;
+    @apply font-bold text-center font-texturina text-black-400;
+    font-size: clamp(1.125rem, calc(1.08rem + 0.19vw), 1.25rem);
   }
   .header-5 {
-    @apply font-bold text-center font-texturina text-black-400 text-base lg:text-lg;
+    @apply font-bold text-center font-texturina text-black-400;
+    font-size: clamp(1rem, calc(0.96rem + 0.19vw), 1.125rem);
   }
   .header-6 {
-    @apply font-bold text-center font-texturina text-black-400 text-sm lg:text-base;
+    @apply font-bold text-center font-texturina text-black-400;
+    font-size: clamp(0.875rem, calc(0.83rem + 0.19vw), 1rem);
   }
   .header-7 {
-    @apply font-bold text-center font-texturina text-black-400 text-xs lg:text-sm;
+    @apply font-bold text-center font-texturina text-black-400;
+    font-size: clamp(0.75rem, calc(0.71rem + 0.19vw), 0.875rem);
   }
   .header-8 {
-    @apply font-bold text-center font-texturina text-black-400 text-xs lg:text-sm;
+    @apply font-bold text-center font-texturina text-black-400;
+    font-size: clamp(0.75rem, calc(0.71rem + 0.19vw), 0.875rem);
   }
   .paragraph {
-    @apply text-black-400 font-texturina text-sm lg:text-base text-justify;
+    @apply text-black-400 font-inter text-justify;
+    font-size: clamp(0.875rem, calc(0.83rem + 0.19vw), 1rem);
   }
   .date {
-    @apply text-black-400 font-cinzel text-[0.625rem];
+    @apply text-black-400 font-inter text-[0.625rem];
   }
   .skill-text {
-    @apply text-blue-500 font-texturina text-sm lg:text-base font-medium;
+    @apply text-black-400 font-inter font-medium;
+    font-size: clamp(0.875rem, calc(0.83rem + 0.19vw), 1rem);
   }
   .description {
-    @apply text-black-400 font-texturina text-xs lg:text-xs text-justify;
+    @apply text-black-400 font-inter text-xs text-justify;
   }
   .caption {
-    @apply text-center text-black-400 font-cinzel text-xs lg:text-sm font-bold;
+    @apply text-center text-black-400 font-inter font-bold;
+    font-size: clamp(0.75rem, calc(0.71rem + 0.19vw), 0.875rem);
   }
   .notebook-title {
-    @apply text-start font-firacode text-black-400 text-sm lg:text-base font-medium;
+    @apply text-start font-firacode text-black-400 font-medium;
+    font-size: clamp(0.875rem, calc(0.83rem + 0.19vw), 1rem);
   }
   .notebook-description {
-    @apply text-justify font-texturina text-black-400 text-xs;
+    @apply text-justify font-inter text-black-400 text-xs;
   }
   .background {
     @apply bg-gradient-to-t from-[#A05645] via-[#FFA752] to-[#F9F5F1] -z-50 w-screen h-screen absolute bg-fixed;
@@ -172,10 +184,10 @@
     @apply ring-2 ring-black/20 ring-offset-1 ring-offset-white/10 animate-pulse;
   }
   .nav-link {
-    @apply text-center text-slate-800 font-texturina;
+    @apply text-center text-slate-800 font-inter;
   }
   .nav-profile-link {
-    @apply flex text-center font-texturina w-full justify-center text-black-400 flex-1 p-1 hover:bg-white-200/20 hover:text-white-400 transition-colors;
+    @apply flex text-center font-inter w-full justify-center text-black-400 flex-1 p-1 hover:bg-white-200/20 hover:text-white-400 transition-colors;
   }
   .linkIcon {
     @apply w-8 h-8 text-black-400 hover:text-black-300 fill-current stroke-current;
@@ -226,10 +238,7 @@
     @apply h-full;
   }
   body {
-    @apply font-texturina;
-  }
-  p {
-    @apply font-cinzel;
+    @apply font-inter;
   }
 }
 

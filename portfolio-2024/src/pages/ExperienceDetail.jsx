@@ -1,8 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom';
+import { useState } from 'react';
 import experiences from '../data/experience.json';
 import Button from '../components/Button';
+import Lightbox from '../components/Lightbox';
 import { useNavbar } from '../context/NavbarContext';
 import TechnologyCard from '../components/TechnologyCard';
+import { getExperienceThumbnail } from '../utils/experienceThumbnail';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -11,6 +14,7 @@ const ExperienceDetail = () => {
   const navigate = useNavigate();
   const { isCollapsed } = useNavbar();
   const experience = experiences.find((e) => String(e.id) === String(id));
+  const [expanded, setExpanded] = useState(null);
 
   useGSAP(() => {
     gsap.fromTo('.gsap-mask-text',
@@ -33,15 +37,26 @@ const ExperienceDetail = () => {
       <div className={`flex flex-col items-start ${isCollapsed ? 'lg:w-[80%] mx-auto' : 'w-full'}`}>
         <Button className="w-auto !mt-0 mb-4" text={"← Experience & Education"} onClick={() => navigate('/experience')} />
 
-        {experience.img && (
-          <div className="w-full h-72 mb-4 overflow-hidden rounded-lg">
-            <img src={experience.img} alt={experience.company} className="w-full h-full object-cover" />
-          </div>
-        )}
+        {(() => {
+          const thumbnail = getExperienceThumbnail(experience);
+          return thumbnail && (
+            <div
+              className="w-full h-72 mb-4 overflow-hidden rounded-lg cursor-pointer"
+              onClick={() => setExpanded(thumbnail)}
+            >
+              <img src={thumbnail} alt={experience.company} className="w-full h-full object-cover hover:opacity-90 transition-opacity" />
+            </div>
+          );
+        })()}
 
         <p className="date">{experience.date}</p>
         <h1 className="header-2 text-start mt-1">{experience.title}</h1>
-        <h2 className="header-3 text-start mb-4 text-blue-400">{experience.company}</h2>
+        <div className="flex items-center gap-2 mb-4">
+          {experience.logo && (
+            <img src={experience.logo} alt={`${experience.company} logo`} className="w-6 h-6 object-contain rounded-sm" />
+          )}
+          <h2 className="header-3 text-start">{experience.company}</h2>
+        </div>
 
         <div className="flex flex-col gap-3 mt-2">
           {experience.longDescription?.map((desc, i) => (
@@ -56,7 +71,26 @@ const ExperienceDetail = () => {
             <TechnologyCard key={i} technology={t} />
           ))}
         </div>
+
+        {experience.photos?.length > 0 && (
+          <div className="w-full columns-2 md:columns-3 lg:columns-4 gap-3 mt-6">
+            {experience.photos.map((photo, i) => (
+              <img
+                key={photo.src}
+                src={photo.src}
+                alt={`${experience.company} ${i + 1}`}
+                loading="lazy"
+                onClick={() => setExpanded(photo.src)}
+                className="w-full mb-3 rounded-lg border border-white-100 shadow-md break-inside-avoid cursor-pointer hover:opacity-90 transition-opacity"
+              />
+            ))}
+          </div>
+        )}
       </div>
+
+      {expanded && (
+        <Lightbox src={expanded} alt={experience.company} onClose={() => setExpanded(null)} />
+      )}
     </div>
   );
 };

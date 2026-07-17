@@ -68,14 +68,24 @@ const Projects = () => {
       <div className={`flex flex-col items-start justify-start ${isCollapsed ? 'lg:w-[80%] mx-auto' : 'w-full'}`}>
         <Button className="w-auto !mt-0 mb-4 gsap-animate-up" text={"← Back to Home"} onClick={() => navigate('/')} />
         <h1 className="header-2 mb-2 gsap-animate-text">All Projects</h1>
-        <div className="w-full grid gap-3 mt-2 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] auto-cols-[300px]">
-          {projects.map((project, index) => (
-            <div key={index} className="gsap-animate-up h-full">
-              <Link to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
-                <ProjectCard project={project} />
-              </Link>
-            </div>
-          ))}
+        <div className="w-full grid gap-6 mt-2 grid-cols-1 md:grid-cols-3 md:grid-flow-row-dense items-start">
+          {(() => {
+            let largeCount = 0;
+            return projects.map((project, index) => {
+              let spanClass = '';
+              if (project.size === 'large') {
+                spanClass = largeCount % 2 === 0 ? 'md:col-span-2' : 'md:col-span-2 md:col-start-2';
+                largeCount++;
+              }
+              return (
+                <div key={index} className={`gsap-animate-up h-full ${spanClass}`}>
+                  <Link to={`/projects/${slugify(project.name)}`} className="block h-full hover:scale-[1.01] transition-transform">
+                    <ProjectCard project={project} />
+                  </Link>
+                </div>
+              );
+            });
+          })()}
         </div>
       </div>
     </div>

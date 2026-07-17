@@ -19,7 +19,7 @@ const CourseCard = ({ course }) => {
             onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center gap-1 px-3 py-1 border border-white-100 bg-white-500/10 hover:bg-white-500/40 backdrop-blur-sm rounded-full transition-all ease-in-out"
           >
-            <span className="font-texturina text-sm font-medium text-purple-500">View Certificate</span>
+            <span className="font-inter text-sm font-medium text-purple-500">View Certificate</span>
           </a>
         )}
       </div>

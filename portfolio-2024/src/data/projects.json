@@ -17,7 +17,8 @@
       "OpenCV",
       "Python"
     ],
-    "highlight": true
+    "highlight": true,
+    "size": "large"
   },
   {
     "name": "IskoChatAI",
@@ -34,7 +35,8 @@
       "Google Cloud",
       "Custom Search API"
     ],
-    "highlight": true
+    "highlight": true,
+    "size": "large"
   },
   {
     "name": "Underwater Sealife Crab and Solid Waste Detection (YOLOv8)",
@@ -50,7 +52,8 @@
       "Model Deployment",
       "YOLOv8"
     ],
-    "highlight": true
+    "highlight": true,
+    "size": "small"
   },
   {
     "name": "Plant Disease Classification using ResNet",
@@ -67,7 +70,8 @@
       "Image Preprocessing",
       "Multi-class Classification"
     ],
-    "highlight": true
+    "highlight": true,
+    "size": "small"
   },
   {
     "name": "Handwritten Baybayin Classification using Custom CNN",
@@ -83,7 +87,8 @@
       "OCR & Script Analysis",
       "Performance Evaluation"
     ],
-    "highlight": true
+    "highlight": true,
+    "size": "small"
   },
   {
     "name": "Unsupervised KNN Recommender System",
@@ -99,7 +104,8 @@
       "Recommender Systems",
       "Scikit-Learn"
     ],
-    "highlight": true
+    "highlight": true,
+    "size": "small"
   },
   {
     "name": "PUP Graduate School Alumni Website",
@@ -116,7 +122,8 @@
       "Collaborative Development",
       "Product Lifecycle"
     ],
-    "highlight": true
+    "highlight": true,
+    "size": "large"
   },
   {
     "name": "Tinig Manila: AI Voice Hotline for Filipino Senior Citizens",
@@ -135,7 +142,8 @@
       "Tailwind CSS",
       "Conversational AI",
       "Tagalog NLP"
-    ]
+    ],
+    "size": "large"
   },
   {
     "name": "Kiro: Immersive Portfolio for AI/ML Engineering",
@@ -153,7 +161,8 @@
       "Refractive Shaders",
       "Immersive UI/UX Design",
       "Responsive Engineering"
-    ]
+    ],
+    "size": "small"
   },
   {
     "name": "Luna: Dog Health Expert RAG System",
@@ -171,7 +180,8 @@
       "Gemini API",
       "NLP Evaluation Pipelines",
       "Vector Database Management"
-    ]
+    ],
+    "size": "large"
   },
   {
     "name": "Data Structures & Algorithms Visualizer",
@@ -190,7 +200,8 @@
       "Algorithms",
       "Web Audio API",
       "CSS Animations"
-    ]
+    ],
+    "size": "small"
   },
   {
     "name": "PUP SIS Grades & Contact Grabber",
@@ -207,7 +218,8 @@
       "GWA Calculation Algorithms",
       "HTML5 & CSS3",
       "Browser Scripting API"
-    ]
+    ],
+    "size": "small"
   },
   {
     "name": "Space Shuttle Endeavor",
@@ -223,7 +235,8 @@
       "Physics Simulation",
       "Game Design",
       "Sound Engineering"
-    ]
+    ],
+    "size": "small"
   },
   {
     "name": "Pygame Picross",
@@ -239,7 +252,8 @@
       "NumPy",
       "Grid-based Logic",
       "Game State Management"
-    ]
+    ],
+    "size": "small"
   },
   {
     "name": "Speed Type Pygame",
@@ -255,6 +269,7 @@
       "UI/UX Design",
       "Typing Mechanics",
       "Real-time Data Processing"
-    ]
+    ],
+    "size": "small"
   }
 ]

@@ -15,7 +15,7 @@ const IconLink = ({ href, icon: Icon, label }) => (
     className="inline-flex items-center gap-2 px-3 py-2 mt-2 border border-white-100 bg-white-500/10 hover:bg-white-500/40 backdrop-blur-sm md:rounded-2xl rounded-full transition-all ease-in-out"
   >
     <Icon className="w-5 h-5 text-purple-500 fill-current stroke-current" />
-    <span className="font-texturina text-sm font-medium text-purple-500">{label}</span>
+    <span className="font-inter text-sm font-medium text-purple-500">{label}</span>
   </a>
 );
 

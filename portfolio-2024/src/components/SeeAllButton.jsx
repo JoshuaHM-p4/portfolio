@@ -20,7 +20,7 @@ const SeeAllButton = ({ text, onClick }) => (
       onClick={onClick}
       className="relative w-full py-3 flex flex-col items-center justify-center gap-1
         cursor-pointer md:rounded-b-2xl rounded-b-full
-        font-texturina text-black-400 text-sm tracking-wide"
+        font-inter text-black-400 text-sm tracking-wide"
       aria-label={text}
     >
       <span>{text}</span>
